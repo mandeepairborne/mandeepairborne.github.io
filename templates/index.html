@@ -1,0 +1,209 @@
+{% extends "base.html" %}
+
+{% block extra_data %}
+{% set section = "Home" %}
+{% endblock %}
+
+{% block title %}
+Mandeep
+{% endblock %}
+
+{% block header %}
+  {% include "main-header.html" %}
+{% endblock %}
+
+{% block content %}
+    <main>
+      <div class="personal-statement">
+        <p class="named callout">
+            <span>Personal Statement</span>
+            <span style="font-size:1em">
+                My journey in physics began with a fundamental question: how do the building blocks of our universe interact at the quantum level? Through my research in pentaquark systems and quantum information theory, I've found that combining theoretical physics with computational methods offers powerful tools for understanding these interactions. I aim to contribute to our understanding of quantum phenomena while bridging the gap between theoretical models and practical applications.
+            </span>
+        </p>
+    
+        <p>
+            Hi, I'm Mandeep. Based in Jhunjhunu, India, I work on theoretical physics with a focus on astroparticle physics and cosmology. I completed my Master's in Physics (CGPA: 7.08/10) at Dr. B. R. Ambedkar National Institute of Technology, Jalandhar, under the guidance of Dr. Suneel Dutt, following my Bachelor's in Physics, Chemistry, and Mathematics (CGPA: 7.92/10) from St. Aloysius College, Mangalore.
+        </p>
+    
+        <p>
+            My research experience includes investigating pentaquark systems, developing machine learning models for galaxy classification, and exploring quantum computing applications. Outside of physics, I enjoy amateur astronomy, playing the flute, and cycling. I also co-founded The Socratic Circle Book Club to encourage discussions about scientific literature among peers.
+        </p>
+    </div>
+    <p class="callout">
+      "The more precisely the position is determined, the less precisely the momentum is known in this instant, and vice versa." - Werner Heisenberg
+    </p>
+      <h2>Certifications and Skills</h2>
+      
+      <p>
+          <strong>Notable Certifications:</strong>
+      </p>
+      <ol>
+          <li>Qubit x Qubit - Quantum Computing Course (2024-25)</li>
+          <li>Harvard CS50 - Introduction to Computer Science (2024)</li>
+          <li>ICTS - Curves and Surfaces (2022)</li>
+          <li>Fellow of Physics Training and Talent Search (PTTS) (2021)</li>
+          <li>Vedic Mathematics Program (2021)</li>
+      </ol>
+
+      <p>
+          <strong>Technical Skills:</strong>
+      </p>
+      <ol>
+          <li>Quantum Computing: Algorithms design, information theory, communication protocols</li>
+          <li>Programming: C++, Python (Quantum programming with Qiskit), LaTeX</li>
+          <li>Software: TensorFlow, MATLAB, Quantum simulation tools</li>
+          <li>Languages: Fluent in English and Hindi; Intermediate in Kannada and Haryanvi</li>
+      </ol>
+
+      <h2>Research and Projects</h2>
+
+      <ul class="publications">
+        <li>
+          <div class="venue">
+            <p>MSc Project</p>
+          </div>
+          <div>
+            <h3>
+              <a href="#">
+                Medium Modification of Pentaquark Θ+ (July 2023 - May 2024)
+              </a>
+            </h3>
+            <ul class="authors">
+              <li class="me">Mandeep</li>,
+              <li><a href="#">Dr. Suneel Dutt</a></li>
+            </ul>
+            <details>
+              <summary>Project Details</summary>
+              <p>Investigated exotic pentaquark baryon Θ+ using chiral SU(3) quark mean field model, incorporating key QCD features. Analyzed medium modifications in nuclear and strange matter, developed calculations for effective mass modifications, and found significant mass reduction with increasing baryon density. Applied theoretical framework incorporating scalar fields (σ, ζ, δ) and vector fields (ω, ρ, ϕ) for comprehensive analysis.</p>
+            </details>
+          </div>
+        </li>
+
+        <li>
+          <div class="venue">
+            <p>ML Project</p>
+          </div>
+          <div>
+            <h3>
+              <a href="#">
+                Galaxy Image Classification (May 2023 - July 2023)
+              </a>
+            </h3>
+            <ul class="authors">
+              <li class="me">Mandeep</li>
+            </ul>
+            <details>
+              <summary>Project Details</summary>
+              <p>Implemented a Convolutional Neural Network (CNN) using Python and TensorFlow to classify galaxy images into three categories. Processed dataset from the Sloan Digital Sky Survey (SDSS), applied data augmentation techniques, and created a command-line interface for testing new galaxy images.</p>
+            </details>
+          </div>
+        </li>
+
+        <li>
+          <div class="venue">
+            <p>BSc Project</p>
+          </div>
+          <div>
+            <h3>
+              <a href="#">
+                High Fidelity FM Broadcaster (May 2022 - July 2022)
+              </a>
+            </h3>
+            <ul class="authors">
+              <li class="me">Mandeep</li>,
+              <li><a href="#">Dr. Narayana Moolya B</a></li>
+            </ul>
+            <details>
+              <summary>Project Details</summary>
+              <p>Designed and constructed a small-scale FM broadcasting system operating in the 88-108 MHz frequency band. Implemented frequency modulation using VCO circuit, assembled RF amplifier stage, and optimized audio quality through low-pass filters.</p>
+            </details>
+          </div>
+        </li>
+      </ul>
+
+      <h2>Activities & Leadership</h2>
+
+<div class="leadership-roles">
+    <div class="academic-governance">
+        <h3>Academic Governance</h3>
+        <ul>
+            <li>Academic Representative, Senate Postgraduate Committee
+                <div class="role-details">
+                    <p>Represented postgraduate student interests in academic policy decisions and curriculum development</p>
+                </div>
+            </li>
+            <li>Class Representative, MSc Physics
+                <div class="role-details">
+                    <p>Served as liaison between faculty and students, coordinating academic activities and addressing student concerns</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="initiatives">
+        <h3>Academic Initiatives</h3>
+        <ul>
+            <li>Co-founder, The Socratic Circle Book Club
+                <div class="role-details">
+                    <p>Established and led a discussion forum focusing on scientific literature and philosophical discourse in physics</p>
+                </div>
+            </li>
+            <li>Member, Web Committee, Physical Science Society (PSS)
+                <div class="role-details">
+                    <p>Managed digital presence and technical communications for the society's academic events and initiatives</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<style>
+.leadership-roles {
+    margin: 1.5em 0;
+}
+
+.leadership-roles h3 {
+    color: #333;
+    margin-bottom: 0.5em;
+    font-size: 1.2em;
+}
+
+.leadership-roles ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.leadership-roles li {
+    margin-bottom: 1em;
+    font-weight: bold;
+}
+
+.role-details {
+    margin-top: 0.3em;
+}
+
+.role-details p {
+    font-weight: normal;
+    margin: 0.2em 0;
+    color: #555;
+}
+
+.academic-governance, .initiatives {
+    margin-bottom: 2em;
+}
+</style>
+      <h2>Interests</h2>
+      <p>
+        Amateur Astronomy, Scientific Computing, Reading Scientific Literature, Physical Fitness (Cycling, Calisthenics)
+      </p>
+
+      <p class="callout">
+        "The universe is not only stranger than we imagine, it is stranger than we can imagine." - J.B.S. Haldane
+      </p>
+    </main>
+
+    <footer>
+        There are many imitations, but this one is mine. Last updated: 2024-11-24.
+    </footer>
+{% endblock %}
