@@ -1,0 +1,25 @@
+# List of your projects
+projects:
+  - title: "Medium Modification of Pentaquark Θ+"
+    type: "MSc Project"  # (Optional) categorize projects (e.g., MSc Project, Personal Project)
+    dates: "July 2023 - May 2024"
+    authors:
+      - name: Mandeep
+      - name: Dr. Suneel Dutt (link: https://scholar.google.com/citations?user=WT_lqTwAAAAJ&hl=en)
+    description: |  # Use pipe (|) for multi-line descriptions
+      Investigated exotic pentaquark baryon Θ+ using chiral SU(3) quark mean field model... (Full description)
+  - title: "Galaxy Image Classification"
+    type: "ML Project"
+    dates: "May 2023 - July 2023"
+    authors:
+      - name: Mandeep
+    description: |
+      Implemented a Convolutional Neural Network (CNN) using Python and TensorFlow... (Full description)
+  - title: "High Fidelity FM Broadcaster"
+    type: "BSc Project"  # (Optional)
+    dates: "May 2022 - July 2022"
+    authors:
+      - name: Mandeep
+      - name: Dr. Narayana Moolya B (link: https://scholar.google.com/citations?user=WT_lqTwAAAAJ&hl=en)  # (Optional) link to collaborator
+    description: |
+      Designed and constructed a small-scale FM broadcasting system... (Full description)
