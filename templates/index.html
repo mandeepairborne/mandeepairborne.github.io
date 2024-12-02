@@ -1,20 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Mandeep{% endblock %}</title>
-    <meta name="description" content="Personal portfolio of Mandeep - Theoretical Physicist and Researcher">
-    <link rel="stylesheet" href="/css/main.css">
-    {% block extra_head %}
-    {% endblock %}
-</head>
-<body>
-    {% block header %}
-        {% include "main-header.html" %}
-    {% endblock %}
+{% extends "base.html" %}
 
-    {% block content %}
+{% block extra_data %}
+    {% set section = "Home" %}
+{% endblock %}
+
+{% block title %}
+    Mandeep
+{% endblock %}
+
+{% block header %}
+    {% include "main-header.html" %}
+{% endblock %}
+
+{% block content %}
     <main>
         <div class="personal-statement">
             <p class="named callout">
@@ -151,46 +149,51 @@
     </main>
 
     <footer>There are many imitations, but this one is mine. Last updated: 2024-11-24.</footer>
-    {% endblock %}
+{% endblock %}
 
-    {% block scripts %}
-    <script src="/main.js"></script>
-    {% endblock %}
+<style>
+.leadership-roles {
+    margin: 1.5em 0;
+}
 
-    <style>
-        .leadership-roles {
-            margin: 1.5em 0;
-        }
+.leadership-roles h3 {
+    color: #333;
+    margin-bottom: 0.5em;
+    font-size: 1.2em;
+}
 
-        .leadership-roles h3 {
-            color: #333;
-            margin-bottom: 0.5em;
-            font-size: 1.2em;
-        }
+.leadership-roles ul {
+    list-style-type: none;
+    padding-left: 0;
+}
 
-        .leadership-roles ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
+.leadership-roles li {
+    margin-bottom: 1em;
+    font-weight: bold;
+}
 
-        .leadership-roles li {
-            margin-bottom: 1em;
-            font-weight: bold;
-        }
+.role-details {
+    margin-top: 0.3em;
+}
 
-        .role-details {
-            margin-top: 0.3em;
-        }
+.role-details p {
+    font-weight: normal;
+    margin: 0.2em 0;
+    color: #555;
+}
 
-        .role-details p {
-            font-weight: normal;
-            margin: 0.2em 0;
-            color: #555;
-        }
+.academic-governance, .initiatives {
+    margin-bottom: 2em;
+}
+</style>
 
-        .academic-governance, .initiatives {
-            margin-bottom: 2em;
-        }
-    </style>
-</body>
-</html>
+<h2>Interests</h2>
+      <p>
+        Amateur Astronomy, Scientific Computing, Reading Scientific Literature, Physical Fitness (Cycling, Calisthenics)
+      </p>
+
+      <p class="callout">"The universe is not only stranger than we imagine, it is stranger than we can imagine." - <a href="https://en.wikipedia.org/wiki/J._B._S._Haldane">J.B.S. Haldane</a></p>
+    </main>
+
+    <footer>There are many imitations, but this one is mine. Last updated: 2024-11-24.</footer>
+{% endblock %}
