@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="hi">
+    <title>Sameer jain - blog</title>
+    <subtitle>mai sameer hu</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://mandeepairborne.github.io/hi/tags/blog/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://mandeepairborne.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2025-04-03T00:00:00+00:00</updated>
+    <id>https://mandeepairborne.github.io/hi/tags/blog/atom.xml</id>
+    <entry xml:lang="hi">
+        <title>यह ब्लॉग क्यों?</title>
+        <published>2025-04-03T00:00:00+00:00</published>
+        <updated>2025-04-03T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            Mandeep
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://mandeepairborne.github.io/hi/blog/why-this-blog/"/>
+        <id>https://mandeepairborne.github.io/hi/blog/why-this-blog/</id>
+        
+        <content type="html" xml:base="https://mandeepairborne.github.io/hi/blog/why-this-blog/">&lt;p&gt;मेरे ब्लॉग में आपका स्वागत है! इस पोस्ट में, मैं आपको वह कहानी बताना चाहता हूँ कि मैंने यह ब्लॉग क्यों शुरू किया और यह मेरे लिए क्या मायने रखता है।&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;prernnaa&quot;&gt;प्रेरणा&lt;&#x2F;h2&gt;
+&lt;p&gt;मैं हमेशा से अपने विचार, अंतर्दृष्टि और व्यक्तिगत अनुभवों को लिखकर साझा करने का इच्छुक रहा हूँ। यह ब्लॉग उन विषयों की खोज का मेरा स्थान है जो पारंपरिक ज्ञान को चुनौती देते हैं, अज्ञात में उतरते हैं और सार्थक वार्तालाप को प्रोत्साहित करते हैं। यह केवल जानकारी प्रसारित करने के बारे में नहीं है—बल्कि जिज्ञासु दिमागों के एक समुदाय का निर्माण करने के बारे में है जो गहराई और नए दृष्टिकोण की खोज में लगे हैं।&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;uddeshy&quot;&gt;उद्देश्य&lt;&#x2F;h2&gt;
+&lt;p&gt;एक ऐसी दुनिया में जहाँ तेज संदेशों और क्षणिक प्रवृत्तियों का बहाव है, मैंने एक ऐसा मंच तैयार करने की ठानी जो विचारशील अन्वेषण को महत्व देता हो। यहाँ आप निम्नलिखित उम्मीदें कर सकते हैं:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;गहराई से विश्लेषण:&lt;&#x2F;strong&gt; निबंध और आलेख जो प्रौद्योगिकी, विज्ञान, कला एवं दर्शन के जटिल विषयों की खोज करते हैं।&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;व्यक्तिगत यात्रा:&lt;&#x2F;strong&gt; मेरी स्वयं की खोज, संघर्षों और सफलताओं से प्राप्त अंतर्दृष्टि।&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;रोजगारकारी चर्चाएँ:&lt;&#x2F;strong&gt; ऐसी सामग्री जो वार्तालाप को प्रोत्साहित करती है, प्रतिक्रिया को बढ़ावा देती है, और जिज्ञासु पाठकों का समुदाय बनाती है।&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;aap-kyaa-ummiid-kr-skte-hain&quot;&gt;आप क्या उम्मीद कर सकते हैं&lt;&#x2F;h2&gt;
+&lt;p&gt;इस ब्लॉग की सामग्री गहरी विश्लेषणात्मक कृतियों से लेकर हल्के, अधिक सुलभ लेखों तक होगी। चाहे वह वैज्ञानिक प्रगति पर आधारित एक शोध आलेख हो या आधुनिक जीवन की चुनौतियों पर एक व्यक्तिगत चिंतन, हर पोस्ट को आपको प्रेरित और जुड़ाव महसूस कराने के उद्देश्य से तैयार किया गया है।&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;सूक्ष्म निबंध:&lt;&#x2F;strong&gt; विचारोत्तेजक सामग्री जो आपके नजरिए का विस्तार करती है।&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;क्रियाशील सुझाव:&lt;&#x2F;strong&gt; आधुनिक चुनौतियों से निपटने के लिए व्यावहारिक सुझाव और रणनीतियाँ।&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;समुदाय संवाद:&lt;&#x2F;strong&gt; आपके विचार साझा करने और वार्तालाप आरंभ करने के लिए एक समर्पित स्थान।&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;antim-vicaar&quot;&gt;अंतिम विचार&lt;&#x2F;h2&gt;
+&lt;p&gt;मेरे ब्लॉग के पीछे के उद्देश्य को समझने के लिए आपका धन्यवाद। हर पोस्ट एक निरंतर यात्रा का हिस्सा है—एक ऐसी यात्रा जिसे समझने, सवाल उठाने और अंततः हमारे चारों ओर की दुनिया की सराहना करने के लिए डिजाइन किया गया है। मैं आपको इस सतत सीखने और सार्थक वार्तालाप की यात्रा में मेरे साथ शामिल होने का निमंत्रण देता हूँ।&lt;&#x2F;p&gt;
+&lt;p&gt;खुशियाँ से पढ़ें,&lt;br &#x2F;&gt;
+Sameer Jain&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>

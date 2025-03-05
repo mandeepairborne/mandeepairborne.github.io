@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="hi">
+    <title>Sameer jain</title>
+    <subtitle>mai sameer hu</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://mandeepairborne.github.io/hi/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://mandeepairborne.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2025-04-03T00:00:00+00:00</updated>
+    <id>https://mandeepairborne.github.io/hi/atom.xml</id>
+    <entry xml:lang="hi">
+        <title>यह ब्लॉग क्यों?</title>
+        <published>2025-04-03T00:00:00+00:00</published>
+        <updated>2025-04-03T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            Mandeep
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://mandeepairborne.github.io/hi/blog/why-this-blog/"/>
+        <id>https://mandeepairborne.github.io/hi/blog/why-this-blog/</id>
+        
+        <content type="html" xml:base="https://mandeepairborne.github.io/hi/blog/why-this-blog/">&lt;p&gt;मेरे ब्लॉग में आपका स्वागत है! इस पोस्ट में, मैं आपको वह कहानी बताना चाहता हूँ कि मैंने यह ब्लॉग क्यों शुरू किया और यह मेरे लिए क्या मायने रखता है।&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;prernnaa&quot;&gt;प्रेरणा&lt;&#x2F;h2&gt;
+&lt;p&gt;मैं हमेशा से अपने विचार, अंतर्दृष्टि और व्यक्तिगत अनुभवों को लिखकर साझा करने का इच्छुक रहा हूँ। यह ब्लॉग उन विषयों की खोज का मेरा स्थान है जो पारंपरिक ज्ञान को चुनौती देते हैं, अज्ञात में उतरते हैं और सार्थक वार्तालाप को प्रोत्साहित करते हैं। यह केवल जानकारी प्रसारित करने के बारे में नहीं है—बल्कि जिज्ञासु दिमागों के एक समुदाय का निर्माण करने के बारे में है जो गहराई और नए दृष्टिकोण की खोज में लगे हैं।&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;uddeshy&quot;&gt;उद्देश्य&lt;&#x2F;h2&gt;
+&lt;p&gt;एक ऐसी दुनिया में जहाँ तेज संदेशों और क्षणिक प्रवृत्तियों का बहाव है, मैंने एक ऐसा मंच तैयार करने की ठानी जो विचारशील अन्वेषण को महत्व देता हो। यहाँ आप निम्नलिखित उम्मीदें कर सकते हैं:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;गहराई से विश्लेषण:&lt;&#x2F;strong&gt; निबंध और आलेख जो प्रौद्योगिकी, विज्ञान, कला एवं दर्शन के जटिल विषयों की खोज करते हैं।&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;व्यक्तिगत यात्रा:&lt;&#x2F;strong&gt; मेरी स्वयं की खोज, संघर्षों और सफलताओं से प्राप्त अंतर्दृष्टि।&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;रोजगारकारी चर्चाएँ:&lt;&#x2F;strong&gt; ऐसी सामग्री जो वार्तालाप को प्रोत्साहित करती है, प्रतिक्रिया को बढ़ावा देती है, और जिज्ञासु पाठकों का समुदाय बनाती है।&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;aap-kyaa-ummiid-kr-skte-hain&quot;&gt;आप क्या उम्मीद कर सकते हैं&lt;&#x2F;h2&gt;
+&lt;p&gt;इस ब्लॉग की सामग्री गहरी विश्लेषणात्मक कृतियों से लेकर हल्के, अधिक सुलभ लेखों तक होगी। चाहे वह वैज्ञानिक प्रगति पर आधारित एक शोध आलेख हो या आधुनिक जीवन की चुनौतियों पर एक व्यक्तिगत चिंतन, हर पोस्ट को आपको प्रेरित और जुड़ाव महसूस कराने के उद्देश्य से तैयार किया गया है।&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;सूक्ष्म निबंध:&lt;&#x2F;strong&gt; विचारोत्तेजक सामग्री जो आपके नजरिए का विस्तार करती है।&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;क्रियाशील सुझाव:&lt;&#x2F;strong&gt; आधुनिक चुनौतियों से निपटने के लिए व्यावहारिक सुझाव और रणनीतियाँ।&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;समुदाय संवाद:&lt;&#x2F;strong&gt; आपके विचार साझा करने और वार्तालाप आरंभ करने के लिए एक समर्पित स्थान।&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;antim-vicaar&quot;&gt;अंतिम विचार&lt;&#x2F;h2&gt;
+&lt;p&gt;मेरे ब्लॉग के पीछे के उद्देश्य को समझने के लिए आपका धन्यवाद। हर पोस्ट एक निरंतर यात्रा का हिस्सा है—एक ऐसी यात्रा जिसे समझने, सवाल उठाने और अंततः हमारे चारों ओर की दुनिया की सराहना करने के लिए डिजाइन किया गया है। मैं आपको इस सतत सीखने और सार्थक वार्तालाप की यात्रा में मेरे साथ शामिल होने का निमंत्रण देता हूँ।&lt;&#x2F;p&gt;
+&lt;p&gt;खुशियाँ से पढ़ें,&lt;br &#x2F;&gt;
+Sameer Jain&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="hi">
+        <title>प्रेरणा की उजागर कहानी: कला और संगीत का संगम</title>
+        <published>2025-03-04T00:00:00+00:00</published>
+        <updated>2025-03-04T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            Sameer Jain
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://mandeepairborne.github.io/hi/inspire/"/>
+        <id>https://mandeepairborne.github.io/hi/inspire/</id>
+        
+        <content type="html" xml:base="https://mandeepairborne.github.io/hi/inspire/">&lt;p&gt;प्रेरणा पृष्ठ में आपका स्वागत है!&lt;&#x2F;p&gt;
+&lt;p&gt;इस शोर-शराबे से भरी दुनिया में, कला और संगीत अनंत प्रेरणा के दीपस्तंभ की तरह चमकते हैं। ये हमें याद दिलाते हैं कि हर सुर और हर ब्रश स्ट्रोक में अनोखी सुंदरता बसी है।&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;rngon-kii-simphnii&quot;&gt;रंगों की सिम्फनी&lt;&#x2F;h2&gt;
+&lt;p&gt;कला में गहरी भावनाओं को जगाने की अद्वितीय क्षमता होती है। चाहे वो ऐसा चित्र हो जो आपके नजरिए को बदल दे या मूर्ति जो आपकी कल्पना को चुनौती दे – कला हमारे देखने के तरीके की सीमाओं को परे ले जाती है।&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;br &#x2F;&gt;
+&lt;a href=&quot;https:&#x2F;&#x2F;unsplash.com&#x2F;photos&#x2F;a-mountain-lake-surrounded-by-trees-and-snow-CqTOTZh5vrs&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;images.unsplash.com&#x2F;photo-1635410773896-da585e1fe138?q=80&amp;amp;w=2063&amp;amp;auto=format&amp;amp;fit=crop&amp;amp;ixlib=rb-4.0.3&amp;amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D#full-bleed&quot; alt=&quot;Check out this masterpiece from Unsplash&quot; &#x2F;&gt;&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;em&gt;Starry Night&lt;&#x2F;em&gt; हमें अंधेरे में भी उजाला देखने की प्रेरणा देती है।&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;sngiit-ek-saarvbhaumik-bhaassaa&quot;&gt;संगीत: एक सार्वभौमिक भाषा&lt;&#x2F;h2&gt;
+&lt;p&gt;संगीत भाषा और संस्कृति की दीवारों को तोड़ते हुए हमारे हृदय तक पहुंचता है। इस ambient जाज प्रस्तुति का अनुभव करें, जो मन को शांति दे और सोच की दुनिया को विस्तृत करे:&lt;&#x2F;p&gt;
+&lt;iframe
+	class=&quot;youtube-embed&quot;
+	src=&quot;https:&#x2F;&#x2F;www.youtube-nocookie.com&#x2F;embed&#x2F;5qap5aO4i9A&quot;
+	allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+	referrerpolicy=&quot;strict-origin-when-cross-origin&quot; allowfullscreen&gt;
+&lt;&#x2F;iframe&gt;
+&lt;p&gt;आइए, संगीत की लय को अपने विचारों का मार्गदर्शक बनने दें, जिससे नए विचार और रचनात्मक चुनौतियाँ सामने आएं।&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;jb-klaa-aur-sngiit-milte-hain&quot;&gt;जब कला और संगीत मिलते हैं&lt;&#x2F;h2&gt;
+&lt;p&gt;कभी-कभी जादू तब रचता है जब कला और संगीत एक साथ मिलते हैं – एक तमाम इंद्रियों को झंकृत करने वाला अनुभव। इस लघु डॉक्यूमेंट्री का आनंद लें, जो दृश्य कला और अभिनव संगीत के संगम का उत्सव मनाती है:&lt;&#x2F;p&gt;
+&lt;iframe
+	class=&quot;youtube-embed&quot;
+	src=&quot;https:&#x2F;&#x2F;www.youtube-nocookie.com&#x2F;embed&#x2F;dQw4w9WgXcQ&quot;
+	allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+	referrerpolicy=&quot;strict-origin-when-cross-origin&quot; allowfullscreen&gt;
+&lt;&#x2F;iframe&gt;
+&lt;p&gt;यह संगम हमें याद दिलाता है कि प्रेरणा हर जगह बिखरी हुई है – बस नजरों और कानों को खुला रखना होता है।&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;rcnaatmktaa-pr-vicaar&quot;&gt;रचनात्मकता पर विचार&lt;&#x2F;h2&gt;
+&lt;p&gt;प्रेरणा सिर्फ गैलरी या कॉन्सर्ट हॉल तक सीमित नहीं है। यह तो रोजमर्रा के अनुभवों में भी है – बारिश में नाचती रोशनी, शहर की हलचल, या साधारण पलों में भी छुपी गहरी अंतर्दृष्टि।&lt;&#x2F;p&gt;
+&lt;p&gt;मैं आपको नए कला प्रदर्शनियों की खोज, अनजाने संगीत वाद्य यंत्रों के अनुभव या सिर्फ आसपास के सौंदर्य का आनंद लेने के लिए आमंत्रित करता हूँ। ये अनुभव आपकी रचनात्मक आत्मा को जगाएंगे।&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;antim-vicaar&quot;&gt;अंतिम विचार&lt;&#x2F;h2&gt;
+&lt;p&gt;प्रेरणा एक यात्रा है – जुनून, अवलोकन और खुले मन का संगम। कला और संगीत को अपने उपकरण बनाकर साधारण को असाधारण में बदल दें।&lt;&#x2F;p&gt;
+&lt;p&gt;अपने दिल को खुले रखें, मन को सजग रखें – और अनवरत खोज जारी रखें!&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;small&gt;अंतिम अपडेट: जून 2025&lt;&#x2F;small&gt;&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>

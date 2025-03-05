@@ -1,0 +1,225 @@
+.research-content {
+  /* Publications */
+  
+  .mod-note {
+      color: var(--fade-text-color);
+      font-size: 0.8em;
+      vertical-align: super;
+      /* optional: add a little left margin */
+      margin-left: 0.1em;
+  }
+  
+  .publications > li {
+      display: flex;
+      margin-top: 20px;
+  }
+  
+  .venue {
+      margin-right: var(--spacing-small);
+      flex: 0 0 100px;
+      text-align: right;
+  }
+  
+  .venue p {
+      background-color: var(--accent-color);
+      color: var(--bg-color);
+      display: inline-flex;
+      font-size: 0.85em;
+      font-weight: bold;
+      padding: 1px 3px;
+      border: 2px solid rgba(0, 0, 0, 0.1);
+      border-radius: 3px;
+      position: relative;
+      top: 5px;
+  }
+  
+  .venue p:hover {
+      animation-name: spin3d;
+      animation-duration: 5s;
+      animation-delay: 10s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+  }
+  
+  .publications h3 {
+      font-weight: bold;
+      font-size: 1.1em;
+  }
+  
+  .publications .authors {
+      font-size: 0.9em;
+  }
+  
+  .publications .authors li {
+      display: inline;
+  }
+  
+  .publications .me {
+      text-decoration: underline;
+      font-weight: bold;
+  }
+  
+  .publications .mod {
+      vertical-align: super;
+      font-size: 0.8em;
+  }
+  
+  .publications .links {
+      margin-top: 12px;
+      font-size: 0.7em;
+      line-height: 0.7;
+  }
+  
+  .publications .links li:before {
+      content: "[";
+  }
+  
+  .publications .links li:after {
+      content: "]";
+  }
+  
+  .publications details {
+      margin-top: 12px;
+      font-size: 0.9em;
+  }
+  
+  .publications summary {
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 0.7rem;
+  }
+  
+  .publications details p {
+      margin-top: 4px;
+  }
+  
+  .publications {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+  }
+  
+  .publication-entry {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      padding: 1rem;
+      border-radius: 4px;
+  }
+  
+  .venue-container {
+      flex: 0 0 100px;
+  }
+  
+  .venue {
+      background-color: var(--accent-color);
+      color: var(--bg-color);
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      text-align: center;
+      font-weight: bold;
+  }
+  
+  .content-container {
+      flex: 1;
+  }
+  
+  .content-container h4 {
+      margin: 0 0 0.5rem;
+  }
+  
+  .content-container h4 a {
+      text-decoration: none;
+      color: var(--heading-color);
+  }
+  
+  .authors-list {
+      margin: 0.5rem 0;
+      font-size: 0.9rem;
+  }
+  
+  .authors-list span {
+      margin-right: 1rem;
+  }
+  
+  .authors-list a {
+      text-decoration: none;
+      color: var(--text-color);
+  }
+  
+  .authors-list a:hover {
+      text-decoration: underline;
+  }
+  
+  .links {
+      margin: 0.5rem 0;
+  }
+  
+  .links a {
+      text-decoration: none;
+      padding: 0.25rem 0.75rem;
+      background-color: var(--accent-color);
+      color: var(--bg-color);
+      border-radius: 3px;
+  }
+  
+  details {
+      margin-top: 1rem;
+  }
+  
+  summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+  }
+  
+  details p {
+      margin-top: 0.5rem;
+      padding-left: 1rem;
+  }
+}
+
+.special span {
+    display: inline-block;
+    animation: juggle 1.5s ease-in-out infinite;
+}
+
+/* Stagger the animation on each letter */
+.special span:nth-child(1) { animation-delay: 0s; }
+.special span:nth-child(2) { animation-delay: 0.1s; }
+.special span:nth-child(3) { animation-delay: 0.2s; }
+.special span:nth-child(4) { animation-delay: 0.3s; }
+.special span:nth-child(5) { animation-delay: 0.4s; }
+.special span:nth-child(6) { animation-delay: 0.5s; }
+.special span:nth-child(7) { animation-delay: 0.6s; }
+
+@keyframes juggle {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .publication-entry {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 1rem !important;
+    padding: 0.5rem !important;
+  }
+  
+  /* Remove desktop flex settings by disabling flex for child elements */
+  .venue-container,
+  .content-container,
+  .authors-list,
+  .links {
+    flex: none !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+  
+  .research-content ul.publications {
+    display: block !important;
+  }
+}
+

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>Sameer Jain - blog</title>
+      <link>https://mandeepairborne.github.io</link>
+      <description>more than personal website</description>
+      <generator>Zola</generator>
+      <language>English</language>
+      <atom:link href="https://mandeepairborne.github.io/tags/blog/rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Thu, 03 Apr 2025 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>Why this blog?</title>
+          <pubDate>Thu, 03 Apr 2025 00:00:00 +0000</pubDate>
+          <author>Mandeep</author>
+          <link>https://mandeepairborne.github.io/blog/why-this-blog/</link>
+          <guid>https://mandeepairborne.github.io/blog/why-this-blog/</guid>
+          <description xml:base="https://mandeepairborne.github.io/blog/why-this-blog/">&lt;p&gt;Welcome to my blog! In this post, I want to share the story behind why I started this blog and what it means to me.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-inspiration&quot;&gt;The Inspiration&lt;&#x2F;h2&gt;
+&lt;p&gt;I’ve always been passionate about sharing ideas, insights, and personal experiences through writing. This blog is my space to explore topics that challenge conventional wisdom, delve into the unknown, and foster meaningful conversations. It is not just about conveying information—it’s about cultivating a community of curious minds seeking depth and new perspectives.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-purpose&quot;&gt;The Purpose&lt;&#x2F;h2&gt;
+&lt;p&gt;In a world flooded with quick soundbites and fleeting trends, I wanted to create a platform that values thoughtful exploration. Here’s what you can expect:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Deep Dives:&lt;&#x2F;strong&gt; Essays and articles that explore complex topics from technology and science to art and philosophy.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Personal Journeys:&lt;&#x2F;strong&gt; Insights and reflections from my own explorations, struggles, and triumphs.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Engaging Discussions:&lt;&#x2F;strong&gt; Content designed to spark conversation, encourage feedback, and build a community of inquisitive readers.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;what-you-can-expect&quot;&gt;What You Can Expect&lt;&#x2F;h2&gt;
+&lt;p&gt;Content on this blog will range from in-depth analytical pieces to lighter, more accessible posts. Whether it’s a well-researched article on a scientific breakthrough or a personal reflection on the challenges of modern life, every post is crafted to inspire and engage.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Insightful Essays:&lt;&#x2F;strong&gt; Thought-provoking content to expand your horizons.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Actionable Advice:&lt;&#x2F;strong&gt; Tips and strategies to navigate modern challenges.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Community Interaction:&lt;&#x2F;strong&gt; A space for you to share your thoughts and spark dialogue.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;final-thoughts&quot;&gt;Final Thoughts&lt;&#x2F;h2&gt;
+&lt;p&gt;Thank you for taking the time to understand the purpose behind this blog. Every post is a part of an ongoing journey—a journey to understand, question, and ultimately appreciate the world around us. I invite you to join me on this adventure of continuous learning and meaningful conversation.&lt;&#x2F;p&gt;
+&lt;p&gt;Happy reading,&lt;br &#x2F;&gt;
+Sameer Jain&lt;&#x2F;p&gt;
+</description>
+      </item>
+    </channel>
+</rss>
