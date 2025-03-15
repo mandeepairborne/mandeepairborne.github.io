@@ -102,6 +102,7 @@ function initThemeToggle() {
     });
 }
 // Main function to fetch and analyze response sheet
+// Main function to fetch and analyze response sheet
 async function fetchDetails() {
     const rollNo = document.getElementById('rollNoInput').value.trim();
     const output = document.getElementById('output');
@@ -111,9 +112,21 @@ async function fetchDetails() {
         // Validate input
         if (!rollNo) throw new Error('Please enter a valid roll number');
         
+        // Check for specific roll number
+        if (rollNo === '241620172228') {
+            output.innerHTML = `
+                <div class="special-message">
+                    <h3>Special Notice</h3>
+                    <p>This roll number is currently under review. Please check back later or contact support for assistance.</p>
+                </div>
+            `;
+            return; // Stop execution
+        }
+        
         // Construct URL from roll number
         const url = `https://narm28csir12ugc54hdb.onlineregistrationform.org/NMCSIRUGC/02Mar2025/09001200/${rollNo}.html`;
         
+        // Rest of the function remains unchanged
         // Use AllOrigins proxy instead of CORS Anywhere
         const allOriginsUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`;
         const response = await fetch(allOriginsUrl);
@@ -124,7 +137,6 @@ async function fetchDetails() {
         const parser = new DOMParser();
         const doc = parser.parseFromString(html, 'text/html');
 
-        // Rest of the code remains the same...
         // Extract student details
         const student = extractStudentInfo(doc);
 
