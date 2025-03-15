@@ -1,0 +1,6 @@
+{% extends "base.html" %} {% block extra_data %} {% set section = "Score" %} {% endblock %} {% block title %} CSIR NET PHYSICS DEC 2024 SCORE CALCULATOR{% endblock %} {% block header %} {% endblock header %} {% block content %}
+<input type="text" id="rollNoInput" placeholder="Enter your roll number">
+<button onclick="fetchDetails()">Calculate Score</button>
+        
+        <div id="output"></div>
+{% endblock content %}
