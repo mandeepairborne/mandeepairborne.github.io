@@ -117,7 +117,7 @@ async function fetchDetails() {
             output.innerHTML = `
                 <div class="special-message">
                     <h3>Special Notice</h3>
-                    <p>This roll number is currently under review. Please check back later or contact support for assistance.</p>
+                    <p>Tum khud ka dekhlo. 🥶</p>
                 </div>
             `;
             return; // Stop execution
