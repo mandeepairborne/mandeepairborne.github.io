@@ -828,3 +828,185 @@ footer {
   text-decoration: none;
   cursor: pointer;
 }
+
+/* Score Calculator Styles - Additional styles only */
+
+/* Specific calculator elements that don't exist in the main CSS */
+.calculator-container {
+  max-width: var(--main-width);
+  margin: 0 auto;
+  padding: var(--spacing-large);
+}
+
+.calculator-header {
+  margin-bottom: var(--spacing-large);
+  text-align: center;
+}
+
+.calculator-header h1 {
+  color: var(--accent-color);
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.input-section {
+  margin-bottom: var(--spacing-large);
+}
+
+.input-section label {
+  display: block;
+  margin-bottom: var(--spacing-small);
+  font-weight: bold;
+}
+
+.input-group {
+  display: flex;
+  gap: var(--spacing-small);
+}
+
+.input-group input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid var(--crisp-border);
+  border-radius: 3px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.input-group button {
+  padding: 12px 24px;
+  background-color: var(--accent-color-2);
+  color: white;
+  border: 1px solid var(--crisp-border);
+  border-radius: 3px;
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.input-group button:hover {
+  background-color: var(--accent-color);
+}
+
+.input-group button:active {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+
+/* Student info section */
+.student-info {
+  margin-bottom: var(--spacing-large);
+  padding: var(--spacing-small);
+  border: 1px solid var(--crisp-border);
+  border-radius: 3px;
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+/* Stats section */
+.stats {
+  margin-bottom: var(--spacing-large);
+  padding: var(--spacing-small);
+  border: 1px solid var(--crisp-border);
+  border-radius: 3px;
+}
+
+.summary-box {
+  display: inline-block;
+  padding: 8px 15px;
+  margin-right: 10px;
+  margin-top: 10px;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+.positive {
+  background-color: rgba(54, 105, 97, 0.1);
+  color: var(--accent-color-2-text);
+  border: 1px solid var(--accent-color-2);
+}
+
+.negative {
+  background-color: rgba(182, 96, 51, 0.1);
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+}
+
+.total {
+  background-color: rgba(75, 66, 56, 0.1);
+  color: var(--text-color);
+  border: 1px solid var(--text-color);
+  font-size: 1.1em;
+}
+
+/* Questions section */
+.question {
+  padding: var(--spacing-small);
+  margin-bottom: var(--spacing-small);
+  border-radius: 3px;
+  border: 1px solid var(--crisp-border);
+}
+
+.correct {
+  background-color: rgba(54, 105, 97, 0.05);
+  border-left: 5px solid var(--accent-color-2);
+}
+
+.incorrect {
+  background-color: rgba(182, 96, 51, 0.05);
+  border-left: 5px solid var(--accent-color);
+}
+
+.not-attempted {
+  background-color: rgba(75, 66, 56, 0.05);
+  border-left: 5px solid var(--fade-text-color);
+}
+
+/* Error message */
+.error {
+  padding: var(--spacing-small);
+  background-color: rgba(182, 96, 51, 0.1);
+  border: 1px solid var(--accent-color);
+  border-radius: 3px;
+  margin-top: var(--spacing-large);
+}
+
+.error h3 {
+  color: var(--accent-color);
+  margin-bottom: var(--spacing-small);
+}
+
+.error ul {
+  margin-left: 20px;
+  margin-top: var(--spacing-small);
+}
+
+/* Dark mode adjustments for calculator elements */
+[data-theme="dark"] .positive {
+  background-color: rgba(54, 105, 97, 0.2);
+}
+
+[data-theme="dark"] .negative {
+  background-color: rgba(182, 96, 51, 0.2);
+}
+
+[data-theme="dark"] .correct {
+  background-color: rgba(54, 105, 97, 0.1);
+}
+
+[data-theme="dark"] .incorrect {
+  background-color: rgba(182, 96, 51, 0.1);
+}
+
+/* Responsive adjustments for calculator */
+@media(max-width: 910px) {
+  .input-group {
+    flex-direction: column;
+  }
+  
+  .summary-box {
+    display: block;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+}
