@@ -1010,3 +1010,29 @@ footer {
     text-align: center;
   }
 }
+
+/* Special message class with h3 styling */
+.special-message {
+  margin: var(--spacing-large) 0;
+  padding: var(--spacing-small);
+  background-color: rgba(54, 105, 97, 0.1);
+  border: 1px solid var(--accent-color-2);
+  border-radius: 3px;
+  text-align: center;
+}
+
+.special-message h3 {
+  color: var(--accent-color-2-text);
+  margin-bottom: var(--spacing-small);
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.special-message p {
+  line-height: 1.5;
+}
+
+/* Dark mode adjustment */
+[data-theme="dark"] .special-message {
+  background-color: rgba(54, 105, 97, 0.2);
+}
