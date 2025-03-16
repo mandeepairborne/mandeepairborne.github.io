@@ -1090,11 +1090,7 @@ button {
   position: relative;
 }
 
-/* Add zoom text pseudo-element to ALL buttons */
-button::after {
-  content: "Zoom" !important;
-  display: inline-block;
-}
+
 
 /* Hover state for ALL buttons */
 button:hover {
