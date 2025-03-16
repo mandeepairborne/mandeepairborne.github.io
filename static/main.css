@@ -829,6 +829,101 @@ footer {
   cursor: pointer;
 }
 
+/* Applies to ALL text inputs by default */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="url"],
+input[type="tel"],
+textarea {
+  /* Reset and base styles */
+  all: unset;
+  box-sizing: border-box;
+  width: 100%;
+  
+  /* Visual DNA matching buttons */
+  background-color: var(--bg-color);
+  border: 1px solid var(--crisp-border);
+  border-radius: 3px;
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.25);
+  
+  /* Typography */
+  font-family: "Leitura News", sans-serif;
+  color: var(--text-color);
+  padding: 8px 12px;
+  font-size: 16px;
+  line-height: 1.5;
+  
+  /* Interactions */
+  transition: all 0.2s ease;
+  
+  /* Prevent zoom on mobile */
+  touch-action: manipulation;
+}
+
+/* Focus state (matches button hover) */
+input:focus,
+textarea:focus {
+  border-color: var(--accent-color-2);
+  box-shadow: 
+    2px 2px 0 rgba(0, 0, 0, 0.25),
+    0 0 8px rgba(54, 105, 97, 0.2);
+}
+
+/* Placeholder text */
+::placeholder {
+  color: var(--super-fade-text-color);
+  font-style: italic;
+  font-weight: 200;
+  opacity: 1; /* Fix Firefox default */
+}
+
+/* Disabled state */
+input:disabled,
+textarea:disabled {
+  background-color: rgba(0, 0, 0, 0.05);
+  cursor: not-allowed;
+}
+
+/* Textarea specific */
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Checkbox/Radio default styling */
+input[type="checkbox"],
+input[type="radio"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--crisp-border);
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.25);
+  margin-right: 8px;
+  position: relative;
+  top: 3px;
+  background-color: var(--bg-color);
+  transition: all 0.2s ease;
+}
+
+input[type="checkbox"]:checked,
+input[type="radio"]:checked {
+  background-color: var(--accent-color-2);
+  border-color: var(--accent-color-2);
+}
+
+input[type="checkbox"]:checked::before,
+input[type="radio"]:checked::before {
+  content: "✓";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--bg-color);
+}
+
 /* Score Calculator Styles - Additional styles only */
 
 /* Specific calculator elements that don't exist in the main CSS */
@@ -973,35 +1068,47 @@ footer {
     box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25);
 }
 
-.button {
-    margin-top: var(--spacing-small);
-    padding: 3px 8px;
-    background-color: var(--bg-color); /* Use main background color */
-    color: var(--accent-color-2-text); /* Text color matches accent */
-    border: 1px solid var(--crisp-border);
-    border-radius: 3px;
-    cursor: pointer;
-    font-family: "Leitura News", sans-serif;
-    font-weight: 600;
-    transition: all 0.2s ease;
-    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.25); /* Add default shadow */
-    position: relative;
+/* CSS Reset for buttons first */
+button {
+  all: unset;
+  cursor: pointer;
+  box-sizing: border-box;
 }
 
-
-.button:hover {
-    background-color: var(--accent-color); /* Orange background on hover */
-    color: var(--bg-color); /* Light text on orange */
-    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.25);
-    /* Optional: Add subtle animation */
-    transform: translateY(-1px);
+/* Base button styles for ALL buttons */
+button {
+  margin-top: var(--spacing-small);
+  padding: 3px 8px;
+  background-color: var(--bg-color);
+  color: var(--accent-color-2-text);
+  border: 1px solid var(--crisp-border);
+  border-radius: 3px;
+  font-family: "Leitura News", sans-serif;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.25);
+  position: relative;
 }
 
-/* Active state for click feedback */
-.button:active {
-    transform: translateY(1px);
-    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25);
+/* Add zoom text pseudo-element to ALL buttons */
+button::after {
+  content: "Zoom" !important;
+  display: inline-block;
 }
+
+/* Hover state for ALL buttons */
+button:hover {
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+  transform: translateY(-1px);
+}
+
+/* Active state for ALL buttons */
+button:active {
+  transform: translateY(1px);
+  box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25);
+}
+
 
 .part-wise-stats {
     margin: var(--spacing-large) 0;
