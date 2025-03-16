@@ -903,63 +903,138 @@ footer {
   background-color: rgba(0, 0, 0, 0.02);
 }
 
-/* Stats section */
-.stats {
-  margin-bottom: var(--spacing-large);
-  padding: var(--spacing-small);
-  border: 1px solid var(--crisp-border);
-  border-radius: 3px;
+/* Additions to main.css */
+.question-image {
+    position: relative;
+    margin-top: var(--spacing-small);
+    text-align: center;
+    border: 1px solid var(--crisp-border);
+    border-radius: 3px;
+    padding: var(--spacing-small);
+    background: var(--bg-color);
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.25);
 }
 
-.summary-box {
-  display: inline-block;
-  padding: 8px 15px;
-  margin-right: 10px;
-  margin-top: 10px;
-  border-radius: 3px;
-  font-weight: bold;
+.question-img {
+    max-width: 100%;
+    border: 1px solid var(--crisp-border);
+    transition: all 0.3s ease;
 }
 
-.positive {
-  background-color: rgba(54, 105, 97, 0.1);
-  color: var(--accent-color-2-text);
-  border: 1px solid var(--accent-color-2);
+.question-img.zoomed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%;
+    max-height: 90vh;
+    z-index: 1000;
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.5);
+    border: 2px solid var(--crisp-border);
 }
 
-.negative {
-  background-color: rgba(182, 96, 51, 0.1);
-  color: var(--accent-color);
-  border: 1px solid var(--accent-color);
+.zoom-btn {
+    margin-top: var(--spacing-small);
+    padding: 3px 8px;
+    background-color: var(--accent-color-2);
+    color: var(--accent-color-2-text);
+    border: 1px solid var(--crisp-border);
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: "Leitura News", sans-serif;
+    font-weight: 600;
+    transition: all 0.2s ease;
 }
 
-.total {
-  background-color: rgba(75, 66, 56, 0.1);
-  color: var(--text-color);
-  border: 1px solid var(--text-color);
-  font-size: 1.1em;
+.zoom-btn:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.25);
 }
 
-/* Questions section */
-.question {
-  padding: var(--spacing-small);
-  margin-bottom: var(--spacing-small);
-  border-radius: 3px;
-  border: 1px solid var(--crisp-border);
+.part-wise-stats {
+    margin: var(--spacing-large) 0;
 }
 
+.part-stats-container {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--spacing-small);
+    flex-wrap: wrap;
+}
+
+.part-stat {
+    flex: 1;
+    min-width: 200px;
+    padding: var(--spacing-small);
+    border: 1px solid var(--crisp-border);
+    border-radius: 3px;
+    background-color: var(--bg-color);
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.25);
+}
+
+.part-section {
+    margin-top: var(--spacing-large);
+}
+
+.part-questions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-small);
+}
+
+/* Status colors */
 .correct {
-  background-color: rgba(54, 105, 97, 0.05);
-  border-left: 5px solid var(--accent-color-2);
+    border-left: 4px solid var(--accent-color-2);
+    background-color: rgba(54, 105, 97, 0.1);
 }
 
 .incorrect {
-  background-color: rgba(182, 96, 51, 0.05);
-  border-left: 5px solid var(--accent-color);
+    border-left: 4px solid var(--accent-color);
+    background-color: rgba(182, 96, 51, 0.1);
 }
 
 .not-attempted {
-  background-color: rgba(75, 66, 56, 0.05);
-  border-left: 5px solid var(--fade-text-color);
+    border-left: 4px solid var(--fade-text-color);
+}
+
+/* Summary boxes */
+.summary-box {
+    display: inline-block;
+    padding: 4px 8px;
+    margin: 2px;
+    border-radius: 3px;
+    font-weight: bold;
+    border: 1px solid var(--crisp-border);
+    font-family: "Leitura News", sans-serif;
+    font-size: 0.9em;
+}
+
+.positive {
+    background-color: rgba(54, 105, 97, 0.2);
+    color: var(--accent-color-2-text);
+    border-color: var(--accent-color-2);
+}
+
+.negative {
+    background-color: rgba(182, 96, 51, 0.2);
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.total {
+    background-color: rgba(75, 66, 56, 0.2);
+    color: var(--text-color);
+    border-color: var(--crisp-border);
+}
+
+.no-image {
+    color: var(--super-fade-text-color);
+    font-style: italic;
+    padding: var(--spacing-small);
+    border: 1px dashed var(--crisp-border);
+    border-radius: 3px;
+    background-color: var(--bg-color);
 }
 
 /* Error message */
