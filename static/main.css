@@ -829,97 +829,6 @@ footer {
   cursor: pointer;
 }
 
-/* Applies to ALL text inputs by default */
-input[type="text"],
-textarea {
-  /* Reset and base styles */
-  all: unset;
-  box-sizing: border-box;
-  
-  
-  /* Visual DNA matching buttons */
-  background-color: var(--bg-color);
-  border: 1px solid var(--crisp-border);
-  border-radius: 3px;
-  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.25);
-  
-  /* Typography */
-  font-family: "Leitura News", sans-serif;
-  color: var(--text-color);
-
-  
-  
-  /* Interactions */
-  transition: all 0.2s ease;
-  
-  /* Prevent zoom on mobile */
-  touch-action: manipulation;
-}
-
-/* Focus state (matches button hover) */
-input:focus,
-textarea:focus {
-  border-color: var(--accent-color-2);
-  box-shadow: 
-    2px 2px 0 rgba(0, 0, 0, 0.25),
-    0 0 8px rgba(54, 105, 97, 0.2);
-}
-
-/* Placeholder text */
-::placeholder {
-  color: var(--super-fade-text-color);
-  font-style: italic;
-  font-weight: 200;
-  opacity: 1; /* Fix Firefox default */
-}
-
-/* Disabled state */
-input:disabled,
-textarea:disabled {
-  background-color: rgba(0, 0, 0, 0.05);
-  cursor: not-allowed;
-}
-
-
-
-/* Checkbox/Radio default styling */
-input[type="checkbox"],
-input[type="radio"] {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 18px;
-  height: 18px;
-  border: 1px solid var(--crisp-border);
-  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.25);
-  margin-right: 8px;
-  position: relative;
-  top: 3px;
-  background-color: var(--bg-color);
-  transition: all 0.2s ease;
-}
-
-input[type="checkbox"]:checked,
-input[type="radio"]:checked {
-  background-color: var(--accent-color-2);
-  border-color: var(--accent-color-2);
-}
-
-input[type="checkbox"]:checked::before,
-input[type="radio"]:checked::before {
-  content: "✓";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  color: var(--bg-color);
-}
-
-
-/* Container for input + button */
-/* Text input */
-/* Text Input (Fixed) */
-
-/* Score Calculator Styles - Additional styles only */
 
 /* Specific calculator elements that don't exist in the main CSS */
 .calculator-container {
@@ -1085,11 +994,6 @@ button {
   position: relative;
 }
 
-/* Add zoom text pseudo-element to ALL buttons */
-button::after {
-  content: "Zoom" !important;
-  display: inline-block;
-}
 
 /* Hover state for ALL buttons */
 button:hover {
