@@ -181,6 +181,7 @@ function extractStudentInfo(doc) {
 }
 
 // Parse questions and responses
+// Parse questions and responses
 function parseQuestions(doc) {
     return Array.from(doc.querySelectorAll('table.legend-table')).map(table => {
         const header = table.querySelector('.legend-text')?.textContent.trim() || '';
@@ -200,9 +201,18 @@ function parseQuestions(doc) {
 
         // Find the image associated with this question
         let imageUrl = null;
-        const imgElements = table.querySelectorAll('img');
+        const imgElements = table.querySelectorAll('img.staticImage');
         if (imgElements.length > 0) {
-            imageUrl = imgElements[0].getAttribute('src');
+            // Get the original src attribute
+            const originalSrc = imgElements[0].getAttribute('src');
+            
+            // Fix the URL to use the correct base URL
+            if (originalSrc) {
+                // Extract just the filename from the path
+                const fileName = originalSrc.split('/').pop();
+                // Construct the full URL to the image
+                imageUrl = `https://narm28csir12ugc54hdb.onlineregistrationform.org/NMCSIRUGC/02Mar2025/09001200/Images/${fileName}`;
+            }
         }
 
         // Determine which part this question belongs to
@@ -248,6 +258,7 @@ function parseQuestions(doc) {
         };
     }).filter(q => q.questionId !== 'N/A');
 }
+
 
 // Calculate overall scores
 function calculateScores(questions) {
@@ -360,7 +371,8 @@ function displayResults(student, questions, results) {
                                 </div>
                                 ${q.imageUrl ? `
                                     <div class="question-image">
-                                        <img src="${q.imageUrl}" alt="Question ${q.questionNo}" class="question-img">
+                                        <img src="${q.imageUrl}" alt="Question ${q.questionNo}" class="question-img" 
+                                            onerror="this.onerror=null; this.src='https://via.placeholder.com/500x300?text=Image+Not+Available'; this.classList.add('placeholder-img');">
                                         <button class="zoom-btn" onclick="toggleZoom(this)">Zoom</button>
                                     </div>
                                 ` : `
@@ -376,6 +388,7 @@ function displayResults(student, questions, results) {
         `).join('')}
     `;
 }
+
 
 // Function to toggle image zoom
 function toggleZoom(button) {
