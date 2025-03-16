@@ -848,6 +848,7 @@ footer {
   margin-bottom: 10px;
 }
 
+/* Input Section Styling */
 .input-section {
   margin-bottom: var(--spacing-large);
 }
@@ -856,6 +857,8 @@ footer {
   display: block;
   margin-bottom: var(--spacing-small);
   font-weight: bold;
+  font-family: "Leitura News", sans-serif;
+  color: var(--text-color);
 }
 
 .input-group {
@@ -865,32 +868,73 @@ footer {
 
 .input-group input {
   flex: 1;
-  padding: 12px;
+  padding: 10px;
   border: 1px solid var(--crisp-border);
   border-radius: 3px;
   background-color: var(--bg-color);
   color: var(--text-color);
+  font-family: "Leitura News", sans-serif;
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.15);
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: var(--accent-color-2);
 }
 
 .input-group button {
-  padding: 12px 24px;
+  padding: 10px 20px;
   background-color: var(--accent-color-2);
   color: white;
   border: 1px solid var(--crisp-border);
   border-radius: 3px;
-  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.3);
   cursor: pointer;
   font-weight: bold;
+  font-family: "Leitura News", sans-serif;
   transition: all 0.2s ease;
 }
 
 .input-group button:hover {
   background-color: var(--accent-color);
+  transform: translateY(-2px);
 }
 
 .input-group button:active {
-  transform: translate(2px, 2px);
+  transform: translate(3px, 3px);
   box-shadow: none;
+}
+
+/* Error message styling */
+.input-error {
+  color: var(--accent-color);
+  font-size: 0.85em;
+  margin-top: 5px;
+}
+
+/* Success message styling */
+.input-success {
+  color: var(--accent-color-2-text);
+  font-size: 0.85em;
+  margin-top: 5px;
+}
+
+/* For disabled state */
+.input-group button:disabled {
+  background-color: var(--super-fade-text-color);
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Responsive adjustments */
+@media(max-width: 910px) {
+  .input-group {
+    flex-direction: column;
+  }
+  
+  .input-group button {
+    align-self: flex-end;
+  }
 }
 
 /* Student info section */
