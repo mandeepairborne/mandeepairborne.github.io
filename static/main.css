@@ -924,6 +924,29 @@ input[type="radio"]:checked::before {
   color: var(--bg-color);
 }
 
+
+/* Container for input + button */
+.input-group {
+  max-width: 400px; /* Adjust based on your design */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-small);
+}
+
+/* Text input */
+#rollNoInput {
+  width: 100%; /* Makes input stretch full width of container */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Calculate button */
+button {
+  align-self: center; /* Center button horizontally */
+  margin-top: var(--spacing-small);
+  /* Rest of your existing button styles */
+  padding: 6px 25px; /* Slightly larger for better click target */
+}
 /* Score Calculator Styles - Additional styles only */
 
 /* Specific calculator elements that don't exist in the main CSS */
