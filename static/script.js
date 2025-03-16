@@ -77,6 +77,13 @@ const CORRECT_ANSWERS = {
 "705175": "2"
 };
 
+// Question part categorization
+const QUESTION_PARTS = {
+    'A': { start: 705101, end: 705120 },
+    'B': { start: 705121, end: 705145 },
+    'C': { start: 705146, end: 705175 }
+};
+
 // Initialize theme toggle functionality
 document.addEventListener('DOMContentLoaded', () => {
     initThemeToggle();
@@ -101,7 +108,7 @@ function initThemeToggle() {
         localStorage.setItem('theme', newTheme);
     });
 }
-// Main function to fetch and analyze response sheet
+
 // Main function to fetch and analyze response sheet
 async function fetchDetails() {
     const rollNo = document.getElementById('rollNoInput').value.trim();
@@ -126,7 +133,6 @@ async function fetchDetails() {
         // Construct URL from roll number
         const url = `https://narm28csir12ugc54hdb.onlineregistrationform.org/NMCSIRUGC/02Mar2025/09001200/${rollNo}.html`;
         
-        // Rest of the function remains unchanged
         // Use AllOrigins proxy instead of CORS Anywhere
         const allOriginsUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`;
         const response = await fetch(allOriginsUrl);
@@ -140,7 +146,7 @@ async function fetchDetails() {
         // Extract student details
         const student = extractStudentInfo(doc);
 
-        // Parse questions and answers
+        // Parse questions and answers including image URLs
         const questions = parseQuestions(doc);
 
         // Calculate scores
@@ -192,6 +198,24 @@ function parseQuestions(doc) {
             ?.replace(/\D/g, '') // Extract only numbers
             ?.trim();
 
+        // Find the image associated with this question
+        let imageUrl = null;
+        const imgElements = table.querySelectorAll('img');
+        if (imgElements.length > 0) {
+            imageUrl = imgElements[0].getAttribute('src');
+        }
+
+        // Determine which part this question belongs to
+        let part = '';
+        const qIdNum = parseInt(questionId);
+        if (qIdNum >= QUESTION_PARTS.A.start && qIdNum <= QUESTION_PARTS.A.end) {
+            part = 'A';
+        } else if (qIdNum >= QUESTION_PARTS.B.start && qIdNum <= QUESTION_PARTS.B.end) {
+            part = 'B';
+        } else if (qIdNum >= QUESTION_PARTS.C.start && qIdNum <= QUESTION_PARTS.C.end) {
+            part = 'C';
+        }
+
         // Check correctness
         const correctAnswer = CORRECT_ANSWERS[questionId];
         const isCorrect = chosenOption === correctAnswer;
@@ -213,18 +237,21 @@ function parseQuestions(doc) {
         return {
             questionNo: questionPart?.replace('QuestionNo', '') || 'N/A',
             questionId,
+            part,
             chosen: chosenOption || 'Not attempted',
             correct: isCorrect,
             marks,
             attempted: isAttempted,
             earnedMarks,
-            negativeMarks
+            negativeMarks,
+            imageUrl
         };
     }).filter(q => q.questionId !== 'N/A');
 }
 
 // Calculate overall scores
 function calculateScores(questions) {
+    // Overall scores
     const attemptedQuestions = questions.filter(q => q.attempted);
     const correctQuestions = questions.filter(q => q.attempted && q.correct);
     const incorrectQuestions = questions.filter(q => q.attempted && !q.correct);
@@ -234,6 +261,29 @@ function calculateScores(questions) {
     const negativeMarks = incorrectQuestions.reduce((sum, q) => sum + q.negativeMarks, 0);
     const totalMarks = positiveMarks - negativeMarks;
     
+    // Calculate part-wise statistics
+    const partStats = {};
+    ['A', 'B', 'C'].forEach(part => {
+        const partQuestions = questions.filter(q => q.part === part);
+        const partAttempted = partQuestions.filter(q => q.attempted);
+        const partCorrect = partQuestions.filter(q => q.attempted && q.correct);
+        const partIncorrect = partQuestions.filter(q => q.attempted && !q.correct);
+        
+        const partPositive = partCorrect.reduce((sum, q) => sum + q.earnedMarks, 0);
+        const partNegative = partIncorrect.reduce((sum, q) => sum + q.negativeMarks, 0);
+        
+        partStats[part] = {
+            total: partQuestions.length,
+            attempted: partAttempted.length,
+            correct: partCorrect.length,
+            incorrect: partIncorrect.length,
+            notAttempted: partQuestions.length - partAttempted.length,
+            positiveMarks: partPositive,
+            negativeMarks: partNegative,
+            totalMarks: partPositive - partNegative
+        };
+    });
+    
     return {
         total: questions.length,
         attempted: attemptedQuestions.length,
@@ -242,7 +292,8 @@ function calculateScores(questions) {
         notAttempted: notAttemptedQuestions.length,
         positiveMarks,
         negativeMarks,
-        totalMarks
+        totalMarks,
+        partStats
     };
 }
 
@@ -275,26 +326,69 @@ function displayResults(student, questions, results) {
             </div>
         </div>
 
-        <div class="questions">
-            <h3>Question-wise Analysis</h3>
-            ${questions.map(q => {
-                let statusClass = q.attempted ? (q.correct ? 'correct' : 'incorrect') : 'not-attempted';
-                let statusText = q.attempted ? 
-                    (q.correct ? 
-                        `✅ Correct (+${q.earnedMarks.toFixed(2)})` : 
-                        `❌ Incorrect (-${q.negativeMarks.toFixed(2)})`) : 
-                    '⚪ Not Attempted (0.00)';
-                
-                return `
-                    <div class="question ${statusClass}">
-                        <p><strong>Question ${q.questionNo}</strong> (ID: ${q.questionId})</p>
-                        <p>Your Answer: ${q.attempted ? q.chosen : 'Not attempted'} | Correct Answer: ${CORRECT_ANSWERS[q.questionId] || 'Unknown'}</p>
-                        <p>Status: ${statusText} | Question Value: ${q.marks.toFixed(2)}</p>
+        <div class="part-wise-stats">
+            <h3>Part-wise Analysis</h3>
+            <div class="part-stats-container">
+                ${Object.entries(results.partStats).map(([part, stats]) => `
+                    <div class="part-stat">
+                        <h4>Part ${part}</h4>
+                        <p>Total: ${stats.total} | Attempted: ${stats.attempted} | Correct: ${stats.correct}</p>
+                        <p>Score: ${stats.totalMarks.toFixed(2)} (${stats.positiveMarks.toFixed(2)} - ${stats.negativeMarks.toFixed(2)})</p>
                     </div>
-                `;
-            }).join('')}
+                `).join('')}
+            </div>
         </div>
+
+        ${['A', 'B', 'C'].map(part => `
+            <div class="part-section">
+                <h3>Part ${part} Questions</h3>
+                <div class="part-questions">
+                    ${questions.filter(q => q.part === part).map(q => {
+                        let statusClass = q.attempted ? (q.correct ? 'correct' : 'incorrect') : 'not-attempted';
+                        let statusText = q.attempted ? 
+                            (q.correct ? 
+                                `✅ Correct (+${q.earnedMarks.toFixed(2)})` : 
+                                `❌ Incorrect (-${q.negativeMarks.toFixed(2)})`) : 
+                            '⚪ Not Attempted (0.00)';
+                        
+                        return `
+                            <div class="question ${statusClass}">
+                                <div class="question-header">
+                                    <p><strong>Question ${q.questionNo}</strong> (ID: ${q.questionId})</p>
+                                    <p>Your Answer: ${q.attempted ? q.chosen : 'Not attempted'} | Correct Answer: ${CORRECT_ANSWERS[q.questionId] || 'Unknown'}</p>
+                                    <p>Status: ${statusText} | Question Value: ${q.marks.toFixed(2)}</p>
+                                </div>
+                                ${q.imageUrl ? `
+                                    <div class="question-image">
+                                        <img src="${q.imageUrl}" alt="Question ${q.questionNo}" class="question-img">
+                                        <button class="zoom-btn" onclick="toggleZoom(this)">Zoom</button>
+                                    </div>
+                                ` : `
+                                    <div class="question-image">
+                                        <p class="no-image">No image available for this question</p>
+                                    </div>
+                                `}
+                            </div>
+                        `;
+                    }).join('')}
+                </div>
+            </div>
+        `).join('')}
     `;
+}
+
+// Function to toggle image zoom
+function toggleZoom(button) {
+    const imgContainer = button.closest('.question-image');
+    const img = imgContainer.querySelector('img');
+    
+    if (img.classList.contains('zoomed')) {
+        img.classList.remove('zoomed');
+        button.textContent = 'Zoom';
+    } else {
+        img.classList.add('zoomed');
+        button.textContent = 'Zoom Out';
+    }
 }
 
 // Display error message
@@ -306,7 +400,7 @@ function displayError(error) {
             <p>${error.message}</p>
             <p>Possible fixes:</p>
             <ul>
-                <li><a>Enter valid application number as mentioned in your admit card.</a></li>
+                <li>Enter valid application number as mentioned in your admit card.</li>
                 <li>This tool is valid for CSIR NET PHYSICS DEC 2024 only.</li>
                 <li>Allorigins may have encountered an error. Make sure you have rectified above errors.</li>
             </ul>
