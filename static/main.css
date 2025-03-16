@@ -926,51 +926,7 @@ input[type="radio"]:checked::before {
 
 /* Text input */
 /* Text Input (Fixed) */
-#rollNoInput {
-  /* Essential functional properties */
 
-  width: auto; /* Natural width */
-
-  
-  /* Visual styling */
-  background-color: var(--bg-color);
-  border: 1px solid var(--crisp-border);
-  border-radius: 3px;
-  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.25);
-  font-family: "Leitura News", sans-serif;
-  color: var(--text-color);
-
-  
-  /* Layout */
-  display: inline-block;
-  margin-right: 10px;
-  vertical-align: middle;
-}
-
-/* Button (Fixed) */
-button {
-  /* Functional sizing */
-
-  
-  /* Visual styling */
-  background-color: var(--accent-color-2);
-  color: var(--accent-color-2-text);
-  border: 1px solid var(--crisp-border);
-  border-radius: 3px;
-  font-family: "Leitura News", sans-serif;
-  font-weight: 600;
-  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.25);
-  
-  /* Layout */
-  display: inline-block;
-  vertical-align: middle;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: var(--accent-color);
-  color: var(--bg-color);
-}
 /* Score Calculator Styles - Additional styles only */
 
 /* Specific calculator elements that don't exist in the main CSS */
@@ -1116,41 +1072,7 @@ button:hover {
 }
 
 /* CSS Reset for buttons first */
-button {
-  all: unset;
-  cursor: pointer;
-  box-sizing: border-box;
-}
 
-/* Base button styles for ALL buttons */
-button {
-  margin-top: var(--spacing-small);
-  padding: 3px 8px;
-  background-color: var(--bg-color);
-  color: var(--accent-color-2-text);
-  border: 1px solid var(--crisp-border);
-  border-radius: 3px;
-  font-family: "Leitura News", sans-serif;
-  font-weight: 600;
-  transition: all 0.2s ease;
-  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.25);
-  position: relative;
-}
-
-
-
-/* Hover state for ALL buttons */
-button:hover {
-  background-color: var(--accent-color);
-  color: var(--bg-color);
-  transform: translateY(-1px);
-}
-
-/* Active state for ALL buttons */
-button:active {
-  transform: translateY(1px);
-  box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25);
-}
 
 
 .part-wise-stats {
