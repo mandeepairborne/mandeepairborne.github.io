@@ -831,283 +831,148 @@ footer {
 
 /* Score Calculator Styles - Additional styles only */
 
-/* Specific calculator elements that don't exist in the main CSS */
-.calculator-container {
-  max-width: var(--main-width);
-  margin: 0 auto;
-  padding: var(--spacing-large);
-}
-
-.calculator-header {
-  margin-bottom: var(--spacing-large);
-  text-align: center;
-}
-
-.calculator-header h1 {
-  color: var(--accent-color);
-  font-size: 1.8rem;
-  margin-bottom: 10px;
-}
-
-.input-section {
-  margin-bottom: var(--spacing-large);
-}
-
-.input-section label {
-  display: block;
-  margin-bottom: var(--spacing-small);
-  font-weight: bold;
-}
-
-.input-group {
-  display: flex;
-  gap: var(--spacing-small);
-}
-
-.input-group input {
-  flex: 1;
-  padding: 12px;
-  border: 1px solid var(--crisp-border);
-  border-radius: 3px;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-}
-
-.input-group button {
-  padding: 12px 24px;
-  background-color: var(--accent-color-2);
-  color: white;
-  border: 1px solid var(--crisp-border);
-  border-radius: 3px;
-  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
-  cursor: pointer;
-  font-weight: bold;
-  transition: all 0.2s ease;
-}
-
-.input-group button:hover {
-  background-color: var(--accent-color);
-}
-
-.input-group button:active {
-  transform: translate(2px, 2px);
-  box-shadow: none;
-}
-
-/* Student info section */
+/* Results Styles */
 .student-info {
-  margin-bottom: var(--spacing-large);
-  padding: var(--spacing-small);
   border: 1px solid var(--crisp-border);
   border-radius: 3px;
-  background-color: rgba(0, 0, 0, 0.02);
+  padding: var(--spacing-large);
+  margin-bottom: var(--spacing-large);
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.25);
 }
 
-/* Additions to main.css */
-.question-image {
-    position: relative;
-    margin-top: var(--spacing-small);
-    text-align: center;
-    border: 1px solid var(--crisp-border);
-    border-radius: 3px;
-    padding: var(--spacing-small);
-    background: var(--bg-color);
-    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.25);
-}
-
-.question-img {
-    max-width: 100%;
-    border: 1px solid var(--crisp-border);
-    transition: all 0.3s ease;
-}
-
-.question-img.zoomed {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 90%;
-    max-height: 90vh;
-    z-index: 1000;
-    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.5);
-    border: 2px solid var(--crisp-border);
-}
-
-.zoom-btn {
-    margin-top: var(--spacing-small);
-    padding: 3px 8px;
-    background-color: var(--accent-color-2);
-    color: var(--accent-color-2-text);
-    border: 1px solid var(--crisp-border);
-    border-radius: 3px;
-    cursor: pointer;
-    font-family: "Leitura News", sans-serif;
-    font-weight: 600;
-    transition: all 0.2s ease;
-}
-
-.zoom-btn:hover {
-    background-color: var(--accent-color);
-    color: var(--bg-color);
-    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.25);
-}
-
-.part-wise-stats {
-    margin: var(--spacing-large) 0;
+.stats, .part-wise-stats {
+  margin: var(--spacing-large) 0;
+  padding: var(--spacing-large);
+  border: 1px solid var(--super-fade-text-color);
+  border-radius: 3px;
 }
 
 .part-stats-container {
-    display: flex;
-    justify-content: space-between;
-    gap: var(--spacing-small);
-    flex-wrap: wrap;
+  display: grid;
+  gap: var(--spacing-small);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
 .part-stat {
-    flex: 1;
-    min-width: 200px;
-    padding: var(--spacing-small);
-    border: 1px solid var(--crisp-border);
-    border-radius: 3px;
-    background-color: var(--bg-color);
-    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.25);
-}
-
-.part-section {
-    margin-top: var(--spacing-large);
-}
-
-.part-questions {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-small);
-}
-
-/* Status colors */
-.correct {
-    border-left: 4px solid var(--accent-color-2);
-    background-color: rgba(54, 105, 97, 0.1);
-}
-
-.incorrect {
-    border-left: 4px solid var(--accent-color);
-    background-color: rgba(182, 96, 51, 0.1);
-}
-
-.not-attempted {
-    border-left: 4px solid var(--fade-text-color);
-}
-
-/* Summary boxes */
-.summary-box {
-    display: inline-block;
-    padding: 4px 8px;
-    margin: 2px;
-    border-radius: 3px;
-    font-weight: bold;
-    border: 1px solid var(--crisp-border);
-    font-family: "Leitura News", sans-serif;
-    font-size: 0.9em;
-}
-
-.positive {
-    background-color: rgba(54, 105, 97, 0.2);
-    color: var(--accent-color-2-text);
-    border-color: var(--accent-color-2);
-}
-
-.negative {
-    background-color: rgba(182, 96, 51, 0.2);
-    color: var(--accent-color);
-    border-color: var(--accent-color);
-}
-
-.total {
-    background-color: rgba(75, 66, 56, 0.2);
-    color: var(--text-color);
-    border-color: var(--crisp-border);
-}
-
-.no-image {
-    color: var(--super-fade-text-color);
-    font-style: italic;
-    padding: var(--spacing-small);
-    border: 1px dashed var(--crisp-border);
-    border-radius: 3px;
-    background-color: var(--bg-color);
-}
-
-/* Error message */
-.error {
   padding: var(--spacing-small);
+  border-left: 3px solid var(--accent-color-2);
+  background-color: rgba(54, 105, 97, 0.05);
+}
+
+.question {
+  padding: var(--spacing-small);
+  margin: var(--spacing-small) 0;
+  border: 1px solid var(--super-fade-text-color);
+  border-radius: 3px;
+  position: relative;
+}
+
+.question-header {
+  margin-bottom: var(--spacing-small);
+}
+
+.question.correct {
+  border-left: 3px solid var(--accent-color-2);
+  background-color: rgba(54, 105, 97, 0.05);
+}
+
+.question.incorrect {
+  border-left: 3px solid var(--accent-color);
+  background-color: rgba(182, 96, 51, 0.05);
+}
+
+.question.not-attempted {
+  border-left: 3px solid var(--super-fade-text-color);
+  opacity: 0.8;
+}
+
+.summary-box {
+  display: inline-block;
+  padding: 5px 10px;
+  margin-right: var(--spacing-small);
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+.summary-box.positive {
+  background-color: rgba(54, 105, 97, 0.1);
+  border: 1px solid var(--accent-color-2);
+}
+
+.summary-box.negative {
   background-color: rgba(182, 96, 51, 0.1);
   border: 1px solid var(--accent-color);
-  border-radius: 3px;
-  margin-top: var(--spacing-large);
 }
 
-.error h3 {
-  color: var(--accent-color);
-  margin-bottom: var(--spacing-small);
+.summary-box.total {
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--crisp-border);
+}
+
+.question-image {
+  position: relative;
+  margin-top: var(--spacing-small);
+  max-width: 100%;
+}
+
+.question-img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--super-fade-text-color);
+  border-radius: 3px;
+  transition: transform 0.3s ease;
+}
+
+.question-img.zoomed {
+  transform: scale(1.5);
+  z-index: 100;
+  position: relative;
+}
+
+.zoom-btn {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  background: var(--bg-color);
+  border: 1px solid var(--crisp-border);
+  border-radius: 3px;
+  padding: 2px 5px;
+  font-size: 0.8em;
+  cursor: pointer;
+  font-family: "Inconsolata", monospace;
+}
+
+.zoom-btn:hover {
+  background-color: var(--accent-color-2);
+  color: white;
+}
+
+.error {
+  color: #dc3545;
+  padding: var(--spacing-large);
+  border: 1px solid currentColor;
+  border-radius: 3px;
+  background-color: rgba(220, 53, 69, 0.05);
 }
 
 .error ul {
-  margin-left: 20px;
-  margin-top: var(--spacing-small);
+  margin-left: var(--spacing-large);
 }
 
-/* Dark mode adjustments for calculator elements */
-[data-theme="dark"] .positive {
-  background-color: rgba(54, 105, 97, 0.2);
+.special-message {
+  text-align: center;
+  padding: var(--spacing-large);
+  border: 2px solid var(--accent-color);
+  border-radius: 3px;
+  background-color: rgba(182, 96, 51, 0.05);
 }
 
-[data-theme="dark"] .negative {
-  background-color: rgba(182, 96, 51, 0.2);
-}
-
-[data-theme="dark"] .correct {
-  background-color: rgba(54, 105, 97, 0.1);
-}
-
-[data-theme="dark"] .incorrect {
-  background-color: rgba(182, 96, 51, 0.1);
-}
-
-/* Responsive adjustments for calculator */
-@media(max-width: 910px) {
-  .input-group {
-    flex-direction: column;
+@media (max-width: 910px) {
+  .part-stats-container {
+    grid-template-columns: 1fr;
   }
   
-  .summary-box {
-    display: block;
-    margin-bottom: 10px;
-    text-align: center;
+  .question-img.zoomed {
+    transform: none;
   }
-}
-
-/* Special message class with h3 styling */
-.special-message {
-  margin: var(--spacing-large) 0;
-  padding: var(--spacing-small);
-  background-color: rgba(54, 105, 97, 0.1);
-  border: 1px solid var(--accent-color-2);
-  border-radius: 3px;
-  text-align: center;
-}
-
-.special-message h3 {
-  color: var(--accent-color-2-text);
-  margin-bottom: var(--spacing-small);
-  font-size: 1.3em;
-  font-weight: bold;
-}
-
-.special-message p {
-  line-height: 1.5;
-}
-
-/* Dark mode adjustment */
-[data-theme="dark"] .special-message {
-  background-color: rgba(54, 105, 97, 0.2);
 }
