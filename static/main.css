@@ -935,17 +935,51 @@ input[type="radio"]:checked::before {
 }
 
 /* Text input */
+/* Text Input (Fixed) */
 #rollNoInput {
-  width: 100%; /* Makes input stretch full width of container */
-  box-sizing: border-box; /* Include padding in width calculation */
+  /* Essential functional properties */
+  padding: 8px 12px;
+  width: auto; /* Natural width */
+  min-width: 250px; /* Minimum usable size */
+  
+  /* Visual styling */
+  background-color: var(--bg-color);
+  border: 1px solid var(--crisp-border);
+  border-radius: 3px;
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.25);
+  font-family: "Leitura News", sans-serif;
+  color: var(--text-color);
+  font-size: 16px; /* Explicit size for consistency */
+  
+  /* Layout */
+  display: inline-block;
+  margin-right: 10px;
+  vertical-align: middle;
 }
 
-/* Calculate button */
+/* Button (Fixed) */
 button {
-  align-self: center; /* Center button horizontally */
-  margin-top: var(--spacing-small);
-  /* Rest of your existing button styles */
-  padding: 6px 25px; /* Slightly larger for better click target */
+  /* Functional sizing */
+  padding: 8px 20px; /* Adequate click area */
+  
+  /* Visual styling */
+  background-color: var(--accent-color-2);
+  color: var(--accent-color-2-text);
+  border: 1px solid var(--crisp-border);
+  border-radius: 3px;
+  font-family: "Leitura News", sans-serif;
+  font-weight: 600;
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.25);
+  
+  /* Layout */
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--accent-color);
+  color: var(--bg-color);
 }
 /* Score Calculator Styles - Additional styles only */
 
