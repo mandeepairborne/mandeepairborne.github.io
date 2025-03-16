@@ -828,3 +828,270 @@ footer {
   text-decoration: none;
   cursor: pointer;
 }
+
+/* Score Calculator Styles - Additional styles only */
+
+/* Specific calculator elements that don't exist in the main CSS */
+.calculator-container {
+  max-width: var(--main-width);
+  margin: 0 auto;
+  padding: var(--spacing-large);
+}
+
+.calculator-header {
+  margin-bottom: var(--spacing-large);
+  text-align: center;
+}
+
+.calculator-header h1 {
+  color: var(--accent-color);
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.input-section {
+  margin-bottom: var(--spacing-large);
+}
+
+.input-section label {
+  display: block;
+  margin-bottom: var(--spacing-small);
+  font-weight: bold;
+}
+
+.input-group {
+  display: flex;
+  gap: var(--spacing-small);
+}
+
+.input-group input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid var(--crisp-border);
+  border-radius: 3px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.input-group button {
+  padding: 12px 24px;
+  background-color: var(--accent-color-2);
+  color: white;
+  border: 1px solid var(--crisp-border);
+  border-radius: 3px;
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.input-group button:hover {
+  background-color: var(--accent-color);
+}
+
+.input-group button:active {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+
+/* Student info section */
+.student-info {
+  margin-bottom: var(--spacing-large);
+  padding: var(--spacing-small);
+  border: 1px solid var(--crisp-border);
+  border-radius: 3px;
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+/* Stats section */
+.stats {
+  margin-bottom: var(--spacing-large);
+  padding: var(--spacing-small);
+  border: 1px solid var(--crisp-border);
+  border-radius: 3px;
+}
+
+
+
+/* Additions to main.css */
+.question-image {
+    position: relative;
+    margin-top: var(--spacing-small);
+    text-align: center;
+    border: 1px solid var(--crisp-border);
+    border-radius: 3px;
+    padding: var(--spacing-small);
+    background: var(--bg-color);
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.25);
+}
+
+.question-img {
+    max-width: 100%;
+    border: 1px solid var(--crisp-border);
+    transition: all 0.3s ease;
+}
+
+.question-img.zoomed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%;
+    max-height: 90vh;
+    z-index: 1000;
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.5);
+    border: 2px solid var(--crisp-border);
+}
+
+.zoom-btn {
+    margin-top: var(--spacing-small);
+    padding: 3px 8px;
+    background-color: var(--accent-color-2);
+    color: var(--accent-color-2-text);
+    border: 1px solid var(--crisp-border);
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: "Leitura News", sans-serif;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.zoom-btn:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.25);
+}
+
+.part-wise-stats {
+    margin: var(--spacing-large) 0;
+}
+
+.part-stats-container {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--spacing-small);
+    flex-wrap: wrap;
+}
+
+.part-stat {
+    flex: 1;
+    min-width: 200px;
+    padding: var(--spacing-small);
+    border: 1px solid var(--crisp-border);
+    border-radius: 3px;
+    background-color: var(--bg-color);
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.25);
+}
+
+.part-section {
+    margin-top: var(--spacing-large);
+}
+
+.part-questions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-small);
+}
+
+/* Status colors */
+.correct {
+    border-left: 4px solid var(--accent-color-2);
+    background-color: rgba(54, 105, 97, 0.1);
+}
+
+.incorrect {
+    border-left: 4px solid var(--accent-color);
+    background-color: rgba(182, 96, 51, 0.1);
+}
+
+.not-attempted {
+    border-left: 4px solid var(--fade-text-color);
+}
+
+/* Summary boxes */
+.summary-box {
+    display: inline-block;
+    padding: 4px 8px;
+    margin: 2px;
+    border-radius: 3px;
+    font-weight: bold;
+    border: 1px solid var(--crisp-border);
+    font-family: "Leitura News", sans-serif;
+    font-size: 0.9em;
+}
+
+.positive {
+    background-color: rgba(54, 105, 97, 0.2);
+    color: var(--accent-color-2-text);
+    border-color: var(--accent-color-2);
+}
+
+.negative {
+    background-color: rgba(182, 96, 51, 0.2);
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.total {
+    background-color: rgba(75, 66, 56, 0.2);
+    color: var(--text-color);
+    border-color: var(--crisp-border);
+}
+
+.no-image {
+    color: var(--super-fade-text-color);
+    font-style: italic;
+    padding: var(--spacing-small);
+    border: 1px dashed var(--crisp-border);
+    border-radius: 3px;
+    background-color: var(--bg-color);
+}
+
+/* Error message */
+.error {
+  padding: var(--spacing-small);
+  background-color: rgba(182, 96, 51, 0.1);
+  border: 1px solid var(--accent-color);
+  border-radius: 3px;
+  margin-top: var(--spacing-large);
+}
+
+.error h3 {
+  color: var(--accent-color);
+  margin-bottom: var(--spacing-small);
+}
+
+.error ul {
+  margin-left: 20px;
+  margin-top: var(--spacing-small);
+}
+
+/* Dark mode adjustments for calculator elements */
+[data-theme="dark"] .positive {
+  background-color: rgba(54, 105, 97, 0.2);
+}
+
+[data-theme="dark"] .negative {
+  background-color: rgba(182, 96, 51, 0.2);
+}
+
+[data-theme="dark"] .correct {
+  background-color: rgba(54, 105, 97, 0.1);
+}
+
+[data-theme="dark"] .incorrect {
+  background-color: rgba(182, 96, 51, 0.1);
+}
+
+/* Responsive adjustments for calculator */
+@media(max-width: 910px) {
+  .input-group {
+    flex-direction: column;
+  }
+  
+  .summary-box {
+    display: block;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+}
