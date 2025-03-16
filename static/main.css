@@ -831,11 +831,6 @@ footer {
 
 /* Applies to ALL text inputs by default */
 input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="search"],
-input[type="url"],
-input[type="tel"],
 textarea {
   /* Reset and base styles */
   all: unset;
@@ -851,9 +846,8 @@ textarea {
   /* Typography */
   font-family: "Leitura News", sans-serif;
   color: var(--text-color);
-  padding: 8px 12px;
-  font-size: 16px;
-  line-height: 1.5;
+
+  
   
   /* Interactions */
   transition: all 0.2s ease;
@@ -886,11 +880,7 @@ textarea:disabled {
   cursor: not-allowed;
 }
 
-/* Textarea specific */
-textarea {
-  
-  resize: vertical;
-}
+
 
 /* Checkbox/Radio default styling */
 input[type="checkbox"],
@@ -938,9 +928,9 @@ input[type="radio"]:checked::before {
 /* Text Input (Fixed) */
 #rollNoInput {
   /* Essential functional properties */
-  padding: 8px 12px;
+
   width: auto; /* Natural width */
-  min-width: 250px; /* Minimum usable size */
+
   
   /* Visual styling */
   background-color: var(--bg-color);
@@ -949,7 +939,7 @@ input[type="radio"]:checked::before {
   box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.25);
   font-family: "Leitura News", sans-serif;
   color: var(--text-color);
-  font-size: 16px; /* Explicit size for consistency */
+
   
   /* Layout */
   display: inline-block;
@@ -960,7 +950,7 @@ input[type="radio"]:checked::before {
 /* Button (Fixed) */
 button {
   /* Functional sizing */
-  padding: 8px 20px; /* Adequate click area */
+
   
   /* Visual styling */
   background-color: var(--accent-color-2);
