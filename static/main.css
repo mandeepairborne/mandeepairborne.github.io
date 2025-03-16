@@ -840,7 +840,7 @@ textarea {
   /* Reset and base styles */
   all: unset;
   box-sizing: border-box;
-  width: 100%;
+  
   
   /* Visual DNA matching buttons */
   background-color: var(--bg-color);
@@ -888,7 +888,7 @@ textarea:disabled {
 
 /* Textarea specific */
 textarea {
-  min-height: 100px;
+  
   resize: vertical;
 }
 
@@ -1158,33 +1158,33 @@ button:active {
 
 /* Summary boxes */
 .summary-box {
-    display: inline-block;
-    padding: 4px 8px;
-    margin: 2px;
-    border-radius: 3px;
-    font-weight: bold;
-    border: 1px solid var(--crisp-border);
-    font-family: "Leitura News", sans-serif;
-    font-size: 0.9em;
+  display: inline-block;
+  padding: 8px 15px;
+  margin-right: 10px;
+  margin-top: 10px;
+  border-radius: 3px;
+  font-weight: bold;
 }
 
 .positive {
-    background-color: rgba(54, 105, 97, 0.2);
-    color: var(--accent-color-2-text);
-    border-color: var(--accent-color-2);
+  background-color: rgba(54, 105, 97, 0.1);
+  color: var(--positive-color);
+  border: 1px solid var(--positive-color);
 }
 
 .negative {
-    background-color: rgba(182, 96, 51, 0.2);
-    color: var(--accent-color);
-    border-color: var(--accent-color);
+  background-color: rgba(182, 96, 51, 0.1);
+  color: var(--negative-color);
+  border: 1px solid var(--negative-color);
 }
 
 .total {
-    background-color: rgba(75, 66, 56, 0.2);
-    color: var(--text-color);
-    border-color: var(--crisp-border);
+  background-color: rgba(75, 66, 56, 0.1);
+  color: var(--neutral-color);
+  border: 1px solid var(--neutral-color);
+  font-size: 1.1em;
 }
+
 
 .no-image {
     color: var(--super-fade-text-color);
