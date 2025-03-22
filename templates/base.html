@@ -31,36 +31,17 @@
     <script src="https://kit.fontawesome.com/c8cf0c94c8.js" crossorigin="anonymous"></script>
     <script src="/main.js"></script>
     <script src="/script.js"></script>
-    <script>
-document.addEventListener('DOMContentLoaded', function() {
-  var retries = 0;
-  
-  function updateCounts() {
-    if (window.goatcounter && window.goatcounter.show_count) {
-      // Current page views
-      goatcounter.show_count({
-        path: location.pathname,
-        append_to: "#goatcounter-pageviews",
-        no_style: true
-      });
-
-      // Total site views (remove if unwanted)
-      goatcounter.show_count({
-        path: '*',
-        append_to: "#goatcounter-total",
-        no_style: true
-      });
-    } else if (retries < 10) {
-      retries++;
-      setTimeout(updateCounts, 200);
-    }
-  }
-  updateCounts();
-});
+<script>
+    var t = setInterval(function() {
+        if (window.goatcounter && window.goatcounter.visit_count) {
+            clearInterval(t)
+            window.goatcounter.visit_count({append: 'body'})
+        }
+    }, 100)
 </script>
-
 <script data-goatcounter="https://mandeepairborne.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
+
 
   </head>
   <body>
@@ -81,6 +62,8 @@ document.addEventListener('DOMContentLoaded', function() {
   </body>
   <footer>
   &copy; 2025 Mandeep. MIT License. <div id="footer-stats">
-    <span id="goatcounter-total" class="goatcounter-pageviews"></span>
+    <span id="goatcounter-total" class="footer-count">
+    <i class="fas fa-chart-line"></i> <span data-goatcounter-number></span>
+  </span>
 </footer>
 </html>
