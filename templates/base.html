@@ -31,20 +31,35 @@
     <script src="https://kit.fontawesome.com/c8cf0c94c8.js" crossorigin="anonymous"></script>
     <script src="/main.js"></script>
     <script src="/script.js"></script>
+<footer>
+  &copy; 2025 Mandeep. MIT License.
+  <!-- Add this container -->
+  <span id="goatcounter-total" style="display: inline-block; margin-left: 8px;"></span>
+</footer>
+
 <script>
-var t = setInterval(function() {
-    if (window.goatcounter && window.goatcounter.visit_count) {
-        clearInterval(t)
-        window.goatcounter.visit_count({
-            append: '#goatcounter-total',    // Target your span
-            path: 'TOTAL',        // Show total site views
-            no_branding: true,    // Remove "by GoatCounter"
-            attr: {               // Custom size
-                'style': 'display: inline-block;
-            }
-        })
-    }
-}, 100)
+// 1. Remove async to ensure script loads first
+document.addEventListener('DOMContentLoaded', function() {
+  // 2. Use exact parameters from working direct URL
+  window.goatcounter = {
+    no_onload: true, // Disable auto-init
+    path: 'TOTAL'    // Match the direct URL's path
+  };
+
+  // 3. Load counter script SYNCHRONOUSLY
+  var s = document.createElement('script');
+  s.src = '//gc.zgo.at/count.js';
+  document.head.appendChild(s);
+
+  // 4. Initialize after load
+  s.onload = function() {
+    goatcounter.visit_count({
+      append: '#goatcounter-total',
+      no_branding: true,
+      style: 'div { font-family: "Inconsolata", monospace; color: #366961; font-size: 14px; }'
+    });
+  };
+});
 </script>
 <script data-goatcounter="https://mandeepairborne.goatcounter.com/count" 
         async src="//gc.zgo.at/count.js"></script>
