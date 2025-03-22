@@ -833,18 +833,16 @@ footer {
             font-family: "Leitura News", sans-serif;
             font-weight: 600; /* Matches your h2-h6 weights */
             font-style: normal;
-            color: var(--text-color);
-            font-size: 0.9em;
+            color: var(--fade-text-color);
+        
         }
 
         #gc-total .count {
-            color: var(--accent-color-2-text);
+            color: var(--fade-text-color);
             margin-left: 2px;
         }
 
-        .fa-chart-line {
-            font-size: 0.9em;
-        }
+        
 
 /* Specific calculator elements that don't exist in the main CSS */
 .calculator-container {
