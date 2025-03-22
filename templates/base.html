@@ -31,8 +31,37 @@
     <script src="https://kit.fontawesome.com/c8cf0c94c8.js" crossorigin="anonymous"></script>
     <script src="/main.js"></script>
     <script src="/script.js"></script>
-    <script data-goatcounter="https://mandeepairborne.goatcounter.com/count"
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+  var retries = 0;
+  
+  function updateCounts() {
+    if (window.goatcounter && window.goatcounter.show_count) {
+      // Current page views
+      goatcounter.show_count({
+        path: location.pathname,
+        append_to: "#goatcounter-pageviews",
+        no_style: true
+      });
+
+      // Total site views (remove if unwanted)
+      goatcounter.show_count({
+        path: '*',
+        append_to: "#goatcounter-total",
+        no_style: true
+      });
+    } else if (retries < 10) {
+      retries++;
+      setTimeout(updateCounts, 200);
+    }
+  }
+  updateCounts();
+});
+</script>
+
+<script data-goatcounter="https://mandeepairborne.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
+
   </head>
   <body>
     <canvas id="background-canvas">
