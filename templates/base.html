@@ -32,8 +32,20 @@
     <script src="/main.js"></script>
     <script src="/script.js"></script>
 <script>
-    // Append to the <body>; can use a CSS selector to append somewhere else.
-    window.goatcounter.visit_count({append: 'body'})
+document.addEventListener('DOMContentLoaded', function() {
+  function updateCount() {
+    if (window.goatcounter?.show_count) {
+      goatcounter.show_count({
+        path: '*',
+        append_to: "#goatcounter-total",
+        no_style: true
+      });
+    } else {
+      setTimeout(updateCount, 200);
+    }
+  }
+  updateCount();
+});
 </script>
 <script data-goatcounter="https://mandeepairborne.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
