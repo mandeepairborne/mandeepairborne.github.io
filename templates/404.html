@@ -1,21 +1,38 @@
+{# templates/404.html #}
 {% extends "base.html" %}
 
 {% block content %}
 <article class="center" style="text-align: center; margin-top: var(--spacing-large);">
-    <h1 class="special">404</h1>  {# Uses your .special animation #}
-    
-    {# GIF with existing border styles #}
-    <img src="https://media3.giphy.com/media/UoeaPqYrimha6rdTFV/giphy.gif" 
-         alt="404 error" 
-         class="figure"  {# Reuses your #page .figure class #}
-         style="max-width: 400px; margin: var(--spacing-large) auto;">
+    <h1 style="font-family: 'Leitura News'; font-weight: 800; color: var(--accent-color);">
+        404
+    </h1>
 
-    <div class="callout named">  {# Uses your existing callout classes #}
-        <span class="pronouns">Whoops!</span>  {# Reuses pronouns style #}
-        <p>The page evaporated like untracked changes.</p>
+    {# GIF Container using existing spacing #}
+    <div style="margin: var(--spacing-large) auto; max-width: var(--main-width);">
+        <img src="https://media3.giphy.com/media/UoeaPqYrimha6rdTFV/giphy.gif" 
+             alt="404 error" 
+             style="width: 100%; 
+                    height: auto; 
+                    max-width: 600px; 
+                    border: 1px solid var(--crisp-border);
+                    border-radius: 3px;
+                    box-shadow: 4px 4px 0 rgba(0,0,0,0.25);">
+    </div>
+
+    {# Existing callout class #}
+    <div class="callout" style="max-width: var(--main-width); margin: 0 auto;">
+        <p style="font-size: 1.1em; color: var(--text-color); margin-bottom: var(--spacing-small);">
+            The requested page couldn't be found in the stack.
+        </p>
         
-        <a href="{{ config.base_url }}" class="links">  {# Uses your .links class #}
-           ↻ Return to Index
+        {# Existing button style from your links class #}
+        <a href="{{ config.base_url }}" 
+           class="links" 
+           style="display: inline-block; 
+                  padding: var(--spacing-small) var(--spacing-large);
+                  border: 1px solid var(--crisp-border);
+                  box-shadow: 2px 2px 0 rgba(0,0,0,0.25);">
+           Return to Homepage
         </a>
     </div>
 </article>
