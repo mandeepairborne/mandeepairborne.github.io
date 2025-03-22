@@ -830,18 +830,19 @@ footer {
 }
 
 #gc-total {
-            font-family: "Inconsolata", monospace;
-            color: var(--fade-text-color);
+            font-family: "Leitura News", sans-serif;
+            font-weight: 600; /* Matches your h2-h6 weights */
+            font-style: normal;
+            color: var(--text-color);
             font-size: 0.9em;
-            margin-left: 8px;
         }
 
         #gc-total .count {
             color: var(--accent-color-2-text);
-            margin-left: 4px;
+            margin-left: 2px;
         }
 
-        .fa-eye {
+        .fa-chart-line {
             font-size: 0.9em;
         }
 
