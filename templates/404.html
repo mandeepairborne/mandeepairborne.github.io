@@ -25,17 +25,14 @@
             Those who wander may get lost but you certainly are.
         </p>
         
-        {# Existing button style from your links class #}
-        <a href="{{ config.base_url }}" 
-           class="links" 
-           style="display: inline-block; 
-                  padding: var(--spacing-small) var(--spacing-large);
+    <a href="{{ config.base_url }}" 
+           class="input-group-button" 
+           style="padding: var(--spacing-small) var(--spacing-large);
                   border: 1px solid var(--crisp-border);
-                  box-shadow: 2px 2px 0 rgba(0,0,0,0.25);">
+                  box-shadow: 2px 2px 0 rgba(0,0,0,0.25);
+                  text-decoration: none;">
            Return to Homepage
         </a>
-
-        <button href="{{ config.base_url }}">Return to Homepage</button>
     </div>
 </article>
 {% endblock content %}
