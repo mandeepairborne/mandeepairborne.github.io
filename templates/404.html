@@ -1,38 +1,21 @@
 {% extends "base.html" %}
 
 {% block content %}
-<article class="four-oh-four" style="text-align: center; margin: 4rem auto; max-width: 600px;">
-    <h1 style="font-family: 'Leitura News'; font-weight: 800; color: var(--accent-color); margin-bottom: 2rem;">
-        404: Lost in the Stacks
-    </h1>
+<article class="center" style="text-align: center; margin-top: var(--spacing-large);">
+    <h1 class="special">404</h1>  {# Uses your .special animation #}
+    
+    {# GIF with existing border styles #}
+    <img src="https://media3.giphy.com/media/UoeaPqYrimha6rdTFV/giphy.gif" 
+         alt="404 error" 
+         class="figure"  {# Reuses your #page .figure class #}
+         style="max-width: 400px; margin: var(--spacing-large) auto;">
 
-    {# Retro computer animation #}
-    <div class="terminal-animation" style="margin: 2rem 0;">
-        <svg viewBox="0 0 100 100" style="width: 150px; height: 150px;">
-            <rect x="10" y="10" width="80" height="80" fill="none" stroke="var(--accent-color-2)" stroke-width="2"/>
-            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" 
-                  font-family="Inconsolata" font-size="14" fill="var(--accent-color)">
-                ERROR 404
-                <animate attributeName="opacity" values="1;0.5;1" dur="1.5s" repeatCount="indefinite"/>
-            </text>
-        </svg>
-    </div>
-
-    <div class="callout" style="border: 1px solid var(--crisp-border); padding: 1.5rem; margin: 2rem 0;">
-        <p style="font-family: 'Leitura News'; font-style: italic; color: var(--text-color);">
-            "Not all those who wander are lost, but you certainly are."
-        </p>
+    <div class="callout named">  {# Uses your existing callout classes #}
+        <span class="pronouns">Whoops!</span>  {# Reuses pronouns style #}
+        <p>The page evaporated like untracked changes.</p>
         
-        <a href="{{ config.base_url }}" 
-           style="display: inline-block;
-                  margin-top: 1.5rem;
-                  padding: 0.8rem 1.5rem;
-                  border: 1px solid var(--crisp-border);
-                  box-shadow: 2px 2px 0 rgba(0,0,0,0.25);
-                  text-decoration: none;
-                  font-family: 'Inconsolata';
-                  color: var(--accent-color-2-text);">
-           ↻ Reboot to Home
+        <a href="{{ config.base_url }}" class="links">  {# Uses your .links class #}
+           ↻ Return to Index
         </a>
     </div>
 </article>
