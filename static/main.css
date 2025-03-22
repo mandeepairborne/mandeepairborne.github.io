@@ -829,6 +829,32 @@ footer {
   cursor: pointer;
 }
 
+/* Footer counter styling */
+#footer-stats {
+  margin-top: var(--spacing-large);
+  text-align: center;
+  color: var(--fade-text-color);
+  font-size: 0.85em;
+}
+
+.goatcounter-pageviews {
+  display: inline-block;
+  margin: 0 10px;
+  padding: 2px 8px;
+  border: 1px solid var(--super-fade-text-color);
+  border-radius: 3px;
+  font-family: "Inconsolata", monospace;
+  font-size: 0.9em;
+}
+
+.goatcounter-pageviews::before {
+  content: "👀 ";
+  margin-right: 4px;
+}
+
+#goatcounter-total::before {
+  content: "🌐 ";
+}
 
 /* Specific calculator elements that don't exist in the main CSS */
 .calculator-container {
