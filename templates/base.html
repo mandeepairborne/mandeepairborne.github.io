@@ -37,30 +37,37 @@
   <span id="goatcounter-total" style="display: inline-block; margin-left: 8px;"></span>
 </footer>
 
-<script>
-// 1. Remove async to ensure script loads first
-document.addEventListener('DOMContentLoaded', function() {
-  // 2. Use exact parameters from working direct URL
-  window.goatcounter = {
-    no_onload: true, // Disable auto-init
-    path: 'TOTAL'    // Match the direct URL's path
-  };
+<footer>
+        &copy; 2025 Mandeep. MIT License.
+        <span id="gc-total">
+            <i class="fas fa-eye"></i>
+            <span class="count">-</span>
+        </span>
+    </footer>
 
-  // 3. Load counter script SYNCHRONOUSLY
-  var s = document.createElement('script');
-  s.src = '//gc.zgo.at/count.js';
-  document.head.appendChild(s);
+    <!-- Counter script -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const updateCount = () => {
+            fetch('https://mandeepairborne.goatcounter.com/counter/TOTAL.json?t=' + Date.now())
+                .then(r => r.json())
+                .then(data => {
+                    const countEl = document.querySelector('#gc-total .count');
+                    if (countEl) countEl.textContent = data.count;
+                })
+                .catch(e => {
+                    const countEl = document.querySelector('#gc-total .count');
+                    if (countEl) countEl.textContent = '0';
+                });
+        };
 
-  // 4. Initialize after load
-  s.onload = function() {
-    goatcounter.visit_count({
-      append: '#goatcounter-total',
-      no_branding: true,
-      style: 'div { font-family: "Inconsolata", monospace; color: #366961; font-size: 14px; }'
+        // Initial load
+        updateCount();
+        
+        // Update every 5 minutes (300,000ms)
+        setInterval(updateCount, 300000);
     });
-  };
-});
-</script>
+    </script>
 <script data-goatcounter="https://mandeepairborne.goatcounter.com/count" 
         async src="//gc.zgo.at/count.js"></script>
 
