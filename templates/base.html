@@ -36,7 +36,7 @@ var t = setInterval(function() {
     if (window.goatcounter && window.goatcounter.visit_count) {
         clearInterval(t)
         window.goatcounter.visit_count({
-            append: '#counter',    // Target your span
+            append: '#goatcounter-total',    // Target your span
             path: 'TOTAL',        // Show total site views
             no_branding: true,    // Remove "by GoatCounter"
             attr: {               // Custom size
