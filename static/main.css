@@ -829,31 +829,31 @@ footer {
   cursor: pointer;
 }
 
-/* Footer counter styling */
-#footer-stats {
-  margin-top: var(--spacing-large);
-  text-align: center;
+.footer-count {
+  margin-left: 10px;
+  font-family: "Inconsolata", monospace;
   color: var(--fade-text-color);
-  font-size: 0.85em;
+  font-size: 0.9em;
+  transition: opacity 0.3s ease;
 }
 
-.goatcounter-pageviews {
-  display: inline-block;
-  margin: 0 10px;
-  padding: 2px 8px;
-  border: 1px solid var(--super-fade-text-color);
-  border-radius: 3px;
-  font-family: "Inconsolata", monospace;
+.footer-count:hover {
+  color: var(--accent-color-2-text);
+}
+
+.footer-count i {
+  margin-right: 4px;
   font-size: 0.9em;
 }
 
-.goatcounter-pageviews::before {
-  content: "👀 ";
-  margin-right: 4px;
+/* Loading state */
+.footer-count[data-goatcounter-status="loading"] {
+  opacity: 0.7;
 }
 
-#goatcounter-total::before {
-  content: "🌐 ";
+/* Error state */
+.footer-count[data-goatcounter-status="error"] {
+  color: #cc0000;
 }
 
 /* Specific calculator elements that don't exist in the main CSS */
