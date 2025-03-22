@@ -32,15 +32,12 @@
     <script src="/main.js"></script>
     <script src="/script.js"></script>
 <script>
-    var t = setInterval(function() {
-        if (window.goatcounter && window.goatcounter.visit_count) {
-            clearInterval(t)
-            window.goatcounter.visit_count({append: 'body'})
-        }
-    }, 100)
+    // Append to the <body>; can use a CSS selector to append somewhere else.
+    window.goatcounter.visit_count({append: 'body'})
 </script>
 <script data-goatcounter="https://mandeepairborne.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
+
 
 
   </head>
