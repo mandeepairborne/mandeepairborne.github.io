@@ -4,7 +4,7 @@
 {% block content %}
 <article class="center" style="text-align: center; margin-top: var(--spacing-large);">
     <h1 style="font-family: 'Leitura News'; font-weight: 800; color: var(--accent-color);">
-        404
+       Error 404
     </h1>
 
     {# GIF Container using existing spacing #}
@@ -22,7 +22,7 @@
     {# Existing callout class #}
     <div class="callout" style="max-width: var(--main-width); margin: 0 auto;">
         <p style="font-size: 1.1em; color: var(--text-color); margin-bottom: var(--spacing-small);">
-            The requested page couldn't be found in the stack.
+            Those who wander may get lost but you certainly are.
         </p>
         
         {# Existing button style from your links class #}
@@ -34,6 +34,8 @@
                   box-shadow: 2px 2px 0 rgba(0,0,0,0.25);">
            Return to Homepage
         </a>
+
+        <button href="{{ config.base_url }}">Return to Homepage</button>
     </div>
 </article>
 {% endblock content %}
