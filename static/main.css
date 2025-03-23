@@ -829,7 +829,6 @@ footer {
   cursor: pointer;
 }
 
-/* Table Styling with Overflow Fix */
 .scrollable-table {
   overflow-x: auto;
   margin: var(--spacing-small) 0;
@@ -843,6 +842,7 @@ footer {
   min-width: 100%;
   border-collapse: collapse;
   margin: 0;
+  table-layout: fixed; /* Added for consistent column widths */
 }
 
 .scrollable-table th,
@@ -852,11 +852,9 @@ footer {
   text-align: left;
   box-sizing: border-box;
   max-width: 300px;
-  white-space: nowrap;
-}
-
-.scrollable-table td:last-child {
-  white-space: normal; /* Allow wrapping for links */
+  white-space: normal; /* Changed from nowrap */
+  word-break: break-word; /* Added for long words */
+  vertical-align: top; /* Align content to top */
 }
 
 .scrollable-table th {
@@ -866,22 +864,38 @@ footer {
   border-bottom: 2px solid var(--crisp-border);
   position: sticky;
   left: 0;
+  min-width: 150px; /* Minimum column width */
 }
 
-/* Zebra Striping */
-.scrollable-table tr:nth-child(even) {
-  background-color: rgba(0, 0, 0, 0.03);
+/* Specific column width adjustments */
+.scrollable-table td:nth-child(1), /* Institute column */
+.scrollable-table th:nth-child(1) {
+  min-width: 200px;
+  width: 25%;
 }
 
-/* Hover Effect */
-.scrollable-table tr:hover {
-  background-color: rgba(54, 105, 97, 0.05);
+.scrollable-table td:nth-child(2), /* Eligibility column */
+.scrollable-table th:nth-child(2) {
+  min-width: 180px;
+  width: 25%;
 }
 
-/* Column Borders */
-.scrollable-table td:not(:last-child),
-.scrollable-table th:not(:last-child) {
-  border-right: 1px dashed rgba(0, 0, 0, 0.1);
+.scrollable-table td:nth-child(3), /* Fee column */
+.scrollable-table th:nth-child(3) {
+  min-width: 100px;
+  width: 10%;
+}
+
+.scrollable-table td:nth-child(4), /* Deadline column */
+.scrollable-table th:nth-child(4) {
+  min-width: 150px;
+  width: 20%;
+}
+
+.scrollable-table td:nth-child(5), /* Links column */
+.scrollable-table th:nth-child(5) {
+  min-width: 250px;
+  width: 20%;
 }
 
 /* Responsive Adjustments */
@@ -894,14 +908,19 @@ footer {
   .scrollable-table th {
     padding: 8px 10px;
     font-size: 0.9em;
-    max-width: 200px;
+    min-width: 120px !important;
   }
   
   .scrollable-table td:last-child {
-    white-space: normal;
-    max-width: 250px;
+    min-width: 180px !important;
+  }
+  
+  .scrollable-table td:nth-child(1),
+  .scrollable-table th:nth-child(1) {
+    min-width: 150px !important;
   }
 }
+
 
 #gc-total {
             font-family: "Leitura News", sans-serif;
