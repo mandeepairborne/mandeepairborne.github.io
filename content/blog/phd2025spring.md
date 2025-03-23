@@ -1,10 +1,10 @@
 +++
-title = "PhD Admissions 2024: Institutes, Eligibility, Deadlines"
+title = "PhD Admissions 2025 Spring: Institutes, Eligibility, Deadlines"
 date = 2025-03-23
 +++
 
 
-# PhD Admissions 2024: Institutes, Eligibility, Deadlines
+# PhD Admissions 2025 Spring: Institutes, Eligibility, Deadlines
 
 **Last Updated**: March 23, 2025  
 **Disclaimer**: While efforts have been made to ensure accuracy, this information is compiled through independent research and may not reflect the most current details. Always verify all information directly from official institutional websites before making any application decisions.
