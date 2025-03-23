@@ -92,8 +92,5 @@ date = 2025-03-23
 **Feedback & Corrections**: If you find any outdated information or broken links in this resource, please [open an issue](https://github.com/mandeepairborne/mandeepairborne.github.io/issues) or contact me directly.
 
 ---
-
-*Last updated: March 23, 2025*
+Last updated: March 23, 2025
 ---
-
-*Last updated: March 23, 2025*
