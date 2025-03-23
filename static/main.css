@@ -829,6 +829,33 @@ footer {
   cursor: pointer;
 }
 
+/* Add to existing table rules */
+table {
+  min-width: 100%;
+  border-collapse: collapse;
+  overflow-x: visible; /* Reset any existing overflow */
+}
+
+/* New scrollable container */
+.scrollable-table {
+  overflow-x: auto;
+  margin: var(--spacing-small) 0;
+  border: 1px solid var(--crisp-border);
+  border-radius: 3px;
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.25);
+}
+
+/* Optional: Style scrollbar (works in modern browsers) */
+.scrollable-table::-webkit-scrollbar {
+  height: 8px;
+  background-color: var(--bg-color);
+}
+
+.scrollable-table::-webkit-scrollbar-thumb {
+  background-color: var(--accent-color-2);
+  border-radius: 4px;
+}
+
 #gc-total {
             font-family: "Leitura News", sans-serif;
             font-weight: 600; /* Matches your h2-h6 weights */
