@@ -933,7 +933,7 @@ footer {
 
 
 #gc-total {
-            font-family: "Leitura News", sans-serif;
+            font-family: var(--heading-font);
             font-weight: 600; /* Matches your h2-h6 weights */
             font-style: normal;
             color: var(--fade-text-color);
