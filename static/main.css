@@ -92,6 +92,7 @@
   --spacing-large: 25px;
   --heading-font: 'Playfair Display', serif;
   --body-font: 'Crimson Pro', serif; 
+  --accent-font: 'Space Grotesk', sans-serif;
 }
 
 /*
@@ -187,14 +188,16 @@ code {
   padding: var(--spacing-small);
 
   position: relative;
-  font-family: var(--heading-font);
-  font-size: 0.95rem;
-  color: #4a4a4a;
+ font-family: var(--accent-font);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
 }
 
 .named.callout {
   margin-top: calc(1.5 * var(--spacing-large));
-  font-style: italic;
+  text-transform: uppercase;
+            letter-spacing: 0.05em;
 }
 
 .named.callout > span:first-child {
@@ -315,12 +318,14 @@ code {
 
 nav {
   margin-bottom: var(--spacing-small);
+  font-size: 1.3rem;
 }
 
 nav ul {
   display: flex;
   justify-content: flex-end;
   gap: var(--spacing-large);
+  font-size: 1.3rem;
 }
 
 nav .active {
