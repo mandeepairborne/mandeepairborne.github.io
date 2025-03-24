@@ -828,7 +828,7 @@ footer {
 
 
 .header__contact {
-  font-family: "Inconsolata", "Consolas", monospace;
+	font-family: var(--accent-font);
   margin: 10px 0;
 }
 
@@ -839,7 +839,7 @@ footer {
 }
 
 .header__contact a:hover {
-	font-family: var(--accent-font);
+
   color: #366961; /* The color you specified */
   text-decoration: none;
   cursor: pointer;
