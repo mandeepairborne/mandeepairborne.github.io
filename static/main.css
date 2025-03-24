@@ -318,14 +318,14 @@ code {
 
 nav {
   margin-bottom: var(--spacing-small);
-  font-size: 1.3rem;
+  font-size: 1.14rem;
 }
 
 nav ul {
   display: flex;
   justify-content: flex-end;
   gap: var(--spacing-large);
-  font-size: 1.3rem;
+  font-size: 1.14rem;
 }
 
 nav .active {
