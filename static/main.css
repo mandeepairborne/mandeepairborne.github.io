@@ -130,7 +130,7 @@ body {
   color: var(--text-color);
 
   font-family: var(--body-font);
-  font-size: 1.1rem;
+  font-size: 1.0rem;
   
 }
 
@@ -147,6 +147,10 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--heading-font);
   font-weight: 700;
 }
+
+h1 { font-size: 2.5rem; }
+        h2 { font-size: 2rem; }
+        h3 { font-size: 1.75rem; }
 
 i, em {
   font-style: italic;
@@ -184,13 +188,13 @@ code {
 
   position: relative;
   font-family: var(--heading-font);
-  font-size: 0.8rem;
+  font-size: 0.95rem;
   color: #4a4a4a;
 }
 
 .named.callout {
   margin-top: calc(1.5 * var(--spacing-large));
-  font-weight: bold;
+  font-style: italic;
 }
 
 .named.callout > span:first-child {
