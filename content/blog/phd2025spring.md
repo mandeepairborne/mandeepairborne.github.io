@@ -70,7 +70,7 @@ date = 2025-03-23
 - **JRF**: Junior Research Fellowship  
 - **GATE**: Graduate Aptitude Test in Engineering  
 - **JEST**: Joint Entrance Screening Test  
-- **NET**: National Eligibility Test  
+- **NET**: National Eligibility Test (Lectureship only) 
 - **TBD**: To Be Decided/Updated  
 
 ---
