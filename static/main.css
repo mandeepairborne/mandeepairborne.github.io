@@ -839,6 +839,7 @@ footer {
 }
 
 .header__contact a:hover {
+	font-family: var(--accent-font);
   color: #366961; /* The color you specified */
   text-decoration: none;
   cursor: pointer;
