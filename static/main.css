@@ -189,15 +189,13 @@ code {
 
   position: relative;
  font-family: var(--accent-font);
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
+            font-size: 1.2rem;
+            font-weight: 600;
 }
 
 .named.callout {
   margin-top: calc(1.5 * var(--spacing-large));
-  text-transform: uppercase;
-            letter-spacing: 0.05em;
+  font-weight: 600;
 }
 
 .named.callout > span:first-child {
