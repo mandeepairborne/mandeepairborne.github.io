@@ -132,7 +132,7 @@ body {
   color: var(--text-color);
 
   font-family: var(--body-font);
-  font-size: 1.0rem;
+  font-size: 1.3rem;
   
 }
 
@@ -187,7 +187,7 @@ code {
   border: 1px solid var(--crisp-border);
   border-radius: 3px;
   padding: var(--spacing-small);
-
+font-size: 0.85rem;
   position: relative;
  font-family: var(--accent-font);
             font-weight: 600;
@@ -196,6 +196,7 @@ code {
 .named.callout {
   margin-top: calc(1.5 * var(--spacing-large));
   font-weight: 600;
+	font-size: 0.85rem;
 }
 
 .named.callout > span:first-child {
@@ -392,7 +393,6 @@ nav .active:after {
   
   font-size: 1.8rem;
   margin-bottom: 10px;
-  font-weight: 900;
   
 }
 
@@ -1227,6 +1227,13 @@ footer {
     border: 1px dashed var(--crisp-border);
     border-radius: 3px;
     background-color: var(--bg-color);
+}
+
+.special-notice {
+  padding: var(--spacing-small);
+  border: 1px solid var(--accent-color);
+  border-radius: 3px;
+  margin-top: var(--spacing-large);
 }
 
 /* Error message */
