@@ -1,5 +1,6 @@
 @import"https://fonts.googleapis.com/css?family=Inconsolata";
 
+
 /* Fonts */
 
 @font-face {
@@ -90,7 +91,7 @@
   --main-width: 850px;
   --spacing-small: 15px;
   --spacing-large: 25px;
-  --heading-font: 'Playfair Display', serif;
+  --heading-font: 'Boldonse', serif;
   --body-font: 'Crimson Pro', serif; 
   --accent-font: 'Space Grotesk', sans-serif;
 }
