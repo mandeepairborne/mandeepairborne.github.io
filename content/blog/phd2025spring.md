@@ -14,17 +14,17 @@ date = 2025-03-23
 
 | Institute       | Eligibility           | Fee (₹) | Deadline               | Admission Portal Link           |
 |-----------------|----------------------|---------|------------------------|----------------------------------|
-| IIT Delhi       | GATE/JRF             | 200     | 22 March - 7 April 2025 | [IIT Delhi PhD Admissions](https://ecampus.iitd.ac.in/PGADM/login)                        |
-| IIT Roorkee     | Not Mentioned Explicitly | 500  | Rolling                | [IIT Roorkee PhD Portal](https://iitr.ac.in/Academics/Admission%20To%20Doctoral%20Programmes.html)                        |
-| IIT Kanpur      | GATE/JRF/JEST        | 500     | To be announced        | [IIT Kanpur PhD Admissions](https://www.iitk.ac.in/phy/)                        |
-| IIT Kharagpur   | GATE/NET/JRF/JEST    | 1000    | 5 Feb - 31 March 2025  | [IIT Kharagpur PhD Portal](https://iitkgp.ac.in/)                        |
-| IIT Bombay      | GATE/JRF/NET/JEST    | 300     | 25 March - 11 April 2025 | [IIT Bombay PhD Admissions](https://www.iitb.ac.in/newacadhome/phd.jsp)                        |
-| IIT Hyderabad   | GATE/JRF/JEST        | 500     | July 2025 Session Open - Check Portal | [IIT Hyderabad PhD Portal](https://www.iith.ac.in/phdadmissions/)                        |
-| IIT Guwahati    | GATE/JRF/NET/JEST    | 600     | 21 March - 15 April 2025 | [IIT Guwahati PhD Admissions](https://www.iitg.ac.in/admission)                        |
-| IIT Indore      | GATE/JRF/NET/JEST    | 500     | To be announced        | [IIT Indore PhD Portal](http://academic.iiti.ac.in/phdadvt.php)                        |
-| IIT Madras      | GATE/JRF/JEST/NET    | 1000    | 1 March - 3 April 2025 | [IIT Madras PhD Admissions](https://research.iitm.ac.in)                        |
-| IIT Gandhinagar | GATE/JRF/NET         | 300     | 12 Feb - 26 March 2025 | [IIT Gandhinagar PhD Portal](https://admissions.iitgn.ac.in/pgadmission/)                        |
-| IIT Jodhpur     | Details Not Provided | TBD     | Not Available Yet      | [IIT Jodhpur Physics Department](http://iitj.ac.in/department/index.php?id=physics)                        |
+| IIT Delhi       | GATE/JRF             | 200     | 22 March - 7 April 2025 | <a href="https://ecampus.iitd.ac.in/PGADM/login" target="_blank">IIT Delhi PhD Admissions</a> |
+| IIT Roorkee     | Not Mentioned Explicitly | 500  | Rolling                | <a href="https://iitr.ac.in/Academics/Admission%20To%20Doctoral%20Programmes.html" target="_blank">IIT Roorkee PhD Portal</a> |
+| IIT Kanpur      | GATE/JRF/JEST        | 500     | To be announced        | <a href="https://www.iitk.ac.in/phy/" target="_blank">IIT Kanpur PhD Admissions</a> |
+| IIT Kharagpur   | GATE/NET/JRF/JEST    | 1000    | 5 Feb - 31 March 2025  | <a href="https://iitkgp.ac.in/" target="_blank">IIT Kharagpur PhD Portal</a> |
+| IIT Bombay      | GATE/JRF/NET/JEST    | 300     | 25 March - 11 April 2025 | <a href="https://www.iitb.ac.in/newacadhome/phd.jsp" target="_blank">IIT Bombay PhD Admissions</a> |
+| IIT Hyderabad   | GATE/JRF/JEST        | 500     | July 2025 Session Open - Check Portal | <a href="https://www.iith.ac.in/phdadmissions/" target="_blank">IIT Hyderabad PhD Portal</a> |
+| IIT Guwahati    | GATE/JRF/NET/JEST    | 600     | 21 March - 15 April 2025 | <a href="https://www.iitg.ac.in/admission" target="_blank">IIT Guwahati PhD Admissions</a> |
+| IIT Indore      | GATE/JRF/NET/JEST    | 500     | To be announced        | <a href="http://academic.iiti.ac.in/phdadvt.php" target="_blank">IIT Indore PhD Portal</a> |
+| IIT Madras      | GATE/JRF/JEST/NET    | 1000    | 1 March - 3 April 2025 | <a href="https://research.iitm.ac.in" target="_blank">IIT Madras PhD Admissions</a> |
+| IIT Gandhinagar | GATE/JRF/NET         | 300     | 12 Feb - 26 March 2025 | <a href="https://admissions.iitgn.ac.in/pgadmission/" target="_blank">IIT Gandhinagar PhD Portal</a> |
+| IIT Jodhpur     | Details Not Provided | TBD     | Not Available Yet      | <a href="http://iitj.ac.in/department/index.php?id=physics" target="_blank">IIT Jodhpur Physics Department</a> |
 
 </div>
 
@@ -34,15 +34,15 @@ date = 2025-03-23
 
 | Institute     | Eligibility        | Fee (₹) | Deadline               | Admission Portal Link           |
 |---------------|-------------------|---------|------------------------|----------------------------------|
-| RRI           | JEST/JRF/GATE     | 500     | Expected March 2025    | [Raman Research Institute PhD](https://www.rri.res.in/careers/phd-programme)                        |
-| IIA           | JEST/JRF/GATE     | 1000    | Expected May 2025      | [Indian Institute of Astrophysics PhD](https://www.iiap.res.in/)                        |
-| ARIES         | JEST/JRF/GATE     | 500     | Not Available Yet      | [ARIES PhD Admissions](https://www.aries.res.in/)                        |
-| HRI           | JEST/JRF          | 300     | Not Available Yet      | [Harish-Chandra Research Institute PhD](https://www.hri.res.in/)                        |
-| IPR           | GATE/JRF          | 500     | Not Available Yet      | [Institute for Plasma Research PhD](https://www.ipr.res.in/)                        |
-| RRCAT         | GATE/JRF          | 200     | 10 March - 20 April 2025 | [RRCAT PhD Programme](https://www.rrcat.gov.in/)                        |
-| NCRA-TIFR     | JEST/GATE/JRF     | 500     | Interviews in April-June 2025 | [NCRA-TIFR PhD Admissions](https://www.ncbs.res.in/academic/admissions)                        |
-| PRL           | GATE/NET/JEST     | 300     | 24 March - 21 April 2025 | [Physical Research Laboratory PhD](https://www.prl.res.in/jrfrecruit/)                        |
-| IMSc Chennai  | JEST/JRF          | 500     | 24 March - 4 April 2025 | [IMSc PhD Admissions](https://www.imsc.res.in/)       |
+| RRI           | JEST/JRF/GATE     | 500     | Expected March 2025    | <a href="https://www.rri.res.in/careers/phd-programme" target="_blank">Raman Research Institute PhD</a> |
+| IIA           | JEST/JRF/GATE     | 1000    | Expected May 2025      | <a href="https://www.iiap.res.in/" target="_blank">Indian Institute of Astrophysics PhD</a> |
+| ARIES         | JEST/JRF/GATE     | 500     | Not Available Yet      | <a href="https://www.aries.res.in/" target="_blank">ARIES PhD Admissions</a> |
+| HRI           | JEST/JRF          | 300     | Not Available Yet      | <a href="https://www.hri.res.in/" target="_blank">Harish-Chandra Research Institute PhD</a> |
+| IPR           | GATE/JRF          | 500     | Not Available Yet      | <a href="https://www.ipr.res.in/" target="_blank">Institute for Plasma Research PhD</a> |
+| RRCAT         | GATE/JRF          | 200     | 10 March - 20 April 2025 | <a href="https://www.rrcat.gov.in/" target="_blank">RRCAT PhD Programme</a> |
+| NCRA-TIFR     | JEST/GATE/JRF     | 500     | Interviews in April-June 2025 | <a href="https://www.ncbs.res.in/academic/admissions" target="_blank">NCRA-TIFR PhD Admissions</a> |
+| PRL           | GATE/NET/JEST     | 300     | 24 March - 21 April 2025 | <a href="https://www.prl.res.in/jrfrecruit/" target="_blank">Physical Research Laboratory PhD</a> |
+| IMSc Chennai  | JEST/JRF          | 500     | 24 March - 4 April 2025 | <a href="https://www.imsc.res.in/" target="_blank">IMSc PhD Admissions</a> |
 
 </div>
 
@@ -52,17 +52,16 @@ date = 2025-03-23
 
 | Institute               | Eligibility            | Fee (₹) | Deadline               | Admission Portal Link           |
 |-------------------------|------------------------|---------|------------------------|----------------------------------|
-| IISc                    | GATE/JRF/JEST         | 800     | 4 Feb - 6 April 2025   | [IISc PhD Admissions](https://admissions.iisc.ac.in/)                        |
-| BITS Pilani             | BITS Exam/GATE/JRF    | 2600    | 1 March - 29 April 2025 | [BITS Pilani PhD Portal](https://bitsadmission.com/bitsphweb/index.aspx)                        |
-| IISER Mohali            | GATE/JRF/NET/JEST     | 500     | To be announced - 10 April 2025 | [IISER Mohali PhD Admissions](https://www.iisermohali.ac.in)                        |
-| IISER Bhopal            | GATE/JRF/NET/JEST     | 500     | 16 March - 15 April 2025 | [IISER Bhopal PhD Portal](https://phdadmission.iiserb.ac.in/)                        |
-| IISER Pune              | GATE/JRF/JEST         | 500     | 6 March - 31 March 2025 | [IISER Pune PhD Admissions](https://www.iiserpune.ac.in/)                        |
-| IISER Kolkata           | GATE/JRF/JEST         | 500     | 9 March - 19 May 2025  | [IISER Kolkata PhD Portal](https://www.iiserkol.ac.in/)                        |
-| IISER Thiruvananthapuram| GATE/JRF/JEST         | 500     | Not Available Yet      | [IISER TVM PhD Admissions](https://www.iisertvm.ac.in/)                        |
-| NISER Bhubaneswar       | GATE/JRF              | 500     | To be announced        | [NISER PhD Programme](https://www.niser.ac.in/)                        |
+| IISc                    | GATE/JRF/JEST         | 800     | 4 Feb - 6 April 2025   | <a href="https://admissions.iisc.ac.in/" target="_blank">IISc PhD Admissions</a> |
+| BITS Pilani             | BITS Exam/GATE/JRF    | 2600    | 1 March - 29 April 2025 | <a href="https://bitsadmission.com/bitsphweb/index.aspx" target="_blank">BITS Pilani PhD Portal</a> |
+| IISER Mohali            | GATE/JRF/NET/JEST     | 500     | To be announced - 10 April 2025 | <a href="https://www.iisermohali.ac.in" target="_blank">IISER Mohali PhD Admissions</a> |
+| IISER Bhopal            | GATE/JRF/NET/JEST     | 500     | 16 March - 15 April 2025 | <a href="https://phdadmission.iiserb.ac.in/" target="_blank">IISER Bhopal PhD Portal</a> |
+| IISER Pune              | GATE/JRF/JEST         | 500     | 6 March - 31 March 2025 | <a href="https://www.iiserpune.ac.in/" target="_blank">IISER Pune PhD Admissions</a> |
+| IISER Kolkata           | GATE/JRF/JEST         | 500     | 9 March - 19 May 2025  | <a href="https://www.iiserkol.ac.in/" target="_blank">IISER Kolkata PhD Portal</a> |
+| IISER Thiruvananthapuram| GATE/JRF/JEST         | 500     | Not Available Yet      | <a href="https://www.iisertvm.ac.in/" target="_blank">IISER TVM PhD Admissions</a> |
+| NISER Bhubaneswar       | GATE/JRF              | 500     | To be announced        | <a href="https://www.niser.ac.in/" target="_blank">NISER PhD Programme</a> |
 
 </div>
-
 ---
 
 ## Key to Short Forms
