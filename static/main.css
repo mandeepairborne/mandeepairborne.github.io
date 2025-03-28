@@ -829,6 +829,7 @@ footer {
 .header__contact {
 	font-family: var(--accent-font);
   margin: 10px 0;
+	font-size: 0.9rem;
 }
 
 .header__contact a {
