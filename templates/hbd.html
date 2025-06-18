@@ -1,21 +1,11 @@
 {% extends "base.html" %}
 
 {% block extra_data %}
-
+{% set section = "Score" %}
 {% endblock %}
 
-{% block title %}
-22 Ka Hogya
-{% endblock %}
-
-{% block header %}
-  {% include "score-header.html" %}
-{% endblock header %}
-
-{% block content %}
-
-
-<head>
+{% block head %}
+  <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Happy Birthday!</title>
@@ -98,6 +88,18 @@
     }
   </style>
 </head>
+{% endblock head %}
+
+{% block title %}
+22 Ka Hogya
+{% endblock %}
+
+
+
+{% block content %}
+
+
+
 
 
   <!-- SVG confetti (you can replace with your own) -->
