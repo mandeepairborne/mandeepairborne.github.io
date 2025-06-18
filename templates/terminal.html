@@ -1,0 +1,29 @@
+{# templates/terminal.html #}
+{% extends "base.html" %}
+
+{% block head %}
+  {{ super() }}
+  <link rel="stylesheet" href="{{ get_url(path="css/terminal.css") }}">
+{% endblock %}
+
+{% block content %}
+<div id="terminal">
+  <div id="output">
+    <div>Lccmn You're Welcome!</div>
+    <div>Type the secret key and press Enter:</div>
+  </div>
+  <div id="input-line">
+    <div id="prompt">➜</div>
+    <input type="text" id="cmd" autofocus autocomplete="off" />
+  </div>
+  <div id="wish">
+    <h2>🎉 Happy Birthday, Laxman! 🎉</h2>
+    <p>22 ko, eb join krto europe mh PhD toh 25 tak khatam. Fer 29 tak 2-3 post doc. 30 th pehli professor lagto. Kaka khenchde eb bhi h time.</p>
+  </div>
+</div>
+{% endblock %}
+
+{% block footer_scripts %}
+  {{ super() }}
+  <script src="{{ get_url(path="js/terminal.js") }}"></script>
+{% endblock %}
