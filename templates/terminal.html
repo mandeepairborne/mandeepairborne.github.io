@@ -482,11 +482,7 @@
         <div class="celebration-effects" id="celebrationEffects"></div>
     </div>
 
-    <!-- Hidden file inputs for images -->
-    <input type="file" id="bgtiInput" class="file-input" accept="image/*">
-    <input type="file" id="khelInput" class="file-input" accept="image/*">
-    <input type="file" id="padoInput" class="file-input" accept="image/*">
-    <input type="file" id="exerciseInput" class="file-input" accept="image/*">
+   
 
     <script>
         // Configuration
@@ -503,37 +499,32 @@
                 title: "DEVOTION_PROTOCOL.exe",
                 message: "🙏 Khoob Bhakti Karo, Laxman!\nFind peace in spirituality.\nLet faith guide your journey!\nJai Bajrang Bali! 💪",
                 category: "SPIRITUAL_MODULE",
-                fileName: "bgti.JPG",
-                inputId: "bgtiInput"
+                fileName: "Bhgti.JPG"
             },
             {
                 id: 'khel',
                 title: "BADMINTON_PROTOCOL.exe", 
                 message: "🏸 Khoob Khelo, Laxman!\nRemember: Every serve is a new opportunity.\nKeep that competitive spirit alive!\n0600 hrs to the badminton court! 🔥",
                 category: "SPORTS_MODULE",
-                fileName: "khel.JPG",
-                inputId: "khelInput"
+                fileName: "khel.JPG"
             },
             {
                 id: 'pado',
                 title: "STUDY_PROTOCOL.exe",
                 message: "📚 Khoob Padho, Laxman!\nKnowledge is your superpower.\nEvery book opens a new world!\nKeenxh de kaam nh! ✨",
                 category: "EDUCATION_MODULE",
-                fileName: "pado.JPG",
-                inputId: "padoInput"
+                fileName: "pado.JPG"
             },
             {
                 id: 'exercise',
                 title: "FITNESS_PROTOCOL.exe",
                 message: "💪 Khoob Exercise Karo, Laxman!\nSapate mara kr laadle.\nStay fit, stay awesome!\nHealth hi asli wealth hai! 🏋️‍♂️",
                 category: "HEALTH_MODULE",
-                fileName: "excercise.JPG",
-                inputId: "exerciseInput"
+                fileName: "dehi.JPG"
             }
         ];
         
-        // Image handling
-        const imageData = {};
+
         
         // Initialize system
         document.addEventListener('DOMContentLoaded', function() {
@@ -541,15 +532,7 @@
             setInterval(updateSystemDate, 1000);
             commandInput.focus();
             
-            // Setup file input handlers
-            photos.forEach(photo => {
-                const input = document.getElementById(photo.inputId);
-                if (input) {
-                    input.addEventListener('change', function(e) {
-                        handleImageUpload(e, photo.id);
-                    });
-                }
-            });
+
             
             // Hide boot sequence after delay
             setTimeout(() => {
@@ -557,25 +540,6 @@
             }, 3000);
         });
         
-        function handleImageUpload(event, photoId) {
-            const file = event.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    imageData[photoId] = e.target.result;
-                    // Update the photo if it's already displayed
-                    const existingImg = document.querySelector(`[data-photo-id="${photoId}"] img`);
-                    if (existingImg) {
-                        existingImg.src = e.target.result;
-                    }
-                    const placeholder = document.querySelector(`[data-photo-id="${photoId}"]`);
-                    if (placeholder && !placeholder.querySelector('img')) {
-                        placeholder.innerHTML = `<img src="${e.target.result}" alt="${photoId}">`;
-                    }
-                };
-                reader.readAsDataURL(file);
-            }
-        }
         
         function updateSystemDate() {
             const now = new Date();
@@ -647,7 +611,7 @@
                         showNextPhoto();
                     } else {
                         addLine('[SYSTEM] All memory modules already loaded', 'system');
-                        addLine('[TIP] Click on photo placeholders to upload images!', 'warning');
+                        addLine('[MESSAGE] These memories will fuel your next adventure, Laxman! ⚡', 'warning');
                     }
                 } else if (command === 'help') {
                     showPostAuthHelp();
@@ -741,20 +705,21 @@
                     ? `<img src="${imageData[photo.id]}" alt="${photo.id}">`
                     : `[${photo.fileName}]<br>Click to upload<br>your image here`;
                 
-                photoContainer.innerHTML = `
-                    <div class="photo-header">
-                        MEMORY_MODULE_${photoIndex + 1}: ${photo.title}
-                    </div>
-                    <div class="photo-content">
-                        <div class="photo-placeholder" data-photo-id="${photo.id}" onclick="document.getElementById('${photo.inputId}').click()">
-                            ${imageHTML}
-                        </div>
-                        <div class="photo-message">
-                            <div class="photo-title">${photo.title.replace('.exe', '')}</div>
-                            <div>${photo.message}</div>
-                        </div>
-                    </div>
-                `;
+                // Replace the photoContainer.innerHTML with:
+photoContainer.innerHTML = `
+<div class="photo-header">
+    MEMORY_MODULE_${photoIndex + 1}: ${photo.title}
+</div>
+<div class="photo-content">
+    <div class="photo-placeholder">
+        <img src="${photo.fileName}" alt="${photo.id}" onerror="this.style.display='none'; this.parentNode.innerHTML='[IMAGE_ERROR]<br>File not found:<br>${photo.fileName}';">
+    </div>
+    <div class="photo-message">
+        <div class="photo-title">${photo.title.replace('.exe', '')}</div>
+        <div>${photo.message}</div>
+    </div>
+</div>
+`;
                 
                 const lastLine = terminal.lastElementChild;
                 terminal.insertBefore(photoContainer, lastLine);
@@ -768,7 +733,7 @@
                     setTimeout(() => {
                         addLine('[SYSTEM] All memory modules loaded successfully!', 'success');
                         addLine('[MESSAGE] 🎂 Make this year absolutely amazing, Laxman! 🎂', 'success');
-                        addLine('[TIP] Click on any photo placeholder to upload images!', 'warning');
+                        addLine('[MESSAGE] These memories will fuel your next adventure, Laxman! ⚡', 'warning');
                     }, 2000);
                 }
             }, 1500);
@@ -853,7 +818,7 @@
             addLine('  wish          - Special birthday message', 'output');
             addLine('  birthday-wish - Same as wish', 'output');
             addLine('  clear         - Clear terminal screen', 'output');
-            addLine('[TIP] Click photo placeholders to upload images!', 'warning');
+            addLine('[MESSAGE] These memories will fuel your next adventure, Laxman! ⚡', 'warning');
         }
         
         function clearTerminal() {
