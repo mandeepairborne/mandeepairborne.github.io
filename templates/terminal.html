@@ -690,36 +690,50 @@
         }
         
         function showNextPhoto() {
-            if (photoIndex >= photos.length) return;
-            
-            const photo = photos[photoIndex];
-            addLine(`[LOADING] Accessing ${photo.category}...`, 'system');
-            addLoadingBar();
-            
+    if (photoIndex >= photos.length) return;
+    
+    const photo = photos[photoIndex];
+    addLine(`[LOADING] Accessing ${photo.category}...`, 'system');
+    addLoadingBar();
+    
+    setTimeout(() => {
+        const photoContainer = document.createElement('div');
+        photoContainer.className = 'photo-container show';
+        
+        photoContainer.innerHTML = `
+            <div class="photo-header">
+                MEMORY_MODULE_${photoIndex + 1}: ${photo.title}
+            </div>
+            <div class="photo-content">
+                <div class="photo-placeholder">
+                    <img src="${photo.fileName}" alt="${photo.id}" style="width: 100%; height: 100%; object-fit: cover;" 
+                         onerror="this.style.display='none'; this.parentNode.innerHTML='[IMAGE_ERROR]<br>File not found:<br>${photo.fileName}';">
+                </div>
+                <div class="photo-message">
+                    <div class="photo-title">${photo.title.replace('.exe', '')}</div>
+                    <div>${photo.message}</div>
+                </div>
+            </div>
+        `;
+        
+        const lastLine = terminal.lastElementChild;
+        terminal.insertBefore(photoContainer, lastLine);
+        terminal.scrollTop = terminal.scrollHeight;
+        
+        photoIndex++;
+        
+        // Always continue to next photo or finish, regardless of image load status
+        if (photoIndex < photos.length) {
+            setTimeout(() => showNextPhoto(), 4000);
+        } else {
             setTimeout(() => {
-                const photoContainer = document.createElement('div');
-                photoContainer.className = 'photo-container show';
-                
-                const hasImage = imageData[photo.id];
-                const imageHTML = hasImage 
-                    ? `<img src="${imageData[photo.id]}" alt="${photo.id}">`
-                    : `[${photo.fileName}]<br>Click to upload<br>your image here`;
-                
-                // Replace the photoContainer.innerHTML with:
-photoContainer.innerHTML = `
-<div class="photo-header">
-    MEMORY_MODULE_${photoIndex + 1}: ${photo.title}
-</div>
-<div class="photo-content">
-    <div class="photo-placeholder">
-        <img src="${photo.fileName}" alt="${photo.id}" onerror="this.style.display='none'; this.parentNode.innerHTML='[IMAGE_ERROR]<br>File not found:<br>${photo.fileName}';">
-    </div>
-    <div class="photo-message">
-        <div class="photo-title">${photo.title.replace('.exe', '')}</div>
-        <div>${photo.message}</div>
-    </div>
-</div>
-`;
+                addLine('[SYSTEM] All memory modules loaded successfully!', 'success');
+                addLine('[MESSAGE] 🎂 Make this year absolutely amazing, Laxman! 🎂', 'success');
+                addLine('[CELEBRATION] 🎉 All birthday memories loaded! Enjoy the nostalgia! 🎂', 'success');
+            }, 2000);
+        }
+    }, 1500);
+}
                 
                 const lastLine = terminal.lastElementChild;
                 terminal.insertBefore(photoContainer, lastLine);
