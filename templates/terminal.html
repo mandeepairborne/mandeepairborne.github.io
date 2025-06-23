@@ -266,29 +266,12 @@
             flex-shrink: 0;
             position: relative;
             overflow: hidden;
-            cursor: pointer;
             transition: all 0.3s ease;
         }
         
         .photo-placeholder:hover {
             border-color: #00ff41;
             background: #333;
-        }
-        
-        .photo-placeholder::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 255, 65, 0.1), transparent);
-            animation: scan 3s infinite;
-        }
-        
-        @keyframes scan {
-            0% { left: -100%; }
-            100% { left: 100%; }
         }
         
         .photo-placeholder img {
@@ -375,10 +358,6 @@
         @keyframes rain {
             0% { transform: translateY(-100px); opacity: 0.3; }
             100% { transform: translateY(100vh); opacity: 0; }
-        }
-        
-        .file-input {
-            display: none;
         }
         
         .laxman-special {
@@ -482,12 +461,6 @@
         <div class="celebration-effects" id="celebrationEffects"></div>
     </div>
 
-    <!-- Hidden file inputs for images -->
-    <input type="file" id="bgtiInput" class="file-input" accept="image/*">
-    <input type="file" id="khelInput" class="file-input" accept="image/*">
-    <input type="file" id="padoInput" class="file-input" accept="image/*">
-    <input type="file" id="exerciseInput" class="file-input" accept="image/*">
-
     <script>
         // Configuration
         const SECRET_KEY = 'happybirthdaylaxman'; // Changed to be more specific
@@ -498,50 +471,72 @@
         let photoIndex = 0;
         
         const photos = [
-            {
-                id: 'bgti',
-                title: "DEVOTION_PROTOCOL.exe",
-                message: "🙏 Khoob Bhakti Karo, Laxman!\nFind peace in spirituality.\nLet faith guide your journey!\nBajrang bali ki Jai! 💪",
-                category: "SPIRITUAL_MODULE",
-                fileName: "/assets/Bhgti.JPG",
-                inputId: "bgtiInput"
-            },
-            {
-                id: 'khel',
-                title: "BADMINTON_PROTOCOL.exe", 
-                message: "🏸 Khoob Khelo, Laxman!\nRemember: Every serve is a new opportunity.\nKeep that competitive spirit alive!\nAt 0630 hrs straight to the badminton court 😅! 🔥",
-                category: "SPORTS_MODULE",
-                fileName: "/assets/khel.JPG",
-                inputId: "khelInput"
-            },
-            {
-                id: 'pado',
-                title: "STUDY_PROTOCOL.exe",
-                message: "📚 Khoob Padho, Laxman!\nKnowledge is your superpower.\nEvery book opens a new world!\nPadhle bhai kaam avegi! ✍️",
-                category: "EDUCATION_MODULE",
-                fileName: "/assets/pado.JPG",
-                inputId: "padoInput"
-            },
-            {
-                id: 'exercise',
-                title: "FITNESS_PROTOCOL.exe",
-                message: "💪 Khoob Exercise Karo, Laxman!\Sapate marya kr mitr !.\nStay fit, stay awesome!\nHealth hi asli wealth hai! 🏋️‍♂️",
-                category: "HEALTH_MODULE",
-                fileName: "/assets/dehi.JPG",
-                inputId: "exerciseInput"
-            },
-{
-id: 'ghum',
-title: "WANDER_PROTOCOL.exe",
-message: "🗻🏔 Khoob Ghumo, Laxman!\Naapde Himachal Uttrakhand ki Trails!\nKeep you wanderlust ignited! 🚘🚀‍♂️",
-category: "HEALTH_MODULE",
-fileName: "/assets/gum.jpg",
-inputId: "exerciseInput"
-}
+  {
+    id: 'bgti',
+    title: "DEVOTION_PROTOCOL.exe",
+    message: "🙏 Khoob Bhakti Karo, Laxman!\nFind peace in spirituality.\nLet faith guide your journey!\nBajrang bali ki Jai! 💪",
+    category: "SPIRITUAL_MODULE",
+    fileName: "/assets/Bhgti.JPG"
+  },
+  {
+    id: 'khel',
+    title: "BADMINTON_PROTOCOL.exe",
+    message: "🏸 Khoob Khelo, Laxman!\nRemember: Every serve is a new opportunity.\nKeep that competitive spirit alive!\nAt 0630 hrs straight to the badminton court 😅! 🔥",
+    category: "SPORTS_MODULE",
+    fileName: "/assets/khel.JPG"
+  },
+  {
+    id: 'pado',
+    title: "STUDY_PROTOCOL.exe",
+    message: "📚 Khoob Padho, Laxman!\nKnowledge is your superpower.\nEvery book opens a new world!\nPadhle bhai kaam avegi! ✍️",
+    category: "EDUCATION_MODULE",
+    fileName: "/assets/pado.jpg"
+  },
+  {
+    id: 'exercise',
+    title: "FITNESS_PROTOCOL.exe",
+    message: "💪 Khoob Exercise Karo, Laxman!\nSapate marya kr mitr!.\nStay fit, stay awesome!\nHealth hi asli wealth hai! 🏋️‍♂️",
+    category: "HEALTH_MODULE",
+    fileName: "/assets/dehi.JPG"
+  },
+  {
+    id: 'ghum',
+    title: "WANDER_PROTOCOL.exe",
+    message: "🗻🏔 Khoob Ghumo, Laxman!\nNaapde Himachal Uttrakhand ki Trails!\nKeep your wanderlust ignited!\nTeesra din jayo hi reh 😅🚘🚀‍♂️",
+    category: "ADVENTURE_MODULE",
+    fileName: "/assets/gum.jpg"
+  },
+  {
+    id: 'sleep',
+    title: "SLEEP_PROTOCOL.exe",
+    message: "😴 Khoob Soye, Laxman!\nA well-rested mind is your best asset.\nAim for 7–8 hours of quality sleep.\nSweet dreams and energized mornings! 🌙✨",
+    category: "WELLBEING_MODULE",
+    fileName: "/assets/sovo.jpg"
+  },
+  {
+    id: 'breathe',
+    title: "BREATHE_PROTOCOL.exe",
+    message: "🌬️ Hawagiri ye dhua nikalne mei nhi\nYe hawa nikalne mei h 👇! 🧘",
+    category: "MINDFULNESS_MODULE",
+    fileName: "/assets/beedi.jpg"
+    },
+  {
+    id: 'breathe',
+    title: "BREATHE_PROTOCOL.exe",
+    message: "🍃 Seekhle koi instrument mitr !\nY bhi kaam avegi kde 🥷",
+    category: "MINDFULNESS_MODULE",
+    fileName: "/assets/dhun.jpg"
+  },
+  {
+    id: 'dude',
+    title: "CHILL_DUDE_PROTOCOL.exe",
+    message: "😎 Sharmaya nh kra !\nBaki moj mh rh mitr !\nRemember: hakuna matata! 🎶🍹",
+    category: "LIFESTYLE_MODULE",
+    fileName: "/assets/chin.jpg"
+  }
+
+
         ];
-        
-        // Image handling
-        const imageData = {};
         
         // Initialize system
         document.addEventListener('DOMContentLoaded', function() {
@@ -549,41 +544,11 @@ inputId: "exerciseInput"
             setInterval(updateSystemDate, 1000);
             commandInput.focus();
             
-            // Setup file input handlers
-            photos.forEach(photo => {
-                const input = document.getElementById(photo.inputId);
-                if (input) {
-                    input.addEventListener('change', function(e) {
-                        handleImageUpload(e, photo.id);
-                    });
-                }
-            });
-            
             // Hide boot sequence after delay
             setTimeout(() => {
                 document.getElementById('bootSequence').style.display = 'none';
             }, 3000);
         });
-        
-        function handleImageUpload(event, photoId) {
-            const file = event.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    imageData[photoId] = e.target.result;
-                    // Update the photo if it's already displayed
-                    const existingImg = document.querySelector(`[data-photo-id="${photoId}"] img`);
-                    if (existingImg) {
-                        existingImg.src = e.target.result;
-                    }
-                    const placeholder = document.querySelector(`[data-photo-id="${photoId}"]`);
-                    if (placeholder && !placeholder.querySelector('img')) {
-                        placeholder.innerHTML = `<img src="${e.target.result}" alt="${photoId}">`;
-                    }
-                };
-                reader.readAsDataURL(file);
-            }
-        }
         
         function updateSystemDate() {
             const now = new Date();
@@ -655,7 +620,6 @@ inputId: "exerciseInput"
                         showNextPhoto();
                     } else {
                         addLine('[SYSTEM] All memory modules already loaded', 'system');
-                        addLine('[TIP] Click on photo placeholders to upload images!', 'warning');
                     }
                 } else if (command === 'help') {
                     showPostAuthHelp();
@@ -744,16 +708,13 @@ inputId: "exerciseInput"
                 const photoContainer = document.createElement('div');
                 photoContainer.className = 'photo-container show';
                 
-                const hasImage = imageData[photo.id];
-                const imageHTML = `<img src="${photo.fileName}" alt="${photo.id}" style="width: 100%; height: 100%; object-fit: cover;">`;
-                
                 photoContainer.innerHTML = `
                     <div class="photo-header">
                         MEMORY_MODULE_${photoIndex + 1}: ${photo.title}
                     </div>
                     <div class="photo-content">
-                        <div class="photo-placeholder" data-photo-id="${photo.id}" onclick="document.getElementById('${photo.inputId}').click()">
-                            ${imageHTML}
+                        <div class="photo-placeholder" data-photo-id="${photo.id}">
+                            <img src="${photo.fileName}" alt="${photo.id}">
                         </div>
                         <div class="photo-message">
                             <div class="photo-title">${photo.title.replace('.exe', '')}</div>
@@ -774,7 +735,7 @@ inputId: "exerciseInput"
                     setTimeout(() => {
                         addLine('[SYSTEM] All memory modules loaded successfully!', 'success');
                         addLine('[MESSAGE] 🎂 Make this year absolutely amazing, Laxman! 🎂', 'success');
-                        addLine('[WARNING!] 22 ko hogo mitr !', 'Attention');
+                        addLine('[WARNING!] 22 ko hogo mitr !', 'warning');
                     }, 2000);
                 }
             }, 1500);
@@ -859,7 +820,6 @@ inputId: "exerciseInput"
             addLine('  wish          - Special birthday message', 'output');
             addLine('  birthday-wish - Same as wish', 'output');
             addLine('  clear         - Clear terminal screen', 'output');
-            addLine('[TIP] Click photo placeholders to upload images!', 'warning');
         }
         
         function clearTerminal() {
