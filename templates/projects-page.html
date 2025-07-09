@@ -1,16 +1,16 @@
 {% extends "base.html" %}
 
 {% block extra_data %}
-{% set section = "Blog" %}
+{% set section = "Projects" %}
 {% set katex = true %}
 {% endblock %}
 
 {% block title %}
-MANOlouge | {{ page.title }}
+MANCompiled | {{ page.title }}
 {% endblock %}
 
 {% block header %}
-{% include "blog-header.html" %}
+{% include "projects-header.html" %}
 {% endblock header %}
 
 {% block content %}
@@ -20,7 +20,7 @@ MANOlouge | {{ page.title }}
   <p class="date">{{ page.date | date(format="%B %e, %Y") }}</p>
   {{ page.content | safe }}
   <footer>
-    <p>Return to <a href="/blog">MANOlouge home</a>.</p>
+    <p>Return to <a href="/projects">MANCompiled home</a>.</p>
   </footer>
 </main>
 
