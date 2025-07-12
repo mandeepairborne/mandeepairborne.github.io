@@ -132,14 +132,16 @@ confidence = np.max(pred)
 Here's an example of the model in action on a real galaxy image:
 
 <div class="question-image">
-<img src="/img/projects/test.jpg" alt="Test Galaxy Image" class="question-img">
+<img src="/img/projects/test.jpg" alt="Test Galaxy Image" class="question-img" width="300"
+             height="300">
 <p><em>Original galaxy image used for testing</em></p>
 </div>
 
 ### Prediction Results
 
 <div class="question-image">
-<img src="/img/projects/result.png" alt="Model Prediction Results" class="question-img">
+<img src="/img/projects/result.png" alt="Model Prediction Results" class="question-img" width="300"
+             height="300">
 <p><em>Model prediction output showing classification results</em></p>
 </div>
 
