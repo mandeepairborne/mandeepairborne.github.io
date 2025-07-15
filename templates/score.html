@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block extra_data %}
+{% set section = "Score" %}
+{% endblock %}
+
+{% block title %}
+Dec 2024 NET Score
+{% endblock %}
+
+{% block header %}
+  {% include "score-header.html" %}
+{% endblock header %}
+
+{% block content %}
+
+<div class="input-group">
+  <input type="text" id="rollNoInput" placeholder="Enter the application number from admit card">
+<button onclick="fetchDetails()">Calculate Score</button>
+</div>
+        
+        <div id="output" style="margin-top: 20px;"></div>
+
+  
+{% endblock content %}

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://mandeepairborne.github.io/</loc>
+    </url>
+    <url>
+        <loc>https://mandeepairborne.github.io/blog/</loc>
+    </url>
+    <url>
+        <loc>https://mandeepairborne.github.io/blog/dilemma/</loc>
+        <lastmod>2024-11-23</lastmod>
+    </url>
+    <url>
+        <loc>https://mandeepairborne.github.io/blog/phd2025spring/</loc>
+        <lastmod>2025-03-23</lastmod>
+    </url>
+    <url>
+        <loc>https://mandeepairborne.github.io/projects/</loc>
+    </url>
+    <url>
+        <loc>https://mandeepairborne.github.io/projects/galaxy-classification/</loc>
+        <lastmod>2023-07-09</lastmod>
+    </url>
+    <url>
+        <loc>https://mandeepairborne.github.io/projects/gnn/</loc>
+        <lastmod>2025-06-09</lastmod>
+    </url>
+    <url>
+        <loc>https://mandeepairborne.github.io/score/</loc>
+    </url>
+    <url>
+        <loc>https://mandeepairborne.github.io/terminal/</loc>
+    </url>
+</urlset>

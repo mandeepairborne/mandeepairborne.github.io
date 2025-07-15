@@ -1,0 +1,40 @@
+{# templates/404.html #}
+{% extends "base.html" %}
+
+{% block content %}
+<article class="center" style="text-align: center; margin-top: var(--spacing-large);">
+    <h1 style="font-family: 'Leitura News'; font-weight: 800; color: var(--accent-color);">
+        404
+    </h1>
+
+    <div class="input-group" style="margin: var(--spacing-large) auto; max-width: var(--main-width);">
+        <img src="https://media3.giphy.com/media/UoeaPqYrimha6rdTFV/giphy.gif" 
+             alt="404 error" 
+             style="width: 100%; 
+                    border: 1px solid var(--crisp-border);
+                    border-radius: 3px;
+                    box-shadow: 4px 4px 0 rgba(0,0,0,0.25);">
+    </div>
+
+    <div class="callout named" style="max-width: var(--main-width); margin: var(--spacing-large) auto;">
+        <span class="pronouns">Wanderer's Note</span>
+        <p style="margin: var(--spacing-small) 0; font-style: italic; color: var(--text-color);">
+            "Not all those who wander are lost, but you certainly are."
+        </p>
+        
+        <div class="input-group" style="justify-content: center; margin-top: var(--spacing-small);">
+            <button 
+                onclick="window.location.href='{{ config.base_url }}'" 
+                style="padding: var(--spacing-small) var(--spacing-large);
+                       border: 1px solid var(--crisp-border);
+                       box-shadow: 2px 2px 0 rgba(0,0,0,0.25);
+                       background: var(--bg-color);
+                       color: var(--accent-color-2-text);
+                       cursor: pointer;
+                       font-family: inherit;">
+                Navigate Home
+            </button>
+        </div>
+    </div>
+</article>
+{% endblock content %}

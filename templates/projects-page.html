@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block extra_data %}
+{% set section = "Projects" %}
+{% set katex = true %}
+{% endblock %}
+
+{% block title %}
+MANCompiled | {{ page.title }}
+{% endblock %}
+
+{% block header %}
+{% include "projects-header.html" %}
+{% endblock header %}
+
+{% block content %}
+
+<main id="page">
+  <h2>{{ page.title }}</h2>
+  <p class="date">{{ page.date | date(format="%B %e, %Y") }}</p>
+  {{ page.content | safe }}
+  <footer>
+    <p>Return to <a href="/projects">MANCompiled home</a>.</p>
+  </footer>
+</main>
+
+{% endblock content %}

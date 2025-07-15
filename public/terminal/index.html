@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Laxman - System Terminal v2.0</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: #0a0a0a;
+            font-family: 'JetBrains Mono', monospace;
+            color: #00ff41;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+            position: relative;
+            padding: 10px;
+        }
+        
+        /* Retro CRT effect */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(transparent 50%, rgba(0, 255, 65, 0.03) 50%),
+                linear-gradient(90deg, transparent 50%, rgba(255, 0, 0, 0.01) 50%);
+            background-size: 100% 4px, 3px 100%;
+            pointer-events: none;
+            z-index: 1000;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 900px;
+            height: 90vh;
+            max-height: 800px;
+            background: #000;
+            border: 3px solid #333;
+            border-radius: 0;
+            box-shadow: 
+                inset 0 0 0 1px #00ff41,
+                0 0 50px rgba(0, 255, 65, 0.3),
+                0 0 100px rgba(0, 255, 65, 0.1);
+            overflow: hidden;
+            position: relative;
+            animation: terminalGlow 3s ease-in-out infinite alternate;
+        }
+        
+        @keyframes terminalGlow {
+            from { box-shadow: inset 0 0 0 1px #00ff41, 0 0 50px rgba(0, 255, 65, 0.3), 0 0 100px rgba(0, 255, 65, 0.1); }
+            to { box-shadow: inset 0 0 0 1px #00ff41, 0 0 60px rgba(0, 255, 65, 0.4), 0 0 120px rgba(0, 255, 65, 0.15); }
+        }
+        
+        .terminal-header {
+            background: #1a1a1a;
+            padding: 8px 15px;
+            border-bottom: 2px solid #00ff41;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 11px;
+            color: #00ff41;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .system-info {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .status-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #00ff41;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .terminal-body {
+            padding: 15px;
+            height: calc(100% - 45px);
+            overflow-y: auto;
+            overflow-x: hidden;
+            background: #000;
+            position: relative;
+            word-wrap: break-word;
+        }
+        
+        .terminal-body::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .terminal-body::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+        
+        .terminal-body::-webkit-scrollbar-thumb {
+            background: #00ff41;
+            border-radius: 4px;
+        }
+        
+        .terminal-line {
+            margin-bottom: 6px;
+            display: flex;
+            align-items: flex-start;
+            min-height: 18px;
+            animation: typeIn 0.5s ease-out;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        
+        @keyframes typeIn {
+            from { opacity: 0; transform: translateX(-10px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        .prompt {
+            color: #00ff41;
+            margin-right: 8px;
+            font-weight: 500;
+            flex-shrink: 0;
+            font-size: 13px;
+        }
+        
+        .user-input {
+            background: transparent;
+            border: none;
+            color: #00ff41;
+            font-family: inherit;
+            font-size: 13px;
+            outline: none;
+            flex: 1;
+            caret-color: #00ff41;
+            min-width: 0;
+        }
+        
+        .output {
+            color: #cccccc;
+            margin-left: 0;
+            white-space: pre-wrap;
+            line-height: 1.3;
+            font-size: 13px;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            max-width: 100%;
+        }
+        
+        .output.system {
+            color: #00ff41;
+        }
+        
+        .output.warning {
+            color: #ffaa00;
+        }
+        
+        .output.error {
+            color: #ff4444;
+        }
+        
+        .output.success {
+            color: #44ff44;
+        }
+        
+        .cursor {
+            display: inline-block;
+            width: 8px;
+            height: 16px;
+            background: #00ff41;
+            animation: blink 1s infinite;
+            margin-left: 2px;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        
+        .birthday-ascii {
+            color: #00ff41;
+            font-size: 8px;
+            line-height: 1.1;
+            text-align: center;
+            margin: 15px 0;
+            animation: glow 2s ease-in-out infinite alternate;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        
+        @keyframes glow {
+            from { text-shadow: 0 0 5px #00ff41; }
+            to { text-shadow: 0 0 15px #00ff41, 0 0 25px #00ff41; }
+        }
+        
+        .photo-container {
+            display: none;
+            margin: 10px 0;
+            padding: 12px;
+            border: 1px solid #333;
+            background: #111;
+            animation: slideIn 1s ease-out;
+            max-width: 100%;
+            overflow: hidden;
+        }
+        
+        .photo-container.show {
+            display: block;
+        }
+        
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .photo-header {
+            color: #00ff41;
+            font-size: 11px;
+            margin-bottom: 8px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 4px;
+            word-wrap: break-word;
+        }
+        
+        .photo-content {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .photo-placeholder {
+            width: 100px;
+            height: 75px;
+            background: #222;
+            border: 1px solid #444;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 9px;
+            flex-shrink: 0;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .photo-placeholder:hover {
+            border-color: #00ff41;
+            background: #333;
+        }
+        
+        .photo-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 2px;
+        }
+        
+        .photo-message {
+            flex: 1;
+            color: #cccccc;
+            line-height: 1.3;
+            min-width: 200px;
+        }
+        
+        .photo-title {
+            color: #00ff41;
+            font-weight: 500;
+            margin-bottom: 4px;
+            font-size: 12px;
+        }
+        
+        .loading-bar {
+            width: 100%;
+            height: 2px;
+            background: #333;
+            margin: 8px 0;
+            overflow: hidden;
+        }
+        
+        .loading-progress {
+            height: 100%;
+            background: #00ff41;
+            width: 0%;
+            animation: loading 2s ease-in-out;
+        }
+        
+        @keyframes loading {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+        
+        .system-date {
+            color: #666;
+            font-size: 10px;
+        }
+        
+        .boot-sequence {
+            color: #00ff41;
+            font-size: 11px;
+            margin-bottom: 15px;
+        }
+        
+        .boot-line {
+            margin-bottom: 4px;
+            opacity: 0;
+            animation: bootUp 0.3s ease-out forwards;
+            word-wrap: break-word;
+        }
+        
+        @keyframes bootUp {
+            to { opacity: 1; }
+        }
+        
+        .celebration-effects {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        
+        .matrix-rain {
+            position: absolute;
+            color: #00ff41;
+            font-size: 12px;
+            opacity: 0.3;
+            animation: rain 10s linear infinite;
+        }
+        
+        @keyframes rain {
+            0% { transform: translateY(-100px); opacity: 0.3; }
+            100% { transform: translateY(100vh); opacity: 0; }
+        }
+        
+        .laxman-special {
+            background: linear-gradient(45deg, #00ff41, #44ff44);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+            animation: rainbowGlow 3s ease-in-out infinite alternate;
+        }
+        
+        @keyframes rainbowGlow {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(120deg); }
+        }
+        
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            body {
+                padding: 5px;
+            }
+            
+            .container {
+                height: 95vh;
+                width: 100%;
+            }
+            
+            .terminal-header {
+                font-size: 10px;
+                padding: 6px 10px;
+            }
+            
+            .system-info {
+                gap: 8px;
+            }
+            
+            .terminal-body {
+                padding: 10px;
+            }
+            
+            .photo-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .photo-message {
+                min-width: auto;
+                width: 100%;
+            }
+            
+            .birthday-ascii {
+                font-size: 6px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="terminal-header">
+            <div class="system-info">
+                <div class="status-indicator">
+                    <div class="status-dot"></div>
+                    <span>ONLINE</span>
+                </div>
+                <span>TERMINAL v2.0</span>
+                <span>TARGET: <span class="laxman-special">LAXMAN</span></span>
+            </div>
+            <div class="system-date" id="systemDate"></div>
+        </div>
+        
+        <div class="terminal-body" id="terminal">
+            <div class="boot-sequence" id="bootSequence">
+                <div class="boot-line" style="animation-delay: 0s;">[SYSTEM] Initializing Laxman's birthday protocol...</div>
+                <div class="boot-line" style="animation-delay: 0.5s;">[SYSTEM] Loading celebration modules...</div>
+                <div class="boot-line" style="animation-delay: 1s;">[SYSTEM] Establishing secure connection...</div>
+                <div class="boot-line" style="animation-delay: 1.5s;">[AUTH] Waiting for authentication key...</div>
+            </div>
+            
+            <div class="terminal-line">
+                <span class="output system">╔══════════════════════════════════════════════════════════════╗</span>
+            </div>
+            <div class="terminal-line">
+                <span class="output system">║            🎂 LAXMAN'S BIRTHDAY SYSTEM 🎂                   ║</span>
+            </div>
+            <div class="terminal-line">
+                <span class="output system">║                Access Level: RESTRICTED                      ║</span>
+            </div>
+            <div class="terminal-line">
+                <span class="output system">╚══════════════════════════════════════════════════════════════╝</span>
+            </div>
+            <div class="terminal-line">
+                <span class="output">Enter authentication key to access birthday protocols:</span>
+            </div>
+            <div class="terminal-line">
+                <span class="prompt">root@laxman-bday:~#</span>
+                <input type="text" class="user-input" id="commandInput" autocomplete="off" spellcheck="false">
+                <span class="cursor" id="cursor"></span>
+            </div>
+        </div>
+        
+        <div class="celebration-effects" id="celebrationEffects"></div>
+    </div>
+
+    <script>
+        // Configuration
+        const SECRET_KEY = 'happybirthdaylaxman'; // Changed to be more specific
+        
+        let commandHistory = [];
+        let historyIndex = -1;
+        let authCompleted = false;
+        let photoIndex = 0;
+        
+        const photos = [
+  {
+    id: 'bgti',
+    title: "DEVOTION_PROTOCOL.exe",
+    message: "🙏 Khoob Bhakti Karo, Laxman!\nFind peace in spirituality.\nLet faith guide your journey!\nBajrang bali ki Jai! 💪",
+    category: "SPIRITUAL_MODULE",
+    fileName: "/assets/terminal/terminal/Bhgti.JPG"
+  },
+  {
+    id: 'khel',
+    title: "BADMINTON_PROTOCOL.exe",
+    message: "🏸 Khoob Khelo, Laxman!\nRemember: Every serve is a new opportunity.\nKeep that competitive spirit alive!\nAt 0630 hrs straight to the badminton court 😅! 🔥",
+    category: "SPORTS_MODULE",
+    fileName: "/assets/terminal/terminal/khel.JPG"
+  },
+  {
+    id: 'pado',
+    title: "STUDY_PROTOCOL.exe",
+    message: "📚 Khoob Padho, Laxman!\nKnowledge is your superpower.\nEvery book opens a new world!\nPadhle bhai kaam avegi! ✍️",
+    category: "EDUCATION_MODULE",
+    fileName: "/assets/terminal/terminal/pado.jpg"
+  },
+  {
+    id: 'exercise',
+    title: "FITNESS_PROTOCOL.exe",
+    message: "💪 Khoob Exercise Karo, Laxman!\nSapate marya kr mitr!.\nStay fit, stay awesome!\nHealth hi asli wealth hai! 🏋️‍♂️",
+    category: "HEALTH_MODULE",
+    fileName: "/assets/terminal/dehi.JPG"
+  },
+  {
+    id: 'ghum',
+    title: "WANDER_PROTOCOL.exe",
+    message: "🗻🏔 Khoob Ghumo, Laxman!\nNaapde Himachal Uttrakhand ki Trails!\nKeep your wanderlust ignited!\nTeesra din jayo hi reh 😅🚘🚀‍♂️",
+    category: "ADVENTURE_MODULE",
+    fileName: "/assets/terminal/gum.jpg"
+  },
+  {
+    id: 'sleep',
+    title: "SLEEP_PROTOCOL.exe",
+    message: "😴 Khoob Soye, Laxman!\nA well-rested mind is your best asset.\nAim for 7–8 hours of quality sleep.\nSweet dreams and energized mornings! 🌙✨",
+    category: "WELLBEING_MODULE",
+    fileName: "/assets/terminal/sovo.jpg"
+  },
+  {
+    id: 'breathe',
+    title: "BREATHE_PROTOCOL.exe",
+    message: "🌬️ Hawagiri ye dhua nikalne mei nhi\nYe hawa nikalne mei h 👇! 🧘",
+    category: "MINDFULNESS_MODULE",
+    fileName: "/assets/terminal/beedi.jpg"
+    },
+  {
+    id: 'breathe',
+    title: "BREATHE_PROTOCOL.exe",
+    message: "🍃 Seekhle koi instrument mitr !\nY bhi kaam avegi kde 🥷",
+    category: "MINDFULNESS_MODULE",
+    fileName: "/assets/terminal/dhun.jpg"
+  },
+  {
+    id: 'dude',
+    title: "CHILL_DUDE_PROTOCOL.exe",
+    message: "😎 Sharmaya nh kra !\nBaki moj mh rh mitr !\nRemember: hakuna matata! 🎶🍹",
+    category: "LIFESTYLE_MODULE",
+    fileName: "/assets/terminal/terminal/chin.jpg"
+  }
+
+
+        ];
+        
+        // Initialize system
+        document.addEventListener('DOMContentLoaded', function() {
+            updateSystemDate();
+            setInterval(updateSystemDate, 1000);
+            commandInput.focus();
+            
+            // Hide boot sequence after delay
+            setTimeout(() => {
+                document.getElementById('bootSequence').style.display = 'none';
+            }, 3000);
+        });
+        
+        function updateSystemDate() {
+            const now = new Date();
+            document.getElementById('systemDate').textContent = 
+                now.toLocaleDateString() + ' ' + now.toLocaleTimeString();
+        }
+        
+        const terminal = document.getElementById('terminal');
+        const commandInput = document.getElementById('commandInput');
+        
+        // Focus management
+        commandInput.focus();
+        document.addEventListener('click', () => commandInput.focus());
+        
+        // Command handling
+        commandInput.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                const command = this.value.trim();
+                executeCommand(command);
+                this.value = '';
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                if (historyIndex < commandHistory.length - 1) {
+                    historyIndex++;
+                    this.value = commandHistory[commandHistory.length - 1 - historyIndex] || '';
+                }
+            } else if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                if (historyIndex > 0) {
+                    historyIndex--;
+                    this.value = commandHistory[commandHistory.length - 1 - historyIndex] || '';
+                } else {
+                    historyIndex = -1;
+                    this.value = '';
+                }
+            }
+        });
+        
+        function executeCommand(command) {
+            const lowerCommand = command.toLowerCase().replace(/\s+/g, '');
+            
+            // Add to history
+            if (command) {
+                commandHistory.push(command);
+                historyIndex = -1;
+            }
+            
+            // Show command
+            addLine(`root@laxman-bday:~# ${command}`, 'prompt');
+            
+            if (!authCompleted) {
+                if (lowerCommand === SECRET_KEY.toLowerCase() || lowerCommand === 'happybirthday' || lowerCommand === 'laxman') {
+                    authenticateUser();
+                } else if (command === 'help') {
+                    showHelp();
+                } else if (command === 'hint') {
+                    addLine('[HINT] The key celebrates our birthday boy... try "happybirthdaylaxman"', 'warning');
+                } else if (command === 'clear') {
+                    clearTerminal();
+                } else if (command) {
+                    addLine('[ERROR] Authentication failed. Access denied.', 'error');
+                    addLine('[SYSTEM] Type "help" for available commands', 'system');
+                }
+            } else {
+                // Post-authentication commands
+                if (command === 'photos' || command === 'show-memories') {
+                    if (photoIndex < photos.length) {
+                        showNextPhoto();
+                    } else {
+                        addLine('[SYSTEM] All memory modules already loaded', 'system');
+                    }
+                } else if (command === 'help') {
+                    showPostAuthHelp();
+                } else if (command === 'clear') {
+                    clearTerminal();
+                } else if (command === 'wish' || command === 'birthday-wish') {
+                    showBirthdayWish();
+                } else if (command) {
+                    addLine(`[SYSTEM] Command "${command}" not recognized in birthday mode`, 'error');
+                }
+            }
+            
+            addPromptLine();
+        }
+        
+        function authenticateUser() {
+            addLine('[AUTH] Key accepted. Authenticating user...', 'success');
+            addLoadingBar();
+            
+            setTimeout(() => {
+                addLine('[SYSTEM] Authentication successful!', 'success');
+                addLine('[SYSTEM] Welcome to Laxman\'s Birthday Protocol v2.0', 'system');
+                authCompleted = true;
+                showBirthdayMessage();
+            }, 2000);
+        }
+        
+        function showBirthdayMessage() {
+            setTimeout(() => {
+                const asciiArt = `
+╔════════════════════════════════════════════════════════════════════╗
+║                                                                    ║
+║    ██   ██  █████  ██████  ██████  ██    ██                       ║
+║    ██   ██ ██   ██ ██   ██ ██   ██  ██  ██                        ║
+║    ███████ ███████ ██████  ██████    ████                         ║
+║    ██   ██ ██   ██ ██      ██         ██                          ║
+║    ██   ██ ██   ██ ██      ██         ██                          ║
+║                                                                    ║
+║    ██████  ██ ██████  ████████ ██   ██ ██████   █████  ██    ██   ║
+║    ██   ██ ██ ██   ██    ██    ██   ██ ██   ██ ██   ██  ██  ██    ║
+║    ██████  ██ ██████     ██    ███████ ██   ██ ███████   ████     ║
+║    ██   ██ ██ ██   ██    ██    ██   ██ ██   ██ ██   ██    ██      ║
+║    ██████  ██ ██   ██    ██    ██   ██ ██████  ██   ██    ██      ║
+║                                                                    ║
+║                    🎉 LAXMAN! 🎉                             ║
+╚════════════════════════════════════════════════════════════════════╝`;
+                
+                addLine(asciiArt, 'birthday-ascii');
+                addLine('', 'output');
+                addLine('[CELEBRATION] 🎂 Birthday protocol activated for Laxman! 🎂', 'success');
+                addLine('[MESSAGE] Another year of awesome adventures awaits, dost!', 'system');
+                addLine('[MESSAGE] Time to unlock your personal memory modules...', 'system');
+                addLine('', 'output');
+                addLine('[COMMAND] Type "photos" to load memory modules', 'warning');
+                addLine('[COMMAND] Type "wish" for a special birthday message', 'warning');
+                
+                startMatrixRain();
+                setTimeout(() => showNextPhoto(), 3000);
+            }, 1000);
+        }
+        
+        function showBirthdayWish() {
+            const wishes = [
+                "🎉 Happy Birthday Laxman ! 🎉",
+                "May this year bring you endless joy and success!",
+                "Keep shining like the star you are! ⭐",
+                "Wishing you health, happiness, and lots of cake! 🎂",
+                "Here's to another year of amazing memories! 🥳"
+            ];
+            
+            wishes.forEach((wish, index) => {
+                setTimeout(() => {
+                    addLine(`[BIRTHDAY_WISH] ${wish}`, 'success');
+                }, index * 1000);
+            });
+        }
+        
+        function showNextPhoto() {
+            if (photoIndex >= photos.length) return;
+            
+            const photo = photos[photoIndex];
+            addLine(`[LOADING] Accessing ${photo.category}...`, 'system');
+            addLoadingBar();
+            
+            setTimeout(() => {
+                const photoContainer = document.createElement('div');
+                photoContainer.className = 'photo-container show';
+                
+                photoContainer.innerHTML = `
+                    <div class="photo-header">
+                        MEMORY_MODULE_${photoIndex + 1}: ${photo.title}
+                    </div>
+                    <div class="photo-content">
+                        <div class="photo-placeholder" data-photo-id="${photo.id}">
+                            <img src="${photo.fileName}" alt="${photo.id}">
+                        </div>
+                        <div class="photo-message">
+                            <div class="photo-title">${photo.title.replace('.exe', '')}</div>
+                            <div>${photo.message}</div>
+                        </div>
+                    </div>
+                `;
+                
+                const lastLine = terminal.lastElementChild;
+                terminal.insertBefore(photoContainer, lastLine);
+                terminal.scrollTop = terminal.scrollHeight;
+                
+                photoIndex++;
+                
+                if (photoIndex < photos.length) {
+                    setTimeout(() => showNextPhoto(), 4000);
+                } else {
+                    setTimeout(() => {
+                        addLine('[SYSTEM] All memory modules loaded successfully!', 'success');
+                        addLine('[MESSAGE] 🎂 Make this year absolutely amazing, Laxman! 🎂', 'success');
+                        addLine('[WARNING!] 22 ko hogo mitr !', 'warning');
+                    }, 2000);
+                }
+            }, 1500);
+        }
+        
+        function addLine(text, className = 'output') {
+            const line = document.createElement('div');
+            line.className = 'terminal-line';
+            const content = document.createElement('span');
+            content.className = `output ${className}`;
+            content.textContent = text;
+            line.appendChild(content);
+            
+            const inputLine = terminal.lastElementChild;
+            terminal.insertBefore(line, inputLine);
+            terminal.scrollTop = terminal.scrollHeight;
+        }
+        
+        function addLoadingBar() {
+            const line = document.createElement('div');
+            line.className = 'terminal-line';
+            line.innerHTML = `
+                <span class="output system">[PROGRESS] </span>
+                <div class="loading-bar">
+                    <div class="loading-progress"></div>
+                </div>
+            `;
+            
+            const inputLine = terminal.lastElementChild;
+            terminal.insertBefore(line, inputLine);
+            terminal.scrollTop = terminal.scrollHeight;
+        }
+        
+        function addPromptLine() {
+            const inputLine = terminal.lastElementChild;
+            inputLine.innerHTML = `
+                <span class="prompt">root@laxman-bday:~#</span>
+                <input type="text" class="user-input" autocomplete="off" spellcheck="false">
+                <span class="cursor"></span>
+            `;
+            
+            const newInput = inputLine.querySelector('.user-input');
+            newInput.focus();
+            
+            // Replace event handlers
+            newInput.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    const command = this.value.trim();
+                    executeCommand(command);
+                    this.value = '';
+                } else if (e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    if (historyIndex < commandHistory.length - 1) {
+                        historyIndex++;
+                        this.value = commandHistory[commandHistory.length - 1 - historyIndex] || '';
+                    }
+                } else if (e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    if (historyIndex > 0) {
+                        historyIndex--;
+                        this.value = commandHistory[commandHistory.length - 1 - historyIndex] || '';
+                    } else {
+                        historyIndex = -1;
+                        this.value = '';
+                    }
+                }
+            });
+        }
+        
+        function showHelp() {
+            addLine('[HELP] Available commands:', 'system');
+            addLine('  help  - Show this help message', 'output');
+            addLine('  hint  - Get authentication hint', 'output');
+            addLine('  clear - Clear terminal screen', 'output');
+        }
+        
+        function showPostAuthHelp() {
+            addLine('[HELP] Birthday mode commands:', 'system');
+            addLine('  photos        - Load memory modules', 'output');
+            addLine('  show-memories - Same as photos', 'output');
+            addLine('  wish          - Special birthday message', 'output');
+            addLine('  birthday-wish - Same as wish', 'output');
+            addLine('  clear         - Clear terminal screen', 'output');
+        }
+        
+        function clearTerminal() {
+            // Keep only essential elements
+            terminal.innerHTML = `
+                <div class="terminal-line">
+                    <span class="output system">Terminal cleared. ${authCompleted ? 'Birthday protocol still active.' : 'Authentication required.'}</span>
+                </div>
+                <div class="terminal-line">
+                    <span class="prompt">root@laxman-bday:~#</span>
+                    <input type="text" class="user-input" autocomplete="off" spellcheck="false">
+                    <span class="cursor"></span>
+                </div>
+            `;
+            
+            const newInput = terminal.querySelector('.user-input');
+            newInput.focus();
+            setupInputHandlers(newInput);
+        }
+        
+        function setupInputHandlers(input) {
+            input.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    const command = this.value.trim();
+                    executeCommand(command);
+                    this.value = '';
+                } else if (e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    if (historyIndex < commandHistory.length - 1) {
+                        historyIndex++;
+                        this.value = commandHistory[commandHistory.length - 1 - historyIndex] || '';
+                    }
+                } else if (e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    if (historyIndex > 0) {
+                        historyIndex--;
+                        this.value = commandHistory[commandHistory.length - 1 - historyIndex] || '';
+                    } else {
+                        historyIndex = -1;
+                        this.value = '';
+                    }
+                }
+            });
+        }
+        
+        function startMatrixRain() {
+            const effects = document.getElementById('celebrationEffects');
+            const chars = '01234567890ABCDEF!@#$%^&*()🎂🎉🎈';
+            
+            for (let i = 0; i < 15; i++) {
+                setTimeout(() => {
+                    const rain = document.createElement('div');
+                    rain.className = 'matrix-rain';
+                    rain.textContent = chars[Math.floor(Math.random() * chars.length)];
+                    rain.style.left = Math.random() * 100 + '%';
+                    rain.style.animationDuration = (Math.random() * 5 + 3) + 's';
+                    effects.appendChild(rain);
+                    
+                    setTimeout(() => rain.remove(), 10000);
+                }, i * 200);
+            }
+        }
+    </script>
+</body>
+</html>

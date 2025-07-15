@@ -1,0 +1,209 @@
+
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+MANCompiled | GNN-based Jet Classification Using Public LHC Data
+</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Signika:wght@600&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@700;900&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Boldonse&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/reset.css">
+    <link rel="stylesheet" href="/main.css">
+
+    <!-- Favicon, courtesy of https://favicon.io/favicon-generator/ -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✈️</text></svg>">
+    <link rel="manifest" href="/site.webmanifest">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js" integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body, { delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+    
+    <script src="https://kit.fontawesome.com/c8cf0c94c8.js" crossorigin="anonymous"></script>
+    <script src="/main.js"></script>
+    <script src="/script.js"></script>
+
+
+
+
+    <!-- Counter script -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const updateCount = () => {
+            fetch('https://mandeepairborne.goatcounter.com/counter/TOTAL.json?t=' + Date.now())
+                .then(r => r.json())
+                .then(data => {
+                    const countEl = document.querySelector('#gc-total .count');
+                    if (countEl) countEl.textContent = data.count;
+                })
+                .catch(e => {
+                    const countEl = document.querySelector('#gc-total .count');
+                    if (countEl) countEl.textContent = '0';
+                });
+        };
+
+        // Initial load
+        updateCount();
+        
+        // Update every 5 minutes (300,000ms)
+        setInterval(updateCount, 300000);
+    });
+    </script>
+<script data-goatcounter="https://mandeepairborne.goatcounter.com/count" 
+        async src="//gc.zgo.at/count.js"></script>
+
+
+    
+  </head>
+  <body>
+    <canvas id="background-canvas">
+    </canvas>
+
+    <nav>
+      <ul>
+        <li><a class="" href="/">Home</a></li>
+        <li><a class="" href="/blog">Blog</a></li>
+        <li><a class="active" href="/projects">Projects</a></li>
+       <!--  <li><a class="" href="/score">Score</a></li> -->
+      </ul>
+    </nav>
+
+    
+  <header class="blog-header">
+    <h1><a href="/projects">MANCompiled</a></h1>
+    <p>Wavefunctions, weights, and while-loops - <a href="/">Mandeep</a>.</p>
+  </header>
+
+
+
+    
+
+<main id="page">
+  <h2>GNN-based Jet Classification Using Public LHC Data</h2>
+  <p class="date">June  9, 2025</p>
+  <hr />
+<h1 id="gnn-based-jet-classification-using-public-lhc-data">GNN-based Jet Classification Using Public LHC Data</h1>
+<p><strong>Status:</strong> Ongoing<br />
+<strong>Project Type:</strong> Independent Research<br />
+<strong>Research Domain:</strong> High Energy Particle Physics, Machine Learning<br />
+<strong>Start Date:</strong> July 2025<br />
+<strong>Student:</strong> Mandeep Jangir</p>
+<hr />
+<h2 id="dart-objective">🎯 Objective</h2>
+<p>This project aims to explore the application of <strong>Graph Neural Networks (GNNs)</strong> for <strong>jet classification</strong> in high-energy particle physics. Specifically, the task involves distinguishing <strong>top-quark jets</strong> from <strong>QCD background jets</strong> using <strong>publicly available LHC datasets</strong>. The use of graph-based architectures provides a natural way to model the set of particles within a jet and the relational information between them.</p>
+<hr />
+<h2 id="mag-motivation">🔍 Motivation</h2>
+<p>Traditional methods for jet tagging, such as using Boosted Decision Trees (BDTs) or Convolutional Neural Networks (CNNs) on jet images, often lack the ability to fully capture the <strong>relational and sparse nature</strong> of jet constituents. GNNs offer a promising alternative by treating particles as nodes and interactions or kinematic proximity as edges in a graph structure. This approach aligns well with the <strong>irregular, hierarchical, and sparse structure</strong> of collider event data.</p>
+<hr />
+<h2 id="test-tube-dataset">🧪 Dataset</h2>
+<ul>
+<li><strong>Source:</strong> Deep Learning Top Tagging Challenge (available on Zenodo)</li>
+<li><strong>Contents:</strong> Simulated LHC proton-proton collision events</li>
+<li><strong>Labels:</strong> Top-quark jets vs. QCD background</li>
+<li><strong>Format:</strong> Each jet includes a variable-length list of particles with features such as:
+<ul>
+<li>Transverse momentum ( p_T )</li>
+<li>Pseudorapidity ( \eta )</li>
+<li>Azimuthal angle ( \phi )</li>
+<li>Energy, charge, mass (optional)</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="brain-methodology">🧠 Methodology</h2>
+<h3 id="jet-graph-construction">Jet Graph Construction</h3>
+<ul>
+<li>Each jet is represented as a <strong>graph ( G = (V, E) )</strong>:
+<ul>
+<li><strong>Nodes ( V )</strong>: Individual particles in the jet</li>
+<li><strong>Edges ( E )</strong>: Defined based on distance in ( \eta )-( \phi ) space or learned attention</li>
+</ul>
+</li>
+<li>Node features include ( p_T ), ( \eta ), ( \phi ), and other observables</li>
+</ul>
+<h3 id="model-architecture">Model Architecture</h3>
+<ul>
+<li>Baseline: <strong>EdgeConv</strong> and <strong>Message Passing Neural Network (MPNN)</strong> using PyTorch Geometric</li>
+<li>Comparisons:
+<ul>
+<li>CNN-based jet image classifier</li>
+<li>BDT with handcrafted observables (e.g., ( N )-subjettiness)</li>
+</ul>
+</li>
+</ul>
+<h3 id="evaluation-metrics">Evaluation Metrics</h3>
+<ul>
+<li>ROC AUC, classification accuracy</li>
+<li>Precision-recall curve</li>
+<li>Latent space visualization (e.g., t-SNE or UMAP)</li>
+</ul>
+<hr />
+<h2 id="tools-tools-libraries">🛠️ Tools &amp; Libraries</h2>
+<ul>
+<li><a href="https://pytorch-geometric.readthedocs.io/">PyTorch Geometric</a></li>
+<li>Python (NumPy, pandas, matplotlib)</li>
+<li>ROOT &amp; uproot (for data processing)</li>
+<li>scikit-learn</li>
+<li>Google Colab / Jupyter Notebooks</li>
+</ul>
+<hr />
+<h2 id="calendar-spiral-timeline-progress">🗓️ Timeline &amp; Progress</h2>
+<table><thead><tr><th>Phase</th><th>Milestone</th><th>Status</th></tr></thead><tbody>
+<tr><td>Phase 1</td><td>Literature review on GNNs in jet physics</td><td>✅ Completed</td></tr>
+<tr><td>Phase 2</td><td>Dataset acquisition &amp; preprocessing</td><td>✅ Completed</td></tr>
+<tr><td>Phase 3</td><td>Jet graph construction and baseline training</td><td>🟡 In progress</td></tr>
+<tr><td>Phase 4</td><td>GNN architecture tuning and evaluation</td><td>🔲 Upcoming</td></tr>
+<tr><td>Phase 5</td><td>Report writing and GitHub documentation</td><td>🔲 Upcoming</td></tr>
+</tbody></table>
+<hr />
+<h2 id="pushpin-goals">📌 Goals</h2>
+<ul>
+<li>Demonstrate the utility of GNNs in jet tagging</li>
+<li>Compare with traditional ML and image-based methods</li>
+<li>Develop a clear, reproducible pipeline for collider physicists interested in ML</li>
+</ul>
+<hr />
+<h2 id="books-references">📚 References</h2>
+<ol>
+<li>Moreno et al., "JEDI-net: Jet Identification with Graph Neural Networks", <a href="https://arxiv.org/abs/1908.05318">arXiv:1908.05318</a></li>
+<li>Qu &amp; Gouskos, "Jet Tagging via Particle Clouds", <a href="https://arxiv.org/abs/1902.08570">arXiv:1902.08570</a></li>
+<li>Kasieczka et al., "The LHC Olympics 2020: A Community Challenge for Anomaly Detection in High Energy Physics", <a href="https://arxiv.org/abs/2101.08320">arXiv:2101.08320</a></li>
+</ol>
+<hr />
+<h2 id="writing-hand-author">✍️ Author</h2>
+<p><strong>Mandeep</strong><br />
+MSc Physics, NIT Jalandhar<br />
+<a href="https://mandeepairborne.github.io">mandeepairborne.github.io</a><br />
+mandeepjangir@proton.me</p>
+
+  <footer>
+    <p>Return to <a href="/projects">MANCompiled home</a>.</p>
+  </footer>
+</main>
+
+
+  </body>
+<footer>
+        &copy; 2025 Mandeep. MIT License.
+        <span id="gc-total">
+            <i class="fas fa-chart-line"></i>
+            <span class="count">-</span>
+        </span>
+    </footer>
+</html>
