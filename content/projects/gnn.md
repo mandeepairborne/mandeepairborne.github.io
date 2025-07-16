@@ -8,8 +8,7 @@ show_date = true
 
 ---
 
-> _Ongoing Project — June 2025 to Present_  
-> _Conducted under the supervision of [Dr. Suneel Dutt](https://departments.nitj.ac.in/dept/ph/Faculty/6430446a38bff038a7808216) (NIT Jalandhar)_
+> _Ongoing Project — June 2025 to Present_
 
 ---
 
