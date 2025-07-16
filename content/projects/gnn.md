@@ -1,7 +1,7 @@
 +++
 title = "GNN-based Jet Classification Using Public LHC Data"
 date = 2025-06-09
-description = "A convolutional neural network trained on Galaxy10 dataset to classify galaxy morphologies"
+description = "Using Graph Neural Networks (GNNs) to classify top-quark jets vs. QCD background"
 [extra]
 show_date = true
 +++
