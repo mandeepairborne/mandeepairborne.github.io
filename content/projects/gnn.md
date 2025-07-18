@@ -40,7 +40,7 @@ This method retains the natural geometry of collider events and is scalable to v
 - Labels: `1` = top-quark jets, `0` = QCD background
 - Each jet contains up to 200 constituents
 - Features per particle: $\( p_T, \eta, \phi, E \)$
-- Format: HDF5 (loadable via 'h5py', 'JetNet', 'pandas')
+- Format: HDF5
 
 ---
 
@@ -56,6 +56,7 @@ This method retains the natural geometry of collider events and is scalable to v
 - **Message Passing Neural Networks (MPNN)**
 - **EdgeConv Layers** from DGCNN
 - Trained using PyTorch Geometric
+- The best model according to me is ParticleNet. Read complete documentation [here](https://cms-ml.github.io/documentation/inference/particlenet.html).
 
 ### Evaluation
 
