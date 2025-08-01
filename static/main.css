@@ -1060,200 +1060,129 @@ footer {
   }
 }
 
-/* Student info section */
-.student-info {
+/* Base container style for all main sections */
+.student-info,
+.stats,
+.analysis-box {
   margin-bottom: var(--spacing-large);
-  padding: var(--spacing-small);
-  border: 1px solid var(--crisp-border);
+  padding: var(--spacing-small) var(--spacing-large);
+  border: 1px solid var(--super-fade-text-color);
   border-radius: 3px;
   background-color: rgba(0, 0, 0, 0.02);
 }
 
-/* Stats section */
-.stats {
-  margin-bottom: var(--spacing-large);
-  padding: var(--spacing-small);
-  border: 1px solid var(--crisp-border);
-  border-radius: 3px;
+/* Headings within the boxes */
+.student-info h2,
+.stats h3,
+.analysis-box h2,
+.analysis-box h3 {
+  margin-top: 0;
+  margin-bottom: var(--spacing-small);
+  padding-bottom: var(--spacing-small);
+  border-bottom: 1px solid var(--super-fade-text-color);
+  color: var(--text-color); /* Use standard text color for consistency */
 }
 
-
-
-/* Additions to main.css */
-.question-image {
-    position: relative;
-    margin-top: var(--spacing-small);
-    text-align: center;
-    border: 1px solid var(--crisp-border);
-    border-radius: 3px;
-    padding: var(--spacing-small);
-    background: var(--bg-color);
-    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.25);
+.student-info h2 {
+  color: var(--accent-color); /* Keep the student name heading special */
+  font-size: 1.5rem;
 }
 
-.question-img {
-    max-width: 100%;
-    border: 1px solid var(--crisp-border);
-    transition: all 0.3s ease;
-}
-
-.question-img.zoomed {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 90%;
-    max-height: 90vh;
-    z-index: 1000;
-    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.5);
-    border: 2px solid var(--crisp-border);
-}
-
-.zoom-btn {
-    margin-top: var(--spacing-small);
-    padding: 3px 8px;
-    background-color: var(--bg-color); /* Use main background color */
-    color: var(--accent-color-2-text); /* Text color matches accent */
-    border: 1px solid var(--crisp-border);
-    border-radius: 3px;
-    cursor: pointer;
-    font-family: "Leitura News", sans-serif;
-    font-weight: 600;
-    transition: all 0.2s ease;
-    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.25); /* Add default shadow */
-    position: relative;
-}
-
-
-.zoom-btn:hover {
-    background-color: var(--accent-color); /* Orange background on hover */
-    color: var(--bg-color); /* Light text on orange */
-    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.25);
-    /* Optional: Add subtle animation */
-    transform: translateY(-1px);
-}
-
-/* Active state for click feedback */
-.zoom-btn:active {
-    transform: translateY(1px);
-    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25);
-}
-
-/* CSS Reset for buttons first */
-
-/* CSS Reset for buttons first */
-
-
-
-.part-wise-stats {
-    margin: var(--spacing-large) 0;
-}
-
+/* Part-wise summary cards */
 .part-stats-container {
-    display: flex;
-    justify-content: space-between;
-    gap: var(--spacing-small);
-    flex-wrap: wrap;
+  display: flex;
+  gap: var(--spacing-small);
+  flex-wrap: wrap;
 }
 
 .part-stat {
-    flex: 1;
-    min-width: 200px;
-    padding: var(--spacing-small);
-    border: 1px solid var(--crisp-border);
-    border-radius: 3px;
-    background-color: var(--bg-color);
-    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.25);
+  flex: 1;
+  min-width: 200px;
+  padding: var(--spacing-small);
+  border: 1px solid var(--super-fade-text-color);
+  border-radius: 3px;
+  background-color: var(--bg-color); /* Use main background to pop against the container */
 }
 
-.part-section {
-    margin-top: var(--spacing-large);
+/* Add this CSS for the styled summary cards */
+
+/* Color for the Positive card's heading */
+.part-stat.positive h4 {
+  color: var(--accent-color-2); /* Your site's green/teal */
 }
 
-.part-questions {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-small);
+/* Color for the Negative card's heading */
+.part-stat.negative h4 {
+  color: var(--accent-color); /* Your site's orange/brown */
 }
 
-/* Status colors */
+/* Special styling for the Total Score card's number */
+.part-stat.total p strong {
+  font-size: 1.5rem; /* Make the final score number larger */
+  color: var(--text-color);
+}
+
+.part-stat h4 {
+  margin: 0 0 5px 0;
+  color: var(--accent-color-2);
+}
+
+.part-stat p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.part-stat p strong {
+  font-size: 1.1rem;
+  color: var(--text-color);
+}
+
+/* Detailed question list items */
+.question {
+  border: 1px solid transparent; /* Base border, color defined by status */
+  border-left-width: 4px; /* Accent bar */
+  border-radius: 3px;
+  padding: var(--spacing-small);
+  margin-bottom: var(--spacing-small);
+}
+
+.question-header p {
+  margin: 0 0 5px 0;
+  line-height: 1.4;
+}
+
+.question-image {
+  margin-top: var(--spacing-small);
+}
+
+.question-img {
+  max-width: 100%;
+  border-radius: 3px;
+  border: 1px solid var(--super-fade-text-color);
+}
+
+/* Status-specific styles for question boxes (preserves color coding) */
 .correct {
-    border-left: 4px solid var(--accent-color-2);
-    background-color: rgba(54, 105, 97, 0.1);
+  border-color: var(--accent-color-2);
+  background-color: rgba(54, 105, 97, 0.05); /* Light teal tint */
 }
 
 .incorrect {
-    border-left: 4px solid var(--accent-color);
-    background-color: rgba(182, 96, 51, 0.1);
+  border-color: var(--accent-color);
+  background-color: rgba(182, 96, 51, 0.05); /* Light orange tint */
 }
 
-.not-attempted {
-    border-left: 4px solid var(--fade-text-color);
+.unattempted {
+  border-color: var(--super-fade-text-color);
 }
 
-/* Summary boxes */
-.summary-box {
-  display: inline-block;
-  padding: 8px 15px;
-  margin-right: 10px;
-  margin-top: 10px;
-  border-radius: 3px;
-  font-weight: bold;
-}
-
-.positive {
-  background-color: rgba(54, 105, 97, 0.1);
-  color: var(--positive-color);
-  border: 1px solid var(--positive-color);
-}
-
-.negative {
-  background-color: rgba(182, 96, 51, 0.1);
-  color: var(--negative-color);
-  border: 1px solid var(--negative-color);
-}
-
-.total {
-  background-color: rgba(75, 66, 56, 0.1);
-  color: var(--neutral-color);
-  border: 1px solid var(--neutral-color);
-  font-size: 1.1em;
-}
-
-
-.no-image {
-    color: var(--super-fade-text-color);
-    font-style: italic;
-    padding: var(--spacing-small);
-    border: 1px dashed var(--crisp-border);
-    border-radius: 3px;
-    background-color: var(--bg-color);
-}
-
-.special-notice {
-  padding: var(--spacing-small);
-  border: 1px solid var(--accent-color);
-  border-radius: 3px;
-  margin-top: var(--spacing-large);
-}
-
-/* Error message */
+/* Error message styling */
 .error {
   padding: var(--spacing-small);
   background-color: rgba(182, 96, 51, 0.1);
   border: 1px solid var(--accent-color);
   border-radius: 3px;
   margin-top: var(--spacing-large);
-}
-
-.error h3 {
-  color: var(--accent-color);
-  margin-bottom: var(--spacing-small);
-}
-
-.error ul {
-  margin-left: 20px;
-  margin-top: var(--spacing-small);
 }
 
 /* Dark mode adjustments for calculator elements */
