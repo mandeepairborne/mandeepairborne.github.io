@@ -1,0 +1,277 @@
+
+    
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+    Mandeep
+</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Signika:wght@600&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@700;900&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Boldonse&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/reset.css">
+    <link rel="stylesheet" href="/main.css">
+
+    <!-- Favicon, courtesy of https://favicon.io/favicon-generator/ -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✈️</text></svg>">
+    <link rel="manifest" href="/site.webmanifest">
+
+    
+    <script src="https://kit.fontawesome.com/c8cf0c94c8.js" crossorigin="anonymous"></script>
+    <script src="/main.js"></script>
+    <script src="/assets/score/script.js"></script>
+
+
+
+    <!-- Counter script -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const updateCount = () => {
+            fetch('https://mandeepairborne.goatcounter.com/counter/TOTAL.json?t=' + Date.now())
+                .then(r => r.json())
+                .then(data => {
+                    const countEl = document.querySelector('#gc-total .count');
+                    if (countEl) countEl.textContent = data.count;
+                })
+                .catch(e => {
+                    const countEl = document.querySelector('#gc-total .count');
+                    if (countEl) countEl.textContent = '0';
+                });
+        };
+
+        // Initial load
+        updateCount();
+        
+        // Update every 5 minutes (300,000ms)
+        setInterval(updateCount, 300000);
+    });
+    </script>
+<script data-goatcounter="https://mandeepairborne.goatcounter.com/count" 
+        async src="//gc.zgo.at/count.js"></script>
+
+
+    
+  </head>
+  <body>
+    <canvas id="background-canvas">
+    </canvas>
+
+    <nav>
+      <ul>
+        <li><a class="active" href="/">Home</a></li>
+        <li><a class="" href="/blog">Blog</a></li>
+        <li><a class="" href="/projects">Projects</a></li>
+       <!-- <li><a class="" href="/score">Score</a></li> -->
+      </ul>
+    </nav>
+
+    
+        <header class="main-header">
+      <a href="/img/friendshot.jpg">
+        <img src="/img/headshot.png"
+             alt="Do i look serious."
+             width="125"
+             height="125" />
+      </a>
+      <div>
+        <h1>
+          <a href="/">
+            Mandeep</a>
+          
+          <span class="pronouns">(he/him)</span>
+        </h1>
+        <ul class="links">
+          <li><a href="/assets/airborne-cv.pdf" class="no-highlight"><i aria-hidden="true" title="CV" class="fa fa-file-text-o"></i></a></li><li><a href="https://github.com/mandeepairborne" class="no-highlight"><i aria-hidden="true" title="GitHub" class="fa fa-github-alt"></i></a></li><li><a href="https://t.me/ingloriousmaverick" class="no-highlight"><i aria-hidden="true" title="Telegram" class="fa fa-telegram"></i></a></li>
+<li><a href="https://discordapp.com/users/majorandro" class="no-highlight"><i aria-hidden="true" title="Discord" class="fab fa-discord"></i></a></li>
+<li><a href="https://x.com/mandeepairborne" class="no-highlight"><i aria-hidden="true" title="Twitter" class="fa fa-twitter"></i></a></li>
+<li><a href="https://LinkedIn.com/in/mandeepairborne" class="no-highlight"><i aria-hidden="true" title="LinkedIn" class="fa fa-linkedin"></i></a></li>
+        </ul><p class="header__contact"><a href="mailto:mandeepjangir@proton.me">mandeepjangir [at] proton [dot] me</a></p>
+        <div class="narrow">
+          <span><strong>Primary area:</strong> ML in High energy physics</span>
+          <span class="sep">◦</span>
+          <span><strong>Secondary area:</strong> Quantum information theory</span>
+        </div>
+      </div>
+    </header>
+
+
+
+    
+    <main>
+        
+            <p class="named callout">
+                <span>Way of Being</span>
+                <span style="font-size:1em">Read voraciously, run freely, discover endlessly, live and explore relentlesly.</span>
+
+            </p>
+        
+            <br>
+            <p>Hi, I'm Mandeep. I completed my Master's in Physics at <a href="https://nitj.ac.in">Dr. B.R. Ambedkar National Institute of Technology Jalandhar</a>, under the guidance of <a href="https://scholar.google.co.in/citations?user=N84DLpQAAAAJ&hl=en">Dr. Suneel Dutt</a>, following my Bachelor's in Physics, Chemistry, and Mathematics from <a href="https://staloysius.edu.in">St. Aloysius College, Mangalore</a>.</p>
+            
+            <p>My research experience includes investigating pentaquark systems, developing machine learning models for galaxy classification, and exploring quantum computing applications. Outside of physics, I enjoy amateur astronomy, playing the flute, and cycling. I also co-founded <a href="https://thesocraticcircle.github.io">The Socratic Circle</a> Book Club to encourage discussions about scientific literature among peers.</p>
+        
+
+        <p class="callout">"The more precisely the position is determined, the less precisely the momentum is known in this instant, and vice versa." - <a href="https://scholar.google.com/citations?user=WT_lqTwAAAAJ&hl=en">Werner Heisenberg</a></p>
+
+      
+        <h2>Research and Projects</h2>
+
+        <ul class="publications">
+            <li>
+                <div class="venue">
+                    <p>MSc Project</p>
+                </div>
+                <div>
+                    <h3>
+                        <a href="#">Medium Modification of Pentaquark Θ+ (July 2023 - May 2024)</a>
+                    </h3>
+                    <ul class="authors">
+                        <li class="me">Mandeep</li>,
+                        <li><a href="https://scholar.google.com/citations?user=WT_lqTwAAAAJ&hl=en">Dr. Suneel Dutt</a></li>
+                    </ul>
+                    <details>
+                        <summary>Project Details</summary>
+                        <p>Investigated exotic pentaquark baryon Θ+ using chiral SU(3) quark mean field model, incorporating key QCD features. Analyzed medium modifications in nuclear and strange matter, developed calculations for effective mass modifications, and found significant mass reduction with increasing baryon density. Applied theoretical framework incorporating scalar fields (σ, ζ, δ) and vector fields (ω, ρ, ϕ) for comprehensive analysis.</p>
+                    </details>
+                </div>
+            </li>
+
+            <li>
+                <div class="venue">
+                    <p>ML Project</p>
+                </div>
+                <div>
+                    <h3>
+                        <a href="/projects/galaxy-classification/">Galaxy Image Classification (May 2023 - July 2023)</a>
+                    </h3>
+                    <ul class="authors">
+                        <li class="me">Mandeep</li>
+                    </ul>
+                    <details>
+                        <summary>Project Details</summary>
+                        <p>This galaxy image classification project demonstrates the effectiveness of convolutional neural networks in astronomical image analysis. With a test accuracy of 73.99%, the model successfully distinguishes between various galaxy morphologies, providing a solid foundation for automated galaxy classification systems.</p>
+                    </details>
+                </div>
+            </li>
+
+            <li>
+                <div class="venue">
+                    <p>BSc Project</p>
+                </div>
+                <div>
+                    <h3><a href="#">High Fidelity FM Broadcaster (May 2022 - July 2022)</a></h3>
+                    <ul class="authors">
+                        <li class="me">Mandeep</li>,
+                        <li><a href="#">Dr. Narayana Moolya B</a></li>
+                    </ul>
+                    <details>
+                        <summary>Project Details</summary>
+                        <p>Designed and constructed a small-scale FM broadcasting system operating in the 88-108 MHz frequency band. Implemented frequency modulation using VCO circuit, assembled RF amplifier stage, and optimized audio quality through low-pass filters.</p>
+                    </details>
+                </div>
+            </li>
+        </ul>
+
+        <h2>Activities & Leadership</h2>
+
+        <div class="leadership-roles">
+            <div class="academic-governance">
+                <h3>Academic Governance</h3>
+                <ul>
+                    <li>Academic Representative, Senate Postgraduate Committee
+                        <div class="role-details">
+                            <p>Represented postgraduate student interests in academic policy decisions and curriculum development</p>
+                        </div>
+                    </li>
+                    <li>Class Representative, MSc Physics
+                        <div class="role-details">
+                            <p>Served as liaison between faculty and students, coordinating academic activities and addressing student concerns</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="initiatives">
+                <h3>Academic Initiatives</h3>
+                <ul>
+                    <li>Co-founder, The Socratic Circle Book Club
+                        <div class="role-details">
+                            <p>Established and led a discussion forum focusing on scientific literature and philosophical discourse in physics</p>
+                        </div>
+                    </li>
+                    <li>Member, Web Committee, Physical Science Society (PSS)
+                        <div class="role-details">
+                            <p>Managed digital presence and technical communications for the society's academic events and initiatives</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <style>
+.leadership-roles {
+    margin: 1.5em 0;
+}
+
+.leadership-roles h3 {
+    color: #333;
+    margin-bottom: 0.5em;
+    font-size: 1.2em;
+}
+
+.leadership-roles ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.leadership-roles li {
+    margin-bottom: 1em;
+    font-weight: bold;
+}
+
+.role-details {
+    margin-top: 0.3em;
+}
+
+.role-details p {
+    font-weight: normal;
+    margin: 0.2em 0;
+    color: #555;
+}
+
+.academic-governance, .initiatives {
+    margin-bottom: 2em;
+}
+</style>
+
+        <h2>Interests</h2>
+        <p>
+            Amateur Astronomy, Scientific Computing, Reading Scientific Literature, Physical Fitness (Cycling, Calisthenics)
+        </p>
+
+        <p class="callout">"The universe is not only stranger than we imagine, it is stranger than we can imagine." - <a href="https://en.wikipedia.org/wiki/J._B._S._Haldane">J.B.S. Haldane</a></p>
+    </main>
+
+    <footer>Last updated: 2024-11-24.</footer>
+
+  </body>
+<footer>
+        &copy; 2025 Mandeep. MIT License.
+        <span id="gc-total">
+            <i class="fas fa-chart-line"></i>
+            <span class="count">-</span>
+        </span>
+    </footer>
+</html>
