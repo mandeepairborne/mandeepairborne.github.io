@@ -42,15 +42,44 @@ async function fetchDetails() {
     }
 
     outputDiv.innerHTML = '<div class="analysis-box"><p>Fetching your response sheet... Please wait. ⏳</p></div>';
-    
-    // Using allorigins proxy to bypass CORS
-    const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(responseUrl)}`;
+
+    // List of proxies to try in order
+    const proxies = [
+        `https://corsproxy.io/?${encodeURIComponent(responseUrl)}`,
+        `https://api.allorigins.win/raw?url=${encodeURIComponent(responseUrl)}`
+    ];
+
+    let htmlString = null;
+    let fetchError = null;
+
+    // 🔄 Try proxies one by one
+    for (const proxyUrl of proxies) {
+        try {
+            console.log(`Attempting fetch via: ${proxyUrl}`);
+            const response = await fetch(proxyUrl);
+            
+            if (response.ok) {
+                htmlString = await response.text();
+                // Check if we actually got HTML back, sometimes proxies return error text as 200 OK
+                if (htmlString.includes("<!DOCTYPE html") || htmlString.includes("<html")) {
+                    break; // Success! Stop the loop
+                } else {
+                    throw new Error("Invalid content received from proxy");
+                }
+            } else {
+                throw new Error(`Status: ${response.status}`);
+            }
+        } catch (error) {
+            console.warn(`Proxy failed: ${proxyUrl}`, error);
+            fetchError = error;
+        }
+    }
 
     try {
-        const response = await fetch(proxyUrl);
-        if (!response.ok) throw new Error(`Proxy Error: Could not fetch the URL. Status: ${response.status}`);
-        
-        const htmlString = await response.text();
+        if (!htmlString) {
+            throw new Error(`<strong>Connection Failed.</strong><br>We could not reach your response sheet using any proxy.<br><br><strong>Solution:</strong> Please ensure your URL is correct and public. If the issue persists, the CSIR server might be slow.`);
+        }
+
         const parser = new DOMParser();
         const doc = parser.parseFromString(htmlString, 'text/html');
 
@@ -58,8 +87,10 @@ async function fetchDetails() {
         const baseUrl = new URL(responseUrl).origin;
         const studentResponses = extractStudentResponses(doc, baseUrl);
         
+        // Validation: Did we actually find questions?
         if (Object.keys(studentResponses).length === 0) {
-            throw new Error("Could not find any questions in the response sheet.");
+            // Sometimes proxies strip the content. 
+            throw new Error("<strong>Parse Error:</strong> The link was fetched, but no questions were found. The response sheet might have expired or the link is invalid.");
         }
         
         const results = calculateScore(studentResponses, OFFICIAL_ANSWERS, EXAM_CONFIG);
@@ -74,7 +105,6 @@ async function fetchDetails() {
         console.error("Calculation Error:", error);
     }
 }
-
 /**
  * Saves the calculated score and student details to a Google Sheet via Apps Script.
  */
