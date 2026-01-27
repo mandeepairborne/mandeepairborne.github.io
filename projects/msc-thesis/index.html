@@ -1,0 +1,143 @@
+
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+MANCompiled | MSc Thesis Highlights
+</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Signika:wght@600&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@700;900&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Boldonse&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/reset.css">
+    <link rel="stylesheet" href="/main.css">
+
+    <!-- Favicon, courtesy of https://favicon.io/favicon-generator/ -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✈️</text></svg>">
+    <link rel="manifest" href="/site.webmanifest">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js" integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body, { delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+    
+    <script src="https://kit.fontawesome.com/c8cf0c94c8.js" crossorigin="anonymous"></script>
+    <script src="/main.js"></script>
+    <script src="/assets/score/script.js"></script>
+
+
+
+    <!-- Counter script -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const updateCount = () => {
+            fetch('https://mandeepairborne.goatcounter.com/counter/TOTAL.json?t=' + Date.now())
+                .then(r => r.json())
+                .then(data => {
+                    const countEl = document.querySelector('#gc-total .count');
+                    if (countEl) countEl.textContent = data.count;
+                })
+                .catch(e => {
+                    const countEl = document.querySelector('#gc-total .count');
+                    if (countEl) countEl.textContent = '0';
+                });
+        };
+
+        // Initial load
+        updateCount();
+        
+        // Update every 5 minutes (300,000ms)
+        setInterval(updateCount, 300000);
+    });
+    </script>
+<script data-goatcounter="https://mandeepairborne.goatcounter.com/count" 
+        async src="//gc.zgo.at/count.js"></script>
+
+
+    
+  </head>
+  <body>
+    <canvas id="background-canvas">
+    </canvas>
+
+    <nav>
+      <ul>
+        <li><a class="" href="/">Home</a></li>
+        <li><a class="" href="/blog">Blog</a></li>
+        <li><a class="active" href="/projects">Projects</a></li>
+       <!-- <li><a class="" href="/score">Score</a></li> -->
+      </ul>
+    </nav>
+
+    
+  <header class="blog-header">
+    <h1><a href="/projects">MANCompiled</a></h1>
+    <p>Wavefunctions, weights, and while-loops - <a href="/">Mandeep</a>.</p>
+  </header>
+
+
+
+    
+
+<main id="page">
+  <h2>MSc Thesis Highlights</h2>
+  <p class="date">May 15, 2024</p>
+  <hr />
+<h3 id="medium-modification-of-pentaquark-th"><strong>Medium Modification of Pentaquark Θ⁺</strong></h3>
+<p><strong>Institution:</strong> Dr. B R Ambedkar National Institute of Technology, Jalandhar<br />
+<strong>Supervisor:</strong> <a href="https://departments.nitj.ac.in/dept/ph/Faculty/6430446a38bff038a7808216">Dr. Suneel Dutt</a><br />
+<strong>Duration:</strong> July 2023 – May 2024</p>
+<hr />
+<h3 id="memo-abstract">📝 Abstract</h3>
+<p>The exotic pentaquark baryon Θ⁺ (quark content: uudds̄) was investigated theoretically using the <strong>chiral SU(3) quark mean field model</strong> to study its in-medium behavior in dense nuclear and strange matter.</p>
+<p>Key observations include:</p>
+<ul>
+<li>A significant decrease in the effective mass of Θ⁺ with increasing baryon density</li>
+<li>Stronger medium modification in strange matter compared to nuclear matter</li>
+<li>Nontrivial dependence on isospin asymmetry and temperature</li>
+<li>Possible existence of Θ⁺ in the hyperonic cores of neutron stars</li>
+</ul>
+<p>These results provide insights into <strong>chiral symmetry restoration</strong> in dense QCD matter and support the possibility of <strong>exotic phases</strong> inside compact astrophysical objects.</p>
+<hr />
+<h3 id="round-pu-key-findings">📌 Key Findings</h3>
+<ul>
+<li><strong>Mass reduction:</strong> The effective mass of Θ⁺ drops sharply with increasing baryon density, more significantly in strange matter than in nuclear matter.</li>
+<li><strong>Thermal and isospin effects:</strong> Isospin asymmetry accelerates the mass drop. Temperature tends to slightly increase Θ⁺ mass at fixed density.</li>
+<li><strong>Astrophysical relevance:</strong> The findings suggest Θ⁺ may exist in the cores of neutron stars, supporting possible chiral symmetry restoration and exotic hadronic phases.</li>
+</ul>
+<hr />
+<h3 id="microscope-keywords">🔬 Keywords</h3>
+<p>Pentaquarks, medium modification, dense matter, neutron stars, chiral SU(3) model, Θ⁺</p>
+<hr />
+<h3 id="page-facing-up-download-full-thesis-pdf">📄 <a href="/assets/msc_thesis.pdf">Download Full Thesis (PDF)</a></h3>
+<hr />
+
+  <footer>
+    <p>Return to <a href="/projects">MANCompiled home</a>.</p>
+  </footer>
+</main>
+
+
+  </body>
+<footer>
+        &copy; 2025 Mandeep. MIT License.
+        <span id="gc-total">
+            <i class="fas fa-chart-line"></i>
+            <span class="count">-</span>
+        </span>
+    </footer>
+</html>

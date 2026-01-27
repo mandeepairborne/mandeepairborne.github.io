@@ -1,0 +1,126 @@
+
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Signika:wght@600&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@700;900&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Boldonse&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/reset.css">
+    <link rel="stylesheet" href="/main.css">
+
+    <!-- Favicon, courtesy of https://favicon.io/favicon-generator/ -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✈️</text></svg>">
+    <link rel="manifest" href="/site.webmanifest">
+
+    
+    <script src="https://kit.fontawesome.com/c8cf0c94c8.js" crossorigin="anonymous"></script>
+    <script src="/main.js"></script>
+    <script src="/assets/score/script.js"></script>
+
+
+
+    <!-- Counter script -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const updateCount = () => {
+            fetch('https://mandeepairborne.goatcounter.com/counter/TOTAL.json?t=' + Date.now())
+                .then(r => r.json())
+                .then(data => {
+                    const countEl = document.querySelector('#gc-total .count');
+                    if (countEl) countEl.textContent = data.count;
+                })
+                .catch(e => {
+                    const countEl = document.querySelector('#gc-total .count');
+                    if (countEl) countEl.textContent = '0';
+                });
+        };
+
+        // Initial load
+        updateCount();
+        
+        // Update every 5 minutes (300,000ms)
+        setInterval(updateCount, 300000);
+    });
+    </script>
+<script data-goatcounter="https://mandeepairborne.goatcounter.com/count" 
+        async src="//gc.zgo.at/count.js"></script>
+
+
+    
+  </head>
+  <body>
+    <canvas id="background-canvas">
+    </canvas>
+
+    <nav>
+      <ul>
+        <li><a class="" href="/">Home</a></li>
+        <li><a class="" href="/blog">Blog</a></li>
+        <li><a class="" href="/projects">Projects</a></li>
+       <!-- <li><a class="" href="/score">Score</a></li> -->
+      </ul>
+    </nav>
+
+     
+
+    
+<article class="center" style="text-align: center; margin-top: var(--spacing-large);">
+    <h1 style="font-family: 'Leitura News'; font-weight: 800; color: var(--accent-color);">
+        404
+    </h1>
+
+    <div class="input-group" style="margin: var(--spacing-large) auto; max-width: var(--main-width);">
+        <img src="https://media3.giphy.com/media/UoeaPqYrimha6rdTFV/giphy.gif" 
+             alt="404 error" 
+             style="width: 100%; 
+                    border: 1px solid var(--crisp-border);
+                    border-radius: 3px;
+                    box-shadow: 4px 4px 0 rgba(0,0,0,0.25);">
+    </div>
+
+    <div class="callout named" style="max-width: var(--main-width); margin: var(--spacing-large) auto;">
+        <span class="pronouns">Wanderer's Note</span>
+        <p style="margin: var(--spacing-small) 0; font-style: italic; color: var(--text-color);">
+            "Not all those who wander are lost, but you certainly are."
+        </p>
+        
+        <div class="input-group" style="justify-content: center; margin-top: var(--spacing-small);">
+            <button 
+                onclick="window.location.href='https:&#x2F;&#x2F;mandeepairborne.github.io'" 
+                style="padding: var(--spacing-small) var(--spacing-large);
+                       border: 1px solid var(--crisp-border);
+                       box-shadow: 2px 2px 0 rgba(0,0,0,0.25);
+                       background: var(--bg-color);
+                       color: var(--accent-color-2-text);
+                       cursor: pointer;
+                       font-family: inherit;">
+                Navigate Home
+            </button>
+        </div>
+    </div>
+</article>
+
+  </body>
+<footer>
+        &copy; 2025 Mandeep. MIT License.
+        <span id="gc-total">
+            <i class="fas fa-chart-line"></i>
+            <span class="count">-</span>
+        </span>
+    </footer>
+</html>
