@@ -1,0 +1,166 @@
+
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+MANCompiled | Autoencoder-based Precision Measurement Techniques
+</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Signika:wght@600&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@700;900&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Boldonse&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/reset.css">
+    <link rel="stylesheet" href="/main.css">
+
+    <!-- Favicon, courtesy of https://favicon.io/favicon-generator/ -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✈️</text></svg>">
+    <link rel="manifest" href="/site.webmanifest">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js" integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body, { delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+    
+    <script src="https://kit.fontawesome.com/c8cf0c94c8.js" crossorigin="anonymous"></script>
+    <script src="/main.js"></script>
+    <script src="/assets/score/script.js"></script>
+
+
+
+    <!-- Counter script -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const updateCount = () => {
+            fetch('https://mandeepairborne.goatcounter.com/counter/TOTAL.json?t=' + Date.now())
+                .then(r => r.json())
+                .then(data => {
+                    const countEl = document.querySelector('#gc-total .count');
+                    if (countEl) countEl.textContent = data.count;
+                })
+                .catch(e => {
+                    const countEl = document.querySelector('#gc-total .count');
+                    if (countEl) countEl.textContent = '0';
+                });
+        };
+
+        // Initial load
+        updateCount();
+        
+        // Update every 5 minutes (300,000ms)
+        setInterval(updateCount, 300000);
+    });
+    </script>
+<script data-goatcounter="https://mandeepairborne.goatcounter.com/count" 
+        async src="//gc.zgo.at/count.js"></script>
+
+
+    
+  </head>
+  <body>
+    <canvas id="background-canvas">
+    </canvas>
+
+    <nav>
+      <ul>
+        <li><a class="" href="/">Home</a></li>
+        <li><a class="" href="/blog">Blog</a></li>
+        <li><a class="active" href="/projects">Projects</a></li>
+       <!-- <li><a class="" href="/score">Score</a></li> -->
+      </ul>
+    </nav>
+
+    
+  <header class="blog-header">
+    <h1><a href="/projects">MANCompiled</a></h1>
+    <p>Wavefunctions, weights, and while-loops - <a href="/">Mandeep</a>.</p>
+  </header>
+
+
+
+    
+
+<main id="page">
+  <h2>Autoencoder-based Precision Measurement Techniques</h2>
+  <p class="date">November 15, 2025</p>
+  <h2 id="microscope-project-overview">🔬 Project Overview</h2>
+<p>In experimental particle physics, detector measurements are subject to complex systematic uncertainties and distortions caused by detector response, pileup, and material interactions. This project, completed during my research tenure at <strong>Northwestern University</strong>, implements deep autoencoder neural networks to automate and improve the calibration of particle physics measurements. By training autoencoders in an unsupervised manner on standard physics reference channels, the models learn to reconstruct clean kinematic distributions and systematically correct detector effects.</p>
+<div class="callout named">
+<span>⚡ Key Objective</span>
+Develop a deep-learning-based calibration framework to reduce systematic uncertainties in reconstructed particle physics properties, enhancing overall measurement precision.
+</div>
+<hr />
+<h2 id="brain-methodology-model-architecture">🧠 Methodology &amp; Model Architecture</h2>
+<p>Autoencoders are neural networks trained to reconstruct their input data through a low-dimensional bottleneck (latent space). For detector calibration:</p>
+<ol>
+<li><strong>Input Features:</strong> Particle kinematic vectors $( (p_T, \eta, \phi, m) )$ along with detector-specific calorimeter cluster shapes and tracker qualities.</li>
+<li><strong>Latent Representation:</strong> The encoder maps high-dimensional reconstructed features to a lower-dimensional representation representing the true physics parameters.</li>
+<li><strong>Reconstruction &amp; Calibration:</strong> The decoder reconstructs the calibrated measurements. The reconstruction loss function is weighted by experimental resolution parameters to align the output with true calibration benchmarks (such as the $( Z )$-boson mass peak).</li>
+</ol>
+<h3 id="model-architecture">Model Architecture</h3>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span style="color:#b48ead;">import </span><span>tensorflow </span><span style="color:#b48ead;">as </span><span>tf
+</span><span>
+</span><span style="color:#b48ead;">class </span><span style="color:#ebcb8b;">PrecisionCalibrationAutoencoder</span><span style="color:#eff1f5;">(</span><span style="color:#a3be8c;">tf.keras.Model</span><span style="color:#eff1f5;">):
+</span><span>    </span><span style="color:#b48ead;">def </span><span style="color:#96b5b4;">__init__</span><span>(</span><span style="color:#bf616a;">self</span><span>, </span><span style="color:#bf616a;">input_dim</span><span>, </span><span style="color:#bf616a;">latent_dim</span><span>):
+</span><span>        </span><span style="color:#96b5b4;">super</span><span>(PrecisionCalibrationAutoencoder, </span><span style="color:#bf616a;">self</span><span>).</span><span style="color:#96b5b4;">__init__</span><span>()
+</span><span>        </span><span style="color:#65737e;"># Encoder Network
+</span><span>        </span><span style="color:#bf616a;">self</span><span>.encoder = tf.keras.</span><span style="color:#bf616a;">Sequential</span><span>([
+</span><span>            tf.keras.layers.</span><span style="color:#bf616a;">Dense</span><span>(</span><span style="color:#d08770;">128</span><span>, </span><span style="color:#bf616a;">activation</span><span>=&#39;</span><span style="color:#a3be8c;">relu</span><span>&#39;, </span><span style="color:#bf616a;">input_shape</span><span>=(input_dim,)),
+</span><span>            tf.keras.layers.</span><span style="color:#bf616a;">BatchNormalization</span><span>(),
+</span><span>            tf.keras.layers.</span><span style="color:#bf616a;">Dropout</span><span>(</span><span style="color:#d08770;">0.2</span><span>),
+</span><span>            tf.keras.layers.</span><span style="color:#bf616a;">Dense</span><span>(</span><span style="color:#d08770;">64</span><span>, </span><span style="color:#bf616a;">activation</span><span>=&#39;</span><span style="color:#a3be8c;">relu</span><span>&#39;),
+</span><span>            tf.keras.layers.</span><span style="color:#bf616a;">Dense</span><span>(latent_dim, </span><span style="color:#bf616a;">activation</span><span>=&#39;</span><span style="color:#a3be8c;">relu</span><span>&#39;)
+</span><span>        ])
+</span><span>        </span><span style="color:#65737e;"># Decoder Network (Calibration)
+</span><span>        </span><span style="color:#bf616a;">self</span><span>.decoder = tf.keras.</span><span style="color:#bf616a;">Sequential</span><span>([
+</span><span>            tf.keras.layers.</span><span style="color:#bf616a;">Dense</span><span>(</span><span style="color:#d08770;">64</span><span>, </span><span style="color:#bf616a;">activation</span><span>=&#39;</span><span style="color:#a3be8c;">relu</span><span>&#39;, </span><span style="color:#bf616a;">input_shape</span><span>=(latent_dim,)),
+</span><span>            tf.keras.layers.</span><span style="color:#bf616a;">BatchNormalization</span><span>(),
+</span><span>            </span><span style="color:#bf616a;">self</span><span>.decoder_output = tf.keras.layers.</span><span style="color:#bf616a;">Dense</span><span>(input_dim, </span><span style="color:#bf616a;">activation</span><span>=&#39;</span><span style="color:#a3be8c;">linear</span><span>&#39;)
+</span><span>        ])
+</span><span>        
+</span><span>    </span><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">call</span><span>(</span><span style="color:#bf616a;">self</span><span>, </span><span style="color:#bf616a;">inputs</span><span>):
+</span><span>        latent = </span><span style="color:#bf616a;">self</span><span>.</span><span style="color:#bf616a;">encoder</span><span>(inputs)
+</span><span>        calibrated = </span><span style="color:#bf616a;">self</span><span>.</span><span style="color:#bf616a;">decoder</span><span>(latent)
+</span><span>        </span><span style="color:#b48ead;">return </span><span>calibrated
+</span></code></pre>
+<hr />
+<h2 id="chart-with-upwards-trend-results-calibration-impact">📈 Results &amp; Calibration Impact</h2>
+<ul>
+<li><strong>Resolution Improvement:</strong> Successfully corrected energy/momentum scale offsets, narrowing the reconstructed invariant mass distributions for reference calibration channels.</li>
+<li><strong>Uncertainty Reduction:</strong> The deep autoencoder framework reduced the systematic uncertainties associated with detector energy scale resolution, improving precision in downstream searches.</li>
+<li><strong>Pileup Robustness:</strong> The network demonstrated excellent resilience under high-pileup conditions, filtering out extraneous soft-radiation energy contributions.</li>
+</ul>
+<hr />
+<h2 id="tech-stack">🛠️ Tech Stack</h2>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>Python | PyTorch | TensorFlow | Keras | ROOT | NumPy | SciPy | pandas | Matplotlib
+</span></code></pre>
+<p><em>This research project was conducted under the supervision of <strong>Dr. Raman Khurana</strong> at Northwestern University (USA).</em></p>
+
+  <footer>
+    <p>Return to <a href="/projects">MANCompiled home</a>.</p>
+  </footer>
+</main>
+
+
+  </body>
+<footer>
+        &copy; 2026 Mandeep. MIT License.
+        <span id="gc-total">
+            <i class="fas fa-chart-line"></i>
+            <span class="count">-</span>
+        </span>
+    </footer>
+</html>

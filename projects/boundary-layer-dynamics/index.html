@@ -1,0 +1,190 @@
+
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+MANCompiled | Numerical Modeling of Advective Boundary Layer Dynamics
+</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Signika:wght@600&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@700;900&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Boldonse&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/reset.css">
+    <link rel="stylesheet" href="/main.css">
+
+    <!-- Favicon, courtesy of https://favicon.io/favicon-generator/ -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✈️</text></svg>">
+    <link rel="manifest" href="/site.webmanifest">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js" integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body, { delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+    
+    <script src="https://kit.fontawesome.com/c8cf0c94c8.js" crossorigin="anonymous"></script>
+    <script src="/main.js"></script>
+    <script src="/assets/score/script.js"></script>
+
+
+
+    <!-- Counter script -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const updateCount = () => {
+            fetch('https://mandeepairborne.goatcounter.com/counter/TOTAL.json?t=' + Date.now())
+                .then(r => r.json())
+                .then(data => {
+                    const countEl = document.querySelector('#gc-total .count');
+                    if (countEl) countEl.textContent = data.count;
+                })
+                .catch(e => {
+                    const countEl = document.querySelector('#gc-total .count');
+                    if (countEl) countEl.textContent = '0';
+                });
+        };
+
+        // Initial load
+        updateCount();
+        
+        // Update every 5 minutes (300,000ms)
+        setInterval(updateCount, 300000);
+    });
+    </script>
+<script data-goatcounter="https://mandeepairborne.goatcounter.com/count" 
+        async src="//gc.zgo.at/count.js"></script>
+
+
+    
+  </head>
+  <body>
+    <canvas id="background-canvas">
+    </canvas>
+
+    <nav>
+      <ul>
+        <li><a class="" href="/">Home</a></li>
+        <li><a class="" href="/blog">Blog</a></li>
+        <li><a class="active" href="/projects">Projects</a></li>
+       <!-- <li><a class="" href="/score">Score</a></li> -->
+      </ul>
+    </nav>
+
+    
+  <header class="blog-header">
+    <h1><a href="/projects">MANCompiled</a></h1>
+    <p>Wavefunctions, weights, and while-loops - <a href="/">Mandeep</a>.</p>
+  </header>
+
+
+
+    
+
+<main id="page">
+  <h2>Numerical Modeling of Advective Boundary Layer Dynamics</h2>
+  <p class="date">May 22, 2026</p>
+  <h2 id="project-overview">🌪️ Project Overview</h2>
+<p>This project implements a 2D numerical solver for the <strong>Mahrt (1972) advective boundary layer model</strong>. The solver is designed to simulate cross-equatorial wind flow, focusing on the dynamics of the Somali Jet. By integrating real-world meteorological data from the <strong>ERA5 Global Catalog</strong>, we study how pressure forces, horizontal and vertical advection, eddy viscosity, and the changing Coriolis parameter across the equator interact to shape the planetary boundary layer.</p>
+<div class="callout named">
+<span>💡 Research Summary</span>
+Investigated boundary layer response to cross-equatorial gradients along the Somali Jet axis (60°E longitude). Developed an upwind numerical solver initialized with ERA5 data and conducted comparisons between constant and height-dependent eddy viscosity profiles.
+</div>
+<hr />
+<h2 id="microscope-model-physics-governing-equations">🔬 Model Physics &amp; Governing Equations</h2>
+<p>The Mahrt (1972) model governs the steady-state boundary layer velocity fields $( (u, v, w) )$ under the influence of pressure gradients, friction (eddy diffusion), and Coriolis acceleration:</p>
+<p>$$ v \frac{\partial u}{\partial y} + w \frac{\partial u}{\partial z} = f v + K_z \frac{\partial^2 u}{\partial z^2} - \frac{1}{\rho}\frac{\partial p}{\partial x} $$</p>
+<p>$$ v \frac{\partial v}{\partial y} + w \frac{\partial v}{\partial z} = -f u + K_z \frac{\partial^2 v}{\partial z^2} - \frac{1}{\rho}\frac{\partial p}{\partial y} $$</p>
+<p>Where:</p>
+<ul>
+<li>$( f = \beta y )$ is the Coriolis parameter, which varies linearly with latitude $( y )$ (beta-plane approximation).</li>
+<li>$( K_z )$ is the vertical eddy diffusion coefficient.</li>
+<li>$( -\frac{1}{\rho}\frac{\partial p}{\partial x} )$ and $( -\frac{1}{\rho}\frac{\partial p}{\partial y} )$ are the zonal and meridional pressure gradient forces.</li>
+<li>The vertical velocity $( w )$ is determined from the continuity equation:</li>
+</ul>
+<p>$$ \frac{\partial v}{\partial y} + \frac{\partial w}{\partial z} = 0 \implies w(z) = -\int_{0}^{z} \frac{\partial v}{\partial y} dz $$</p>
+<hr />
+<h2 id="numerical-implementation">🛠️ Numerical Implementation</h2>
+<p>The solver is written in Python and uses a finite difference grid to discretize the boundary layer:</p>
+<ul>
+<li><strong>Discretization:</strong> Upwind finite difference scheme is used for horizontal and vertical advection to maintain numerical stability in strongly advective flows.</li>
+<li><strong>Eddy Diffusion:</strong> Standard second-order central difference scheme.</li>
+<li><strong>Time Integration:</strong> Explicit forward-Euler scheme used to step the equations of motion to a steady state (spin-up).</li>
+<li><strong>Coriolis near Equator:</strong> A reference latitude method is used to avoid singularities at the exact equator ($( f=0 )$).</li>
+</ul>
+<h3 id="core-solver-step">Core Solver Step</h3>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">step</span><span>(</span><span style="color:#bf616a;">self</span><span>, </span><span style="color:#bf616a;">dt</span><span>):
+</span><span>    </span><span style="color:#65737e;"># Calculate vertical velocity w from continuity
+</span><span>    </span><span style="color:#bf616a;">self</span><span>.</span><span style="color:#bf616a;">_calculate_vertical_velocity</span><span>()
+</span><span>    
+</span><span>    </span><span style="color:#65737e;"># Calculate advection, diffusion, and Coriolis terms
+</span><span>    adv_u = </span><span style="color:#bf616a;">self</span><span>.</span><span style="color:#bf616a;">_advection_u</span><span>()
+</span><span>    adv_v = </span><span style="color:#bf616a;">self</span><span>.</span><span style="color:#bf616a;">_advection_v</span><span>()
+</span><span>    diff_u = </span><span style="color:#bf616a;">self</span><span>.</span><span style="color:#bf616a;">_diffusion_u</span><span>()
+</span><span>    diff_v = </span><span style="color:#bf616a;">self</span><span>.</span><span style="color:#bf616a;">_diffusion_v</span><span>()
+</span><span>    cor_u, cor_v = </span><span style="color:#bf616a;">self</span><span>.</span><span style="color:#bf616a;">_coriolis_beta_term</span><span>()
+</span><span>    
+</span><span>    </span><span style="color:#65737e;"># Update velocity fields with pressure gradient force (dpdx, dpdy)
+</span><span>    u_new = </span><span style="color:#bf616a;">self</span><span>.u + dt * (adv_u + cor_u + diff_u - </span><span style="color:#bf616a;">self</span><span>.dpdx)
+</span><span>    v_new = </span><span style="color:#bf616a;">self</span><span>.v + dt * (adv_v + cor_v + diff_v - </span><span style="color:#bf616a;">self</span><span>.dpdy)
+</span><span>    
+</span><span>    </span><span style="color:#65737e;"># Enforce boundary conditions (no-slip at surface, geostrophic at top)
+</span><span>    u_new[</span><span style="color:#d08770;">0</span><span>, :] = </span><span style="color:#d08770;">0.0
+</span><span>    v_new[</span><span style="color:#d08770;">0</span><span>, :] = </span><span style="color:#d08770;">0.0
+</span><span>    u_new[-</span><span style="color:#d08770;">1</span><span>, :] = u_new[-</span><span style="color:#d08770;">2</span><span>, :]
+</span><span>    v_new[-</span><span style="color:#d08770;">1</span><span>, :] = v_new[-</span><span style="color:#d08770;">2</span><span>, :]
+</span><span>    
+</span><span>    </span><span style="color:#bf616a;">self</span><span>.u = u_new
+</span><span>    </span><span style="color:#bf616a;">self</span><span>.v = v_new
+</span></code></pre>
+<hr />
+<h2 id="bar-chart-numerical-experiments-findings">📊 Numerical Experiments &amp; Findings</h2>
+<p>We performed two main simulation experiments across the domain spanning from $( -10^\circ )$ to $( +10^\circ )$ latitude and $( 0 )$ to $( 2000\text{ m} )$ altitude:</p>
+<h3 id="1-experiment-1-meridional-pressure-gradient-only">1. Experiment 1: Meridional Pressure Gradient Only</h3>
+<ul>
+<li>Configured with only meridional forcing ($( dp/dy \neq 0, dp/dx = 0 )$).</li>
+<li>Results show strong cross-equatorial advection carrying southern-hemispheric momentum into the Northern Hemisphere, which delays the adaptation of the wind vector to the Northern Hemisphere Coriolis force.</li>
+</ul>
+<h3 id="2-experiment-2-joint-meridional-and-zonal-pressure-gradients">2. Experiment 2: Joint Meridional and Zonal Pressure Gradients</h3>
+<ul>
+<li>Configured with both meridional and zonal forcing to model a realistic Somali Jet scenario.</li>
+<li>The zonal pressure gradient drives strong zonal wind acceleration, creating a pronounced low-level wind maximum (jet core) within the boundary layer near the equator.</li>
+</ul>
+<h3 id="3-sensitivity-analysis-eddy-viscosity-profiles">3. Sensitivity Analysis: Eddy Viscosity Profiles</h3>
+<ul>
+<li><strong>Constant $( K_z )$:</strong> Results in classical Ekman-like spiral profiles that show uniform friction depth.</li>
+<li><strong>Height-Dependent $( K_z(z) )$:</strong> Simulates realistic boundary layers where turbulence decreases near the top of the boundary layer, leading to sharper shear zones and a more realistic jet core height.</li>
+</ul>
+<hr />
+<h2 id="gear-tech-stack">⚙️ Tech Stack</h2>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>Python | NumPy | xarray | Intake | Matplotlib | Jupyter Notebooks
+</span></code></pre>
+<p><em>This project was developed as part of the ICTS Monsoon School (Moist Convective Dynamics of Monsoons - II) in Bengaluru, India.</em></p>
+
+  <footer>
+    <p>Return to <a href="/projects">MANCompiled home</a>.</p>
+  </footer>
+</main>
+
+
+  </body>
+<footer>
+        &copy; 2026 Mandeep. MIT License.
+        <span id="gc-total">
+            <i class="fas fa-chart-line"></i>
+            <span class="count">-</span>
+        </span>
+    </footer>
+</html>

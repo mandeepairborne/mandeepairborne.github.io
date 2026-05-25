@@ -1,0 +1,49 @@
+/* static/css/terminal.css */
+
+/* Container */
+#terminal {
+  background: #000;
+  border: 2px solid #0f0;
+  padding: 1rem;
+  max-width: 600px;
+  margin: 2rem auto;
+  box-shadow: 0 0 20px rgba(0,255,0,0.3);
+}
+
+/* Make all terminal text green Courier */
+#terminal,
+#terminal * {
+  color: #0f0;
+  font-family: "Courier New", Courier, monospace;
+}
+
+/* Prompt + input line */
+#terminal #input-line {
+  display: flex;
+}
+#terminal #prompt {
+  margin-right: .5em;
+}
+#terminal #cmd {
+  background: none;
+  border: none;
+  outline: none;
+  color: inherit;    /* inherits #0f0 */
+  font: inherit;     /* inherits Courier */
+  flex: 1;
+  border-right: 2px solid #0f0;
+  animation: blink 1s infinite;
+}
+
+/* Blinking cursor keyframes */
+@keyframes blink {
+  0%, 50%   { border-color: transparent; }
+  50.1%,100%{ border-color: #0f0; }
+}
+
+/* Hidden birthday wish */
+#terminal #wish {
+  display: none;
+  margin-top: 1rem;
+  color: #ff0;
+}
